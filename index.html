@@ -15,6 +15,7 @@
 
 <script charset="utf-8" type="text/javascript" src="JS/d3.min.js"></script>
 <script type="text/javascript" src="JS/d3-tip.min.js"></script>
+<script type="text/javascript" src="JS/jquery-min.js"></script>
 
 
 
@@ -53,6 +54,43 @@ in some browsers.
 
 <section>
 
+<h3 class="center">applied statistician</h3>
+
+<aside>
+</aside>
+
+<p class="pg">2</p></section>
+
+
+<section>
+
+<h3 class="center"><font class="fade2">applied</font> statistician</h3>
+
+<aside>
+</aside>
+
+<script type="text/javascript">
+slide_transition = function(slidenumber) {
+
+  if(slidenumber==2 || slidenumber==4) {
+    d3.select("font.fade2").attr("color", "white");
+  }
+
+  if(slidenumber==3) {
+    d3.select("font.fade2").transition().duration(3000).ease("linear").attr("color", "#444");
+  }
+}
+</script>
+
+<p class="pg">2</p></section>
+
+
+
+
+
+
+<section>
+
 <h3>Inbred mice</h3>
 
 <img style="position:fixed;bottom: 0px; left:0px; z-index: -1;" width="1280px" src="Figs/inbredmice.jpg" />
@@ -65,7 +103,7 @@ href="http://cals.ncsu.edu/genetics/index.php/people/david-threadgill/">David
 Threadgill</a>.
 </aside>
 
-<p class="pg">2</p></section>
+<p class="pg">3</p></section>
 
 
 
@@ -89,7 +127,7 @@ href="http://www.daviddeen.com">David Deen</a>.
 </aside>
 
 
-<p class="pg">3</p></section>
+<p class="pg">4</p></section>
 
 
 
