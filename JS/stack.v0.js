@@ -135,7 +135,7 @@ var stack = (function() {
         .style("transform", yError ? "translate(0," + (-yError * size) + "px)" : null)
         .classed("active", yError != yMax);
 
-    slide_transition(yFloor+1);
+    slide_transition(yFloor+1); // defined in slide_transition.js
 
     d3.select(section[0][yFloor + 1])
         .style("-webkit-transform", yError ? "translate3d(0,0,0)" : null)
