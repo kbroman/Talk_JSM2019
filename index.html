@@ -53,33 +53,19 @@ in some browsers.
 
 
 <section>
-
 <h3 class="abscenter">applied statistician</h3>
-
 <aside>
 </aside>
-
 <p class="pg">2</p></section>
 
-
 <section>
-
 <h3 class="abscenter"><font id="fade2">applied</font> statistician</h3>
-
-<aside>
-</aside>
-
-<p class="pg">3</p></section>
-
+<p class="pg">2</p></section>
 
 <section>
-
 <h3 class="abscenter" id="fade3b">data scientist</h3>
 <h3 class="abscenter" id="fade3"><font id="fade3">applied</font> statistician</h3>
-
-
-<aside>
-</aside>
+<p class="pg">2</p></section>
 
 <script type="text/javascript">
 slide_transition = function(slidenumber) {
@@ -87,9 +73,11 @@ slide_transition = function(slidenumber) {
   if(slidenumber==3) {
     d3.select("font#fade2").transition().duration(3000).ease("linear").style("opacity", 0.2);
   }
-
-  if(slidenumber==2 || slidenumber==4) {
+  if(slidenumber==2) {
     d3.select("font#fade2").style("opacity", 1);
+  }
+  if(slidenumber==4) {
+    d3.select("font#fade2").style("opacity", 0.2);
   }
 
   if(slidenumber==4) {
@@ -97,17 +85,19 @@ slide_transition = function(slidenumber) {
     d3.select("h3#fade3").transition().duration(2000).ease("linear").style("opacity", 0)
     d3.select("h3#fade3b").transition().delay(1500).duration(2000).ease("linear").style("opacity", 1);
   }
-
-  if(slidenumber==3 || slidenumber==5) {
+  if(slidenumber==3) {
     d3.select("font#fade3").style("opacity", 0.2);
     d3.select("h3#fade3").style("opacity", 1);
     d3.select("h3#fade3b").style("opacity", 0);
   }
+  if(slidenumber==5) {
+    d3.select("font#fade3").style("opacity", 0);
+    d3.select("h3#fade3").style("opacity", 0);
+    d3.select("h3#fade3b").style("opacity", 1);
+  }
 
 }
 </script>
-
-<p class="pg">4</p></section>
 
 
 
