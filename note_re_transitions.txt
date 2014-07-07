@@ -1,0 +1,8 @@
+Was having trouble with animations
+
+Had to do with transitions between slides
+  - if browser is zoomed-in a lot, the slide transitions behave
+    differently
+  - this seems to also cause the problem where you can't go backwards
+
+SOLUTION: be sure that you can see border all around slide
