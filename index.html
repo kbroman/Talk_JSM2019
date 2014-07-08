@@ -42,7 +42,7 @@ for high-dimensional genetic data</h2>
 Click on the link at the bottom-left to remove these
 notes.<br><br>
 
-These slides were tested for Safari and Chrome on a Mac and might look terrible
+These slides were tested for Chrome on a Mac and might look terrible
 in some browsers.
 </aside>
 
@@ -53,6 +53,15 @@ in some browsers.
 <section>
 <h3 class="abscenter">applied statistician</h3>
 <aside>
+I&rsquo;m an applied statistician, though I&rsquo;d prefer to drop the
+&ldquo;applied&rdquo; as if it&rsquo;s not applied, it&rsquo;s not
+statistics.<br><br>
+
+My job is to help scientists make sense of data. Data visualizations
+is always a big part of that.<br><br>
+
+You could say that I&rsquo;m a data scientist. I no longer fight that
+term. But to me statistics <em>is</em> data science. Some
 </aside>
 <p class="pg">2</p></section>
 
@@ -78,6 +87,8 @@ in some browsers.
 <img style="position:fixed;bottom: 0px; left:0px; z-index: -1;" width="1280px" src="Figs/inbredmice.jpg" />
 
 <aside>
+I focus on genetics problems, and particularly on mouse genetics.<br><br>
+
 I think these are <a
 href="http://jaxmice.jax.org/strain/000689.html">SWR mice</a>; the
 photo is from <a
@@ -122,6 +133,16 @@ href="http://www.daviddeen.com">David Deen</a>.
 <img src="Figs/intercross.png" />
 
 <aside>
+The main problem I tackle is to try to identify genes that underlie
+phenotypic variation.<br><br>
+
+The basic experiment I consider is an experimental cross: we start
+with two inbred strains that differ in the phenotype and perform a
+couple of generations of breeding to mix up the genomes.<br><br>
+
+We gather phenotype data on the progeny, along with genome-wide genotype
+data, and we seek to identify genomic regions for which genotype is
+associated with phenotype.
 </aside>
 
 
@@ -136,6 +157,18 @@ href="http://www.daviddeen.com">David Deen</a>.
 <img src="Figs/lodcurve_insulin.png" />
 
 <aside>
+The basic analysis is to do a statistical test at each locus in the
+genome, to assess the association between genotype and
+phenotype.<br><br>
+
+We measure the association with a LOD score. The details aren&rsquo;t
+important. The key is that large LOD scores indicate evidence for an
+association.<br><br>
+
+It is important to account for the scan across the genome. The dashed
+horizontal line is a threshold for statistical significance. If there
+were no association between genotype and phenotype, there&rsquo;d still be a
+5% chance of a LOD score that big somewhere in the genome.
 </aside>
 
 
@@ -149,6 +182,12 @@ href="http://www.daviddeen.com">David Deen</a>.
 <img src="Figs/lodcurve_insulin_with_effects.png" />
 
 <aside>
+Underneath each of these peaks is an association between genotype and
+phenotype: If you group the mice by genotype at that location, you&rsquo;ll
+see a difference in the average phenotype among the groups.<br><br>
+
+The BB, BR, and RR indicate the three different genotypes, as these
+data concern a cross between two strains labeled B and R.
 </aside>
 
 
@@ -164,6 +203,19 @@ href="http://www.daviddeen.com">David Deen</a>.
 <img height=700 style="margin-left:100px;" src="Figs/genechips.png" />
 
 <aside>
+My data visualizations have been pretty pedestrian. But in the past
+decade, I&rsquo;ve come to be swamped with data, and I&rsquo;m just beginning to
+come to grips with that.<br><br>
+
+This is a picture of a pile of gene expression arrays. More and more,
+we&rsquo;re seeing genome-scale phenotype information. For example, in
+one of my collaborations, we have data on 500 mice, each with gene
+expression microarrays for 6 different tissues.<br><br>
+
+You&rsquo;d think that with such high-dimensional data, we&rsquo;d be
+making a lot more graphs. But there&rsquo;s a tendency actually to
+make <em>fewer</em> graphs, or even <em>no</em> graphs. It&rsquo;s
+hard to look at 500 histograms, so why bother?
 </aside>
 
 <p class="pg">7</p></section>
