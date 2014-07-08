@@ -3,3 +3,5 @@ outline.txt
 Figs/*.png
 R/*.Rout
 R/cache/
+Figs/mouse_on_chips.tif
+!Figs/mouse_on_chips.png
