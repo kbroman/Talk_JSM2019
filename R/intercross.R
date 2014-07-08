@@ -6,7 +6,7 @@
 library(broman)
 library(simcross)
 
-color <- brocolors("crayons")[c("Denim", "Blush")]
+color <- brocolors("crayons")[c("Cornflower", "Blush")]
 
 png(file="../Figs/intercross.png", width=1180, height=800, res=108,
     pointsize=14, bg="transparent")
