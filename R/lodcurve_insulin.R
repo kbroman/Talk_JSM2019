@@ -79,10 +79,10 @@ text(xl[2]+xw*0.05, yax, myround(yaxlab, 1), adj=c(0, 0.5), cex=0.8)
 
 rect(xl[1], yl[1], xl[2], yl[2], border=fgcolor)
 
-segments(xat-xw*0.2, me, xat+xw*0.2, me, col=color[3], lwd=2)
+segments(xat-xw*0.1, me, xat+xw*0.1, me, col=color[3], lwd=2)
 segments(xat, ci[1,], xat, ci[2,], col=color[3], lwd=2)
 for(i in 1:2)
-  segments(xat-xw*0.1, ci[i,], xat+xw*0.1, ci[i,], col=color[3], lwd=2)
+  segments(xat-xw*0.05, ci[i,], xat+xw*0.05, ci[i,], col=color[3], lwd=2)
 
 
 dev.off()
