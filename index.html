@@ -290,7 +290,7 @@ the points are colored by genotype at the QTL.
 
 <div id="learnd3" class="medtop">
 <p>You <font class="darkgray">just</font> need to learn html, css, svg, and javascript.</p>
-<p>And don't forget <code>.enter()</code></p>
+<p>And don&rsquo;t forget <code>.enter()</code></p>
 </div>
 
 <div id="collision" style="position:fixed;top:-10px;left:-50px;width:1280px;height:960px;">
@@ -309,7 +309,7 @@ There are lots of additional examples at the <a
 href="https://github.com/mbostock/d3/wiki/Gallery">D3
 gallery</a>.<br><br>
 
-There's a ton to learn, and it's rather forbidding (and much of it is
+There&rsquo;s a ton to learn, and it&rsquo;s rather forbidding (and much of it is
 dull).<br><br>
 
 My most common mistake is to forget to include <code>.enter()</code>.
@@ -327,7 +327,7 @@ No error is given, but nothing shows up in the plot.
 <h3>Just start making stuff</h3>
 
 <div id="learndevtools" class="medtop">
-<p>Learn to use your browser's developer tools<br>
+<p>Learn to use your browser&rsquo;s developer tools<br>
 &nbsp;
 </div>
 
@@ -337,7 +337,7 @@ No error is given, but nothing shows up in the plot.
 D3 can be forbidding, but just start making stuff. It&rsquo;s fun, and
 eventually it&rsquo; productive.<br><br>
 
-Learn to use your browser's developer tools. When something goes
+Learn to use your browser&rsquo;s developer tools. When something goes
 wrong, typically you just get a black screen. The developer tools show
 the error messages, and you can test some things out on-the-fly.
 </aside>
@@ -351,7 +351,7 @@ the error messages, and you can test some things out on-the-fly.
 <h3>Just start making stuff</h3>
 
 <div id="learndevtools" class="medtop">
-<p>Learn to use your browser's developer tools, <br>
+<p>Learn to use your browser&rsquo;s developer tools, <br>
 and also <a href="http://jsfiddle.net">jsfiddle</a>!</p>
 </div>
 
@@ -360,7 +360,7 @@ and also <a href="http://jsfiddle.net">jsfiddle</a>!</p>
 <aside>
 <a href="http://jsfiddle.net">jsfiddle</a> is a huge help for learning
 javascript and D3. There are separate boxes for html, css, javascript,
-and the result. It's great for just trying stuff out.
+and the result. It&rsquo;s great for just trying stuff out.
 </aside>
 <p class="pg">12</p></section>
 
@@ -460,6 +460,39 @@ phenotype-vs-genotype plot in the top-right.
 <p class="pg">15</p></section>
 
 
+
+<section>
+<h3>Write functions</h3>
+
+<ul class="tight">
+  <li>One tends to write <font class="highlight">scripts</font></li>
+    <ul class="lowlight"><li>But they&rsquo;re hard to reuse</li>
+    </ul>
+  <li>Modularity is the key to reuse</li>
+  <li>Need a system for generating plots</li>
+  <li>I&rsquo;m working on an <a href="http://www.r-project.org" class="highlight">R</a>
+  package, <a href="http://kbroman.github.io/qtlcharts" class="highlight">R/qtlcharts</a></li>
+     <ul class="lowlight"><li>Functions for different types of panels (scatterplot, heatmap, ...)</li>
+         <li>Functions for interactive multi-panel charts</li>
+         <li>R functions to generate a chart</li>
+     </ul>
+</ul>     
+
+<aside>
+Rather than write a script with a bunch of code for a specific chart
+with specific data, write reusable functions<br><br>
+
+Develop a system for generating interactive charts, so that others
+(such as yourself, 3 months hence) can make use of what you&rsquo;ve
+built.<br><br>
+
+My <a href="http://kbroman.github.io/qtlcharts">R/qtlcharts</a>
+package is primitive: it just writes html (including the data, in <a
+href="http://www.json.org/">JSON</a> format) to a file and then opens
+it in a browser. But for small-to-medium-scale charts, this is
+surprisingly effective.
+</aside>
+<p class="pg">16</p></section>
 
 
 
@@ -604,6 +637,10 @@ href="http://github.com/Caged/d3-tip">d3-tip</a> for tool tips.
 
 <p class="large"><code>
 <a href="https://twitter.com/kwbroman" class="gray">@kwbroman</a>
+</code></p>
+
+<p class="large"><code>
+<a href="https://github.com/kbroman/qtlcharts" class="gray">bit.ly/qtlcharts</a>
 </code></p>
 
 <aside>
