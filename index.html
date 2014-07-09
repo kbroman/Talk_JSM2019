@@ -9,6 +9,7 @@
 @import url(CSS/d3-tip.css);
 @import url(CSS/figures.css);
 @import url(CSS/kbroman_talk.css);
+@import url(CSS/corr_w_scatter.css);
 /* comment following line to get rid of notes; uncommented to show notes */
 /* @import url(CSS/kbroman_presentation.css); */
 </style>
@@ -253,6 +254,32 @@ common batch that went bad.
 
 <script type="text/javascript" src="JS/manyboxplots.js"></script>
 <p class="pg">8</p></section>
+
+
+
+<section>
+
+<h3>Correlation matrix</h3>
+
+<div id="corr_w_scatter" style="margin-left:-50px;"></div>
+
+<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
+
+<aside>
+Heatmaps of things like correlation matrices can be quite useful, but
+they are often hard to read.  It's nice to be able to read off the
+values by hovering.<br><br>
+
+Even better: to be able to click on a pixel and view the corresponding
+scatterplot.<br><br>
+
+This is a set of genes that map to a common QTL; in the scatterplot,
+the points are colored by genotype at the QTL.
+</aside>
+
+<p class="pg">9</p></section>
+
+
 
 
 
