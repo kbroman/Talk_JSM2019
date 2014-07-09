@@ -23,6 +23,8 @@
 </head>
 <body class="overview">
 
+
+
 <section class="titlepage">
 <h3 style="margin-top:-10px;" class="highlight">Interactive graphics
 for high-dimensional genetic data</h2>
@@ -122,9 +124,8 @@ biology and disease from mice.<br><br>
 The figure on the right is from <a
 href="http://www.daviddeen.com">David Deen</a>.
 </aside>
-
-
 <p class="pg">4</p></section>
+
 
 
 
@@ -148,9 +149,10 @@ We gather phenotype data on the progeny, along with genome-wide genotype
 data, and we seek to identify genomic regions for which genotype is
 associated with phenotype.
 </aside>
-
-
 <p class="pg">5</p></section>
+
+
+
 
 
 
@@ -174,9 +176,10 @@ horizontal line is a threshold for statistical significance. If there
 were no association between genotype and phenotype, there&rsquo;d still be a
 5% chance of a LOD score that big somewhere in the genome.
 </aside>
-
-
 <p class="pg">6</p></section>
+
+
+
 
 
 <section>
@@ -193,9 +196,9 @@ see a difference in the average phenotype among the groups.<br><br>
 The BB, BR, and RR indicate the three different genotypes, as these
 data concern a cross between two strains labeled B and R.
 </aside>
-
-
 <p class="pg">6</p></section>
+
+
 
 
 
@@ -221,13 +224,14 @@ making a lot more graphs. But there&rsquo;s a tendency actually to
 make <em>fewer</em> graphs, or even <em>no</em> graphs. It&rsquo;s
 hard to look at 500 histograms, so why bother?
 </aside>
-
 <p class="pg">7</p></section>
+
+
+
 
 
 <section>
 <h3>Interactive boxplots</h3>
-
 
 <div id="manyboxplots">
 </div>
@@ -246,14 +250,15 @@ The first 120 or so arrays are badly behaved; they all came from a
 common batch that went bad.
 </aside>
 
-
 <p class="codelink">
 <a href="Coffee/manyboxplots.coffee" class="gray">code</a> |
 <a href="Data/hypo.json" class="gray">data</a>
 
-
 <script type="text/javascript" src="JS/manyboxplots.js"></script>
 <p class="pg">8</p></section>
+
+
+
 
 
 
@@ -276,8 +281,8 @@ scatterplot.<br><br>
 This is a set of genes that map to a common QTL; in the scatterplot,
 the points are colored by genotype at the QTL.
 </aside>
-
 <p class="pg">9</p></section>
+
 
 
 <section nopadding>
@@ -299,15 +304,22 @@ I&rsquo;m using <a href="http://d3js.org">D3</a>, a javascript
 library for data visualization.  (D3 stands for &ldquo;data-driven
 documents.&rdquo;)<br><br>
 
-This is one of the images that convinced me that I wanted to learn D3.<br><br>
-
+This is one of the images that convinced me that I wanted to learn D3.
 There are lots of additional examples at the <a
-href="https://github.com/mbostock/d3/wiki/Gallery">D3 gallery</a>.
-</aside>
+href="https://github.com/mbostock/d3/wiki/Gallery">D3
+gallery</a>.<br><br>
 
-<p class="pg">10</p>
-</section>
+There's a ton to learn, and it's rather forbidding (and much of it is
+dull).<br><br>
+
+My most common mistake is to forget to include <code>.enter()</code>.
+No error is given, but nothing shows up in the plot.
+</aside>
+<p class="pg">10</p></section>
 <script type="text/javascript" src="JS/collision.js"></script>
+
+
+
 
 
 
@@ -320,7 +332,20 @@ href="https://github.com/mbostock/d3/wiki/Gallery">D3 gallery</a>.
 </div>
 
 <img height=600 class="indent" src="Figs/d3_error.png">
+
+<aside>
+D3 can be forbidding, but just start making stuff. It&rsquo;s fun, and
+eventually it&rsquo; productive.<br><br>
+
+Learn to use your browser's developer tools. When something goes
+wrong, typically you just get a black screen. The developer tools show
+the error messages, and you can test some things out on-the-fly.
+</aside>
 <p class="pg">11</p></section>
+
+
+
+
 
 <section>
 <h3>Just start making stuff</h3>
@@ -331,7 +356,16 @@ and also <a href="http://jsfiddle.net">jsfiddle</a>!</p>
 </div>
 
 <img height=600 class="indent" src="Figs/jsfiddle.png">
+
+<aside>
+<a href="http://jsfiddle.net">jsfiddle</a> is a huge help for
+learning. There are separate boxes for html, css, javascript, and the
+result. It's great for just trying stuff out.
+</aside>
 <p class="pg">12</p></section>
+
+
+
 
 
 <section>
@@ -344,6 +378,19 @@ and also <a href="http://jsfiddle.net">jsfiddle</a>!</p>
 </div>
 
 <img height=600 class="indent" src="Figs/jsfiddle_coffee.png">
+
+<aside>
+I&rsquo;m using <a href="http://coffescript.org">CoffeeScript</a>
+rather than javascript. It gets translated to javascript, and
+it&rsquo;s a much nicer language.<br><br>
+
+Particularly nice are the light-weight anonymous functions. Also
+simple syntax for handling <code>null</code> values, for things like
+options.<br><br>
+
+You can use <a href="http://jsfiddle.net">jsfiddle</a> with
+CoffeeScript.
+</aside>
 <p class="pg">13</p></section>
 
 
@@ -353,7 +400,6 @@ and also <a href="http://jsfiddle.net">jsfiddle</a>!</p>
 <h3>Interactive genome scan</h3>
 
 <div id="lod_and_effect" class="fig"></div>
-
 
 <aside>
 The curves at the top correspond to a measure of association between
@@ -367,14 +413,15 @@ effect estimates and raw data on the right.  Hover over things on the
 right to get some further information.
 </aside>
 
-
 <p class="codelink">
 <a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
 <a href="Data/insulinlod.json" class="gray">data</a>
 
-
 <script type="text/javascript" src="JS/lod_and_effect.js"></script>
 <p class="pg">14</p></section>
+
+
+
 
 
 <section nopadding>
@@ -383,8 +430,13 @@ right to get some further information.
 
 <div id="cistrans" class="fig" style="margin-top:-80px;"></div>
 
-
 <aside>
+Here&rsquo;s my most fancy plot. But when I showed this to my
+collaborator, his first question was, &ldquo;Where&rsquo;s my favorite
+gene?&rdquo; I needed to add a search box. <em>Moral</em>: These tools
+are not just for playing around; they need to address the scientific
+questions.<br><br>
+
 The top-left image shows inferred eQTL (sites in genome where genotype
 is associated with the expression of some gene).  The y-axis
 corresponds to the genomic location of probes on a gene expression
@@ -401,13 +453,10 @@ Click on a marker in the lower LOD curve plot to see the corresponding
 phenotype-vs-genotype plot in the top-right.
 </aside>
 
-
 <p class="codelink">
 <a href="Coffee/cistrans.coffee" class="gray">code</a>
 
-
 <script type="text/javascript" src="JS/cistrans.js"></script>
-
 <p class="pg">15</p></section>
 
 
