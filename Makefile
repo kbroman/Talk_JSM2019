@@ -1,4 +1,4 @@
-all: presentation.html Figs/intercross.png Figs/lodcurve_insulin.png JS/manyboxplots.js JS/lod_and_effect.js
+all: presentation.html Figs/intercross.png Figs/lodcurve_insulin.png JS/manyboxplots.js JS/lod_and_effect.js JS/cistrans.js JS/lod_alltimes.js
 
 presentation.html: index.html js css/kbroman_talk.css css/kbroman_presentation.css
 	Perl/create_presentation.pl

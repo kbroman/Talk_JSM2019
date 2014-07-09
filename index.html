@@ -284,6 +284,78 @@ right to get some further information.
 <p class="pg">11</p></section>
 
 
+<section nopadding>
+
+<h3 style="margin-top:10px;margin-left:-20px;">Interactive eQTL plot</h3>
+
+<div id="cistrans" class="fig" style="margin-top:-80px;"></div>
+
+
+<aside>
+The top-left image shows inferred eQTL (sites in genome where genotype
+is associated with the expression of some gene).  The y-axis
+corresponds to the genomic location of probes on a gene expression
+array.  The x-axis corresponds to marker positions.  Dots indicate
+that the genotypes at a particular marker are associated with the
+expression of a particular probe.<br><br>
+
+Hover over a point in the top-right to see all eQTL for a given probe.
+Click on a point to see the LOD curves across the genome for that
+probe: the association between that probe&rsquo;s expression and genotype at
+each position in the genome.<br><br>
+
+Click on a marker in the lower LOD curve plot to see the corresponding
+phenotype-vs-genotype plot in the top-right.
+</aside>
+
+
+<p class="codelink">
+<a href="Coffee/cistrans.coffee" class="gray">code</a>
+
+
+<script type="text/javascript" src="JS/cistrans.js"></script>
+
+<p class="pg">12</p></section>
+
+
+<section nopadding>
+
+<h3>Trait measured over time</h3>
+
+
+<div id="lod_alltimes_fig" style="font-size:20px;margin-left:-50px;"></div>
+
+<aside>
+Here we consider a phenotype measured over time, and perform QTL
+analysis with each time point individually, to seek genetic loci that
+affect the response.  The data concern a set of 162 recombinant inbred
+lines.<br><br>
+
+The top-left plot is a &ldquo;heat map&rdquo; of the LOD scores
+for each time point at each genomic position.  LOD scores are also
+colored to indicate the sign of the QTL effect, with red indicating
+that BB lines have larger phenotype values and blue indicating that AA lines
+have larger phenotype values.  We consider only those (position, time)
+pairs with LOD > 1.<br><br>
+
+When you hover over a point in the top-left plot, the LOD curves for the
+corresponding time are shown below, and the phenotype averages and
+estimated QTL effect (across time) for the corresponding genomic
+position are shown to the right.<br><br>
+
+Click on a point to show pointwise confidence bands on the QTL
+effect (&plusmn; 2 SE).  (We require a mouse click, as otherwise the graph
+was painfully slow to refresh.)
+</aside>
+
+
+<p class="codelink">
+<a href="Coffee/lod_alltimes.coffee" class="gray">code</a> |
+<a href="Data/all_lod.json" class="gray">data</a>
+
+<script type="text/javascript" src="JS/lod_alltimes.js"></script>
+<p class="pg">13</p></section>
+
 
 
 <script type="text/javascript" src="JS/stack.v0.js"></script>

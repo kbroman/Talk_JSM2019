@@ -5,3 +5,5 @@ R/*.Rout
 R/cache/
 Figs/mouse_on_chips.tif
 !Figs/mouse_on_chips.png
+Data/islet_eqtl.json
+Data/probe_data
