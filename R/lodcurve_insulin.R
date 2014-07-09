@@ -60,6 +60,8 @@ mx.y <- mx[[3]]
 for(y in yl)
   segments(mx.x, mx.y, xl[1], y, lty=2, col="gray70")
 xat <- seq(xl[1], xl[2], len=7)[c(2,4,6)]
+for(x in xat)
+    segments(x, yl[1], x, yl[2], lwd=5, col="gray20")
 text(xat, rep(yl[1]-yd*0.3, length(xat)), names(me))
 
 library(scales)
@@ -74,7 +76,7 @@ yax <- yax[yax > yl[1] & yax < yl[2]]
 xw <- diff(xat)[1]
 
 for(y in yax)
-  segments(xl[1], y, xl[2], y, col="gray30")
+  segments(xl[1], y, xl[2], y, col="gray40")
 text(xl[2]+xw*0.05, yax, myround(yaxlab, 1), adj=c(0, 0.5), cex=0.8)
 
 rect(xl[1], yl[1], xl[2], yl[2], border=fgcolor)
