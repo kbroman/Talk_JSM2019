@@ -8,3 +8,6 @@ Figs/%.png: R/%.R
 
 JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^
+
+web:
+	scp *.html broman-2.biostat.wisc.edu:public_html/presentations/BioVis/
