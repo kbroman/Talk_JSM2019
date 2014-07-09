@@ -317,3 +317,7 @@ h3.abscenter {
   top: 320px;
   left: 340px;
 }
+
+p.large {
+    font-size: 60px;
+}
