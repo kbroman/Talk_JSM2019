@@ -6,7 +6,7 @@
 
 <style>
 @import url(CSS/stack.css);
-@import url(CSS/d3-tip.min.css);
+@import url(CSS/d3-tip.css);
 @import url(CSS/figures.css);
 @import url(CSS/kbroman_talk.css);
 /* comment following line to get rid of notes; uncommented to show notes */
@@ -14,7 +14,7 @@
 </style>
 
 <script charset="utf-8" type="text/javascript" src="JS/d3.min.js"></script>
-<script type="text/javascript" src="JS/d3-tip.min.js"></script>
+<script type="text/javascript" src="JS/d3.tip.js"></script>
 <script type="text/javascript" src="JS/slide_transition.js"></script>
 
 
@@ -222,6 +222,66 @@ hard to look at 500 histograms, so why bother?
 </aside>
 
 <p class="pg">7</p></section>
+
+
+<section>
+<h3><code>iboxplot</code></h3>
+
+
+<div id="manyboxplots">
+</div>
+
+<aside>
+This is like a set of 500 box plots (for the gene expression values
+from 500 gene expression microarray), but going farther out into the
+tails: the lines connect various quantiles: the 
+1, 5, 10, 25, 50, 75, 90, 95, and 99%iles.  <br><br>
+
+Hover over an array above and see the corresponding histogram.  Click
+on an array for the histogram to persist; click again to make it go
+away.
+
+The first 120 or so arrays are badly behaved; they all came from a
+common batch that went bad.
+</aside>
+
+
+<p class="codelink">
+<a href="Coffee/manyboxplots.coffee" class="gray">code</a> |
+<a href="Data/hypo.json" class="gray">data</a>
+
+
+<script type="text/javascript" src="JS/manyboxplots.js"></script>
+<p class="pg">8</p></section>
+
+
+
+<section>
+<h3>Interactive genome scan</h3>
+
+<div id="lod_and_effect" class="fig"></div>
+
+
+<aside>
+The curves at the top correspond to a measure of association between
+genotype and insulin level.  LOD scores are log<sub>10</sub>
+likelihood ratios: a transformation of the F statistic from
+ANOVA.<br><br>
+
+Click on a chromosome in the top panel to see a detailed view in the
+lower-left panel.  Click on a marker in the lower-left panel to see
+effect estimates and raw data on the right.  Hover over things on the
+right to get some further information.
+</aside>
+
+
+<p class="codelink">
+<a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
+<a href="Data/insulinlod.json" class="gray">data</a>
+
+
+<script type="text/javascript" src="JS/lod_and_effect.js"></script>
+<p class="pg">11</p></section>
 
 
 
