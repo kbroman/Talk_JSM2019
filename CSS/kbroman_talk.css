@@ -51,6 +51,10 @@ a.invisiblelink:hover {
   color: #C8C8C8;
 }
 
+.darkgray {
+  color: #989898;
+}
+
 .small {
   font-size: 28px;
 }
@@ -321,3 +325,16 @@ h3.abscenter {
 p.large {
     font-size: 60px;
 }
+
+div.bigtop {
+    margin-top: 100px;
+}
+
+div.medtop {
+    margin-top: 50px;
+}
+
+img.indent {
+    margin-left: 100px;
+}
+
