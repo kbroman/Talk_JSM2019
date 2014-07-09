@@ -402,6 +402,10 @@ CoffeeScript.
 <div id="lod_and_effect" class="fig"></div>
 
 <aside>
+I&rsquo;ve come to the conclusion that <em>every</em> graph could be
+improved with interactivity. You at least want tooltips. Interactive
+graphs are incredibly valuable educational tools.<br><br>
+
 The curves at the top correspond to a measure of association between
 genotype and insulin level.  LOD scores are log<sub>10</sub>
 likelihood ratios: a transformation of the F statistic from
@@ -466,13 +470,15 @@ phenotype-vs-genotype plot in the top-right.
 
 <ul class="tight">
   <li>One tends to write <font class="highlight">scripts</font></li>
-    <ul class="lowlight"><li>But they&rsquo;re hard to reuse</li>
+    <ul class="lowlight">
+          <li>But they&rsquo;re hard to reuse</li>
     </ul>
   <li>Modularity is the key to reuse</li>
   <li>Need a system for generating plots</li>
   <li>I&rsquo;m working on an <a href="http://www.r-project.org" class="highlight">R</a>
   package, <a href="http://kbroman.github.io/qtlcharts" class="highlight">R/qtlcharts</a></li>
-     <ul class="lowlight"><li>Functions for different types of panels (scatterplot, heatmap, ...)</li>
+     <ul class="lowlight">
+         <li>Functions for different types of panels (scatterplot, heatmap, ...)</li>
          <li>Functions for interactive multi-panel charts</li>
          <li>R functions to generate a chart</li>
      </ul>
@@ -493,6 +499,62 @@ it in a browser. But for small-to-medium-scale charts, this is
 surprisingly effective.
 </aside>
 <p class="pg">16</p></section>
+
+
+
+
+
+
+<section>
+<h3>Use big selection regions</h3>
+
+<div class="medtop">
+<p>And for presentations, bring a mouse!</p>
+</div>
+
+<aside>
+It can be incredibly frustrating to try to hover over tiny elements,
+especially if your hands are shaky.
+</aside>
+<p class="pg">17</p></section>
+
+
+
+
+
+
+<section>
+<h3>A few more points</h3>
+
+<ul class="tight">
+  <li>For laptop demos at a poster session, ask for a
+  &ldquo;cabaret table&rdquo; (like 1m tall).</li>
+
+  <li>Data structures are really important</li>
+     <ul class="lowlight">
+       <li>Ill-formed data &rarr; complex code</li>
+       <li>Organize by data point rather than by variable</li>
+     </ul>
+
+  <li>Testing graphing functions is <font
+  class="highlight">hard</a>!</li>
+</ul>     
+
+<aside>
+In a poster session, a live demo is super, but you don&rsquo;t want people
+to have to squat down to use your laptop.<br><br>
+
+I&rsquo;d seldom put much thought into data structures, but in code for
+interactive graphs, the layout of the data makes a huge difference.<br><br>
+
+I&rsquo;ve not figured out a good way to make unit tests for code that
+produces interactive graphs. I pop up a bunch of examples in a
+browser, but then I have to check them manually.
+</aside>
+<p class="pg">18</p></section>
+
+
+
 
 
 
@@ -527,7 +589,7 @@ surprisingly effective.
 <aside>
 It's always good to have a summary slide with your key points.
 </aside>
-<p class="pg">**</p></section>
+<p class="pg">19</p></section>
 
 
 
@@ -575,7 +637,7 @@ It's always good to have a summary slide with your key points.
 <aside>
 Many people are involved in the studies that led to this work.
 </aside>
-<p class="pg">**</p></section>
+<p class="pg">20</p></section>
 
 
 
@@ -618,7 +680,7 @@ href="https://github.com/mbostock/stack">stack.js</a>.  I used <a
 href="http://github.com/kbroman/d3-tip">a modified version</a> of <a
 href="http://github.com/Caged/d3-tip">d3-tip</a> for tool tips.
 </aside>
-<p class="pg">**</p></section>
+<p class="pg">21</p></section>
 
 
 
@@ -627,6 +689,7 @@ href="http://github.com/Caged/d3-tip">d3-tip</a> for tool tips.
 
 <section>
 
+<div class="bigtop">
 <p class="large"><code>
 <a href="http://www.biostat.wisc.edu/~kbroman" class="gray">biostat.wisc.edu/~kbroman</a><br>
 </code></p>
@@ -642,13 +705,14 @@ href="http://github.com/Caged/d3-tip">d3-tip</a> for tool tips.
 <p class="large"><code>
 <a href="https://github.com/kbroman/qtlcharts" class="gray">bit.ly/qtlcharts</a>
 </code></p>
+</div>
 
 <aside>
 This is where to find me.<br><br>
 
 In particular, you can find all of my papers, talks, and software.
 </aside>
-<p class="pg">**</p></section>
+<p class="pg">22</p></section>
 
 
 
