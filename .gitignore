@@ -4,6 +4,9 @@ Figs/*.png
 R/*.Rout
 R/cache/
 Figs/mouse_on_chips.tif
-!Figs/mouse_on_chips.png
 Data/islet_eqtl.json
 Data/probe_data
+!Figs/mouse_on_chips.png
+!Figs/d3_error.png
+!Figs/jsfiddle.png
+!Figs/jsfiddle_coffee.png
