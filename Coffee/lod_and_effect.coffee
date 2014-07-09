@@ -385,7 +385,7 @@ draw = (data) ->
 
   randomDraw = (x) -> x[Math.floor(Math.random()*x.length)]
 
-  randomChr = randomDraw(data.chr)
+  randomChr = "2"
   randomMarker = maxLodByChr_marker[randomChr]
 
   # initial phenotype vs genotype plot

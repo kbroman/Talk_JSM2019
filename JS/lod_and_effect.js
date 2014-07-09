@@ -316,7 +316,7 @@ draw = function(data) {
   randomDraw = function(x) {
     return x[Math.floor(Math.random() * x.length)];
   };
-  randomChr = randomDraw(data.chr);
+  randomChr = "2";
   randomMarker = maxLodByChr_marker[randomChr];
   initialPXG = function(chr, marker) {
     return botsvg.append("g").attr("id", "plotPXG").selectAll("empty").data(data.phevals).enter().append("circle").attr("class", "plotPXG").attr("cx", function(d, i) {
