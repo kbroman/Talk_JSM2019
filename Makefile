@@ -9,5 +9,12 @@ Figs/%.png: R/%.R
 JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^
 
-web: index.html presentation.html
+web: presentation.html
 	scp *.html broman-2.biostat.wisc.edu:public_html/presentations/BioVis/
+
+weball: presentation.html
+	scp *.html broman-2.biostat.wisc.edu:public_html/presentations/BioVis/
+	scp JS/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/JS/
+	scp Coffee/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Coffee/
+	scp CSS/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/CSS/
+	scp Figs/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/
