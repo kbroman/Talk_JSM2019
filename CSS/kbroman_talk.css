@@ -323,7 +323,11 @@ h3.abscenter {
 }
 
 p.large {
-    font-size: 60px;
+    font-size: 45px;
+}
+
+div.hugetop {
+    margin-top: 200px;
 }
 
 div.bigtop {
