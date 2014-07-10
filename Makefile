@@ -25,4 +25,4 @@ weball: presentation.html JS Figs
 	scp Figs/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/
 
 tar: presentation.html JS Figs
-	tar czvhf broman_biovis.tgz [A-Za-z]*
+	cd ..;tar czvhf broman_biovis.tgz BioVis/[A-Za-z]*
