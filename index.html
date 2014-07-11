@@ -42,6 +42,9 @@ for high-dimensional genetic data</h2>
 <p class="codelink"><a href="presentation.html" class="gray">Remove stickies</a>
 
 <aside>
+These are slides for a talk for the 4th Symposium on Biological Data
+Visualization (BioVis), in Boston, Massachusetts, 12 July 2014.<br><br>
+
 Click on the link at the bottom-left to remove these
 notes.<br><br>
 
@@ -66,10 +69,10 @@ is always a big part of that.<br><br>
 You could say that I&rsquo;m a data scientist. I no longer fight that
 term. But to me statistics <em>is</em> data science.<br><br>
 
-(The next couple of slides have a bit of gratuitous animation; feel
-free to skip past them, to the picture with the mice.)
-</aside>
-<p class="pg">2</p></section>
+(The next couple of slides have a bit of gratuitous animation; skip
+past them, to the picture with the mice. Teach a person a bit of
+JavaScript, and you&rsquo;ll get gratuitous animations as a result.)
+</aside> <p class="pg">2</p></section>
 
 <section>
 <h3 class="abscenter"><font id="fadeout_applied">applied</font> statistician</h3>
@@ -147,7 +150,8 @@ couple of generations of breeding to mix up the genomes.<br><br>
 
 We gather phenotype data on the progeny, along with genome-wide genotype
 data, and we seek to identify genomic regions for which genotype is
-associated with phenotype.
+associated with phenotype. We call such regions quantitative trait
+loci (QTL): genetic loci that influence a quantitative trait.
 </aside>
 <p class="pg">5</p></section>
 
@@ -163,7 +167,7 @@ associated with phenotype.
 <img src="Figs/lodcurve_insulin.png" />
 
 <aside>
-The basic analysis is to do a statistical test at each locus in the
+The simplest analysis is to do a statistical test at each locus in the
 genome, to assess the association between genotype and
 phenotype.<br><br>
 
@@ -174,7 +178,7 @@ association.<br><br>
 It is important to account for the scan across the genome. The dashed
 horizontal line is a threshold for statistical significance. If there
 were no association between genotype and phenotype, there&rsquo;d still be a
-5% chance of a LOD score that big somewhere in the genome.
+5% chance of a LOD score that big <font class="highlight">somewhere</font> in the genome.
 </aside>
 <p class="pg">6</p></section>
 
