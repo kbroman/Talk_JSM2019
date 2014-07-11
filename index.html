@@ -171,7 +171,9 @@ The simplest analysis is to do a statistical test at each locus in the
 genome, to assess the association between genotype and
 phenotype.<br><br>
 
-We measure the association with a LOD score. The details aren&rsquo;t
+We measure the association with a LOD score. LOD scores are log<sub>10</sub>
+likelihood ratios &emdash; a transformation of the F statistic from
+ANOVA. The details aren&rsquo;t
 important. The key is that large LOD scores indicate evidence for an
 association.<br><br>
 
@@ -241,6 +243,10 @@ hard to look at 500 histograms, so why bother?
 </div>
 
 <aside>
+Visualization of large data sets necessarily involves making a
+compressed summary. But with interactive graphs, you can easily
+get back to the underlying details.<br><br>
+
 This is like a set of 500 box plots (for the gene expression values
 from 500 gene expression microarray), but going farther out into the
 tails: the lines connect various quantiles: the 
@@ -248,7 +254,7 @@ tails: the lines connect various quantiles: the
 
 Hover over an array above and see the corresponding histogram.  Click
 on an array for the histogram to persist; click again to make it go
-away.
+away.<br><br>
 
 The first 120 or so arrays are badly behaved; they all came from a
 common batch that went bad.
@@ -282,8 +288,9 @@ values by hovering.<br><br>
 Even better: to be able to click on a pixel and view the corresponding
 scatterplot.<br><br>
 
-This is a set of genes that map to a common QTL; in the scatterplot,
-the points are colored by genotype at the QTL.
+This is a set of genes whose expression values are associated with
+genotype at a common locus. In the scatterplot, the points are colored
+by genotype at that locus.
 </aside>
 <p class="pg">9</p></section>
 
@@ -363,7 +370,7 @@ and also <a href="http://jsfiddle.net">jsfiddle</a>!</p>
 <aside>
 <a href="http://jsfiddle.net">jsfiddle</a> is a huge help for learning
 javascript and D3. There are separate boxes for html, css, javascript,
-and the result. It&rsquo;s great for just trying stuff out.
+and the result.
 </aside>
 <p class="pg">12</p></section>
 
@@ -387,9 +394,12 @@ I&rsquo;m using <a href="http://coffescript.org">CoffeeScript</a>
 rather than javascript. It gets translated to javascript, and
 it&rsquo;s a much nicer language.<br><br>
 
-Particularly nice are the light-weight anonymous functions. Also
-simple syntax for handling <code>null</code> values, for things like
-options.<br><br>
+Particularly nice are the light-weight anonymous
+functions. You&rsquo;ll be writing <em>a lot</em> of anonymous
+functions in D3.<br><br>
+
+Also, there&rsquo;s a simple syntax for handling <code>null</code>
+values, for things like options.<br><br>
 
 You can use <a href="http://jsfiddle.net">jsfiddle</a> with
 CoffeeScript.
@@ -409,10 +419,8 @@ I&rsquo;ve come to the conclusion that <em>every</em> graph could be
 improved with interactivity. You at least want tooltips. Interactive
 graphs are incredibly valuable educational tools.<br><br>
 
-The curves at the top correspond to a measure of association between
-genotype and insulin level.  LOD scores are log<sub>10</sub>
-likelihood ratios: a transformation of the F statistic from
-ANOVA.<br><br>
+The curves at the top are the same LOD curves we saw before. The LOD
+score is a measure of association between genotype and phenotype.<br><br>
 
 Click on a chromosome in the top panel to see a detailed view in the
 lower-left panel.  Click on a marker in the lower-left panel to see
@@ -492,14 +500,15 @@ Rather than write a script with a bunch of code for a specific chart
 with specific data, write reusable functions<br><br>
 
 Develop a system for generating interactive charts, so that others
-(such as yourself, 3 months hence) can make use of what you&rsquo;ve
+(such as yourself three months from now) can make use of what you&rsquo;ve
 built.<br><br>
 
 My <a href="http://kbroman.github.io/qtlcharts">R/qtlcharts</a>
-package is primitive: it just writes html (including the data, in <a
-href="http://www.json.org/">JSON</a> format) to a file and then opens
-it in a browser. But for small-to-medium-scale charts, this is
-surprisingly effective.
+package writes html (including the data, in <a
+href="http://www.json.org/">JSON</a> format, and links to the
+javascript code) to a file and then opens
+it in a browser. For small-to-medium-scale charts, 
+this is fast and effective.
 </aside>
 <p class="pg">16</p></section>
 
@@ -521,8 +530,10 @@ surprisingly effective.
 <script type="text/javascript" src="JS/selection_example.js"></script>
 
 <aside>
-It can be incredibly frustrating to try to hover over tiny elements,
-especially if your hands are shaky.<br><br>
+I wanted to point out a few other things I&rsquo;ve learned.<br><br>
+
+First, it can be incredibly frustrating to try to hover over tiny
+elements, especially if your hands are shaky.<br><br>
 
 Hover over a point to have it highlighted in pink. The blue dots are
 padded, and so easier to select. The small green dots are really hard
@@ -549,7 +560,7 @@ to deal with.
      </ul>
 
   <li>Testing graphing functions is <font
-  class="highlight">hard</font>!</li>
+  class="highlight">hard</font>.</li>
 </ul>     
 
 <aside>
@@ -599,7 +610,7 @@ browser, but then I have to check them manually.
 </ul>
 
 <aside>
-It's always good to have a summary slide with your key points.
+It&rsquo;s always good to have a summary slide with your key points.
 </aside>
 <p class="pg">19</p></section>
 
@@ -647,7 +658,8 @@ It's always good to have a summary slide with your key points.
 </div>
 
 <aside>
-Many people are involved in the studies that led to this work.
+The data were drawn from a study on obesity-dependent diabetes;
+many people were involved in that study.
 </aside>
 <p class="pg">20</p></section>
 
@@ -678,16 +690,26 @@ Many people are involved in the studies that led to this work.
 <aside>
 The interactive examples
 were produced with the <a href="http://d3js.org">D3</a>
-library (written in JavaScript). I wrote the code in CoffeeScript,
-which is translated to JavaScript but is a better-designed language.  <a
+library (written in JavaScript).<br><br>
+
+I wrote the code in CoffeeScript,
+which is translated to JavaScript but is a better-designed
+language.<br><br>
+
+<a
 href="http://eloquentjavascript.net"><i>Eloquent JavaScript</i></a> is
 a great free book.  The <a
 href="http://pragprog.com/book/tbcoffee/coffeescript"><i>CoffeeScript</i></a>
 book is not free but is also great; you need to learn at least a bit of
-JavaScript first.  <a href="http://alignedleft.com/tutorials/d3">Scott
+JavaScript first.<br><br>
+
+<a href="http://alignedleft.com/tutorials/d3">Scott
 Murray&rsquo;s D3 tutorials</a> are superb and are a great place to start
 for learning D3; he&rsquo;s since written <a
-href="http://www.amazon.com/exec/obidos/ASIN/1449339735/7210-20">a book</a>.  These slides are in html, using <a
+href="http://www.amazon.com/exec/obidos/ASIN/1449339735/7210-20">a
+book</a>.<br><br>
+
+These slides are in html, using <a
 href="https://github.com/mbostock/stack">stack.js</a>.  I used <a
 href="http://github.com/kbroman/d3-tip">a modified version</a> of <a
 href="http://github.com/Caged/d3-tip">d3-tip</a> for tool tips.
