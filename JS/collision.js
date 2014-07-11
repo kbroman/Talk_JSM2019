@@ -1,6 +1,7 @@
 
 
 collision = function() {
+                       
 
 var w = 1280,
     h = 960;
@@ -79,6 +80,7 @@ function collide(node) {
 }
 
     
+
 }
 
 collision();

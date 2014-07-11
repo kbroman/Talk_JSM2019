@@ -13,4 +13,14 @@ slide_transition = function(slidenumber) {
   if(slidenumber==2 || slidenumber==4) {
     d3.select("font#fadeout_applied").style("opacity", 1);
   }
+
+
+  if(slidenumber==12) {
+    d3.select("p#dotenter").transition()
+                           .style("opacity", 1)
+                           .delay(20000)
+                           .duration(5000)
+                           .ease("linear");
+
+  }
 }
