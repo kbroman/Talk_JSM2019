@@ -41,7 +41,12 @@ for high-dimensional genetic data</h2>
 
 <p class="nopadding"><font class="gray">slides</a>: <code><a href="http://www.biostat.wisc.edu/~kbroman/presentations/BioVis">bit.ly/BioVis2014</a></code></p>
 
-<p class="codelink"><a href="presentation.html" class="gray">Remove stickies</a></p>
+<p class="codelink" style="cursor:pointer;" id="remove_stickies">Remove stickies</p>
+
+<script type="text/javascript">
+d3.select("p#remove_stickies")
+  .on("click", function() { d3.selectAll("aside").style("opacity", 0); });
+</script>
 
 <aside>
 These are slides for a talk for the 4th Symposium on Biological Data
