@@ -43,14 +43,7 @@ for high-dimensional genetic data</h2>
 
 <p class="codelink" style="cursor:pointer;" id="remove_stickies">Remove stickies</p>
 
-<script type="text/javascript">
-d3.select("p#remove_stickies")
-  .on("click", function() {
-                             d3.selectAll("aside").style("opacity", 0);
-                             d3.selectAll("a").style("text-decoration", "none")
-                                              .style("border-bottom", "none");
-                          });
-</script>
+<script type="text/javascript" src="JS/handle_stickies.js"></script> <!-- Remove stickies -->
 
 <aside>
 These are slides for a talk for the 4th Symposium on Biological Data
