@@ -9,7 +9,7 @@
 # This is awful code; I just barely know what I'm doing.
 
 # function that does all of the work
-draw = (data) ->
+draw_manyboxplots = (data) ->
 
   bgcolor = d3.rgb(24, 24, 24)
   labelcolor = "white"
@@ -415,4 +415,4 @@ draw = (data) ->
 
 
 # load json file and call draw function
-d3.json("Data/hypo.json", draw)
+d3.json("Data/hypo.json", draw_manyboxplots)

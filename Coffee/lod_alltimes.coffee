@@ -3,7 +3,7 @@
 # This is awful code; I just barely know what I'm doing.
 
 # function that does all of the work
-draw = (data) ->
+draw_lod_alltimes = (data) ->
 
   d3.select("p#loading").remove()
 
@@ -554,4 +554,4 @@ draw = (data) ->
 
 
 # load json file and call draw function
-d3.json("Data/all_lod.json", draw)
+d3.json("Data/all_lod.json", draw_lod_alltimes)

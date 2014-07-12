@@ -22,7 +22,7 @@
 # This is awful code; I just barely know what I'm doing.
 
 # function that does all of the work
-draw = (data) ->
+draw_cistrans = (data) ->
 
   # dimensions of panels
   w = [500, 300]
@@ -747,4 +747,4 @@ draw = (data) ->
        .attr("class", "outerBox")
 
 # load json file and call draw function
-d3.json("Data/islet_eqtl.json", draw)
+d3.json("Data/islet_eqtl.json", draw_cistrans)

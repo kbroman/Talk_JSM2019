@@ -11,7 +11,7 @@
 # This is awful code; I just barely know what I'm doing.
 
 # function that does all of the work
-draw = (data) ->
+draw_lod_and_effect = (data) ->
 
   # dimensions of SVG
   w = 1000
@@ -668,4 +668,4 @@ draw = (data) ->
            .attr("class", "outerBox")
 
 # load json file and call draw function
-d3.json("Data/insulinlod.json", draw)
+d3.json("Data/insulinlod.json", draw_lod_and_effect)
