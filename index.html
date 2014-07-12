@@ -291,6 +291,106 @@ by genotype at that locus.
 
 
 
+<section>
+<h3>Why? &nbsp; <font class="lowlight">people are lazy</font></h3>
+
+<div id="lod_and_effect" class="fig"></div>
+
+<aside>
+We know we should not rely solely on summary statistics (like the LOD
+score), but if it takes an extra step to plot the underlying details,
+we tend not to do it, or at least not so much as we should.<br><br>
+
+I&rsquo;ve come to the conclusion that <em>every</em> graph could be
+improved with interactivity. You at least want tooltips.<br><br>
+
+The curves at the top are the same LOD curves we saw before. The LOD
+score is a measure of association between genotype and phenotype.<br><br>
+
+Click on a chromosome in the top panel to see a detailed view in the
+lower-left panel.  Click on a marker in the lower-left panel to see
+effect estimates and raw data on the right.  Hover over things on the
+right to get some further information.
+</aside>
+
+<p class="codelink">
+<a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
+<a href="Data/insulinlod.json" class="gray">data</a></p>
+
+<script type="text/javascript" src="JS/lod_and_effect.js"></script>
+<p class="pg">10</p></section>
+
+
+
+
+<section>
+
+<h3>Why? &nbsp; <font class="lowlight">reports to collaborators</font></h3>
+
+<!--
+<div id="corr_w_scatter" style="margin-left:-50px;"></div>
+
+<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
+-->
+
+<aside>
+I write a lot of reports to collaborators, describing my analysis
+results and conclusions.<br><br>
+
+It's hard to anticipate all possible questions that a collaborator
+might have. (&ldquo;What gene is that?&rdquo;) And you can only show
+so many pictures. <br><br>
+
+Including interactive graphs in a report allows my collaborators to
+answer a lot of their own questions on their own and to more fully
+explore their own data.<br><br>
+
+And a single interactive graph can take the place of thousands of
+static ones.
+</aside>
+
+<!--
+<p class="codelink">
+<a href="Coffee/corr_w_scatter.coffee" class="gray">code</a> |
+<a href="Data/corr_w_scatter.json" class="gray">data</a></p>
+-->
+<p class="pg">11</p></section>
+
+
+
+<section>
+
+<h3>Why? &nbsp; <font class="lowlight">teaching</font></h3>
+
+<!--
+<div id="corr_w_scatter" style="margin-left:-50px;"></div>
+
+<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
+-->
+
+<aside>
+Interactive graphs are incredibly valuable educational tools.<br><br>
+
+You can only show so many static graphs, and it can be a big step to get
+students to make more, on their own.<br><br>
+
+Interactive graphs can be a big help to build students&rsquo; intution
+and understanding, both as a demonstration, and as a tool that they
+can play with.
+</aside>
+
+<!--
+<p class="codelink">
+<a href="Coffee/corr_w_scatter.coffee" class="gray">code</a> |
+<a href="Data/corr_w_scatter.json" class="gray">data</a></p>
+-->
+<p class="pg">12</p></section>
+
+
+
+
+
+
 <section nopadding>
 <h3><a href="http://d3js.org">D3</a> is awesome!</h3>
 
@@ -419,32 +519,6 @@ CoffeeScript (see the next slide).
 
 
 
-
-<section>
-<h3>Interactive genome scan</h3>
-
-<div id="lod_and_effect" class="fig"></div>
-
-<aside>
-I&rsquo;ve come to the conclusion that <em>every</em> graph could be
-improved with interactivity. You at least want tooltips. Interactive
-graphs are incredibly valuable educational tools.<br><br>
-
-The curves at the top are the same LOD curves we saw before. The LOD
-score is a measure of association between genotype and phenotype.<br><br>
-
-Click on a chromosome in the top panel to see a detailed view in the
-lower-left panel.  Click on a marker in the lower-left panel to see
-effect estimates and raw data on the right.  Hover over things on the
-right to get some further information.
-</aside>
-
-<p class="codelink">
-<a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
-<a href="Data/insulinlod.json" class="gray">data</a></p>
-
-<script type="text/javascript" src="JS/lod_and_effect.js"></script>
-<p class="pg">14</p></section>
 
 
 
