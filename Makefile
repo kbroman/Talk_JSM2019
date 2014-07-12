@@ -22,7 +22,9 @@ weball: presentation.html JS Figs
 	scp JS/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/JS/
 	scp Coffee/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Coffee/
 	scp CSS/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/CSS/
-	scp Figs/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/
+	scp Figs/*.* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/
+	scp Figs/Panels/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/Panels/
+	scp Figs/Charts/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/Charts/
 
 tar: presentation.html JS Figs
 	cd ..;tar czvhf broman_biovis.tgz BioVis/[A-Za-z]*
