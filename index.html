@@ -327,26 +327,50 @@ right to get some further information.
 
 <h3>Why? &nbsp; <font class="lowlight">reports to collaborators</font></h3>
 
-<!--
-<div id="corr_w_scatter" style="margin-left:-50px;"></div>
-
-<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
--->
+<div id="lod_alltimes_fig" style="font-size:20px;margin-left:-50px;"></div>
 
 <aside>
 I write a lot of reports to collaborators, describing my analysis
-results and conclusions.<br><br>
-
+results and conclusions.
 It's hard to anticipate all possible questions that a collaborator
 might have. (&ldquo;What gene is that?&rdquo;) And you can only show
 so many pictures. <br><br>
 
 Including interactive graphs in a report allows my collaborators to
 answer a lot of their own questions on their own and to more fully
-explore their own data.<br><br>
-
+explore their own data.
 And a single interactive graph can take the place of thousands of
-static ones.
+static ones.<br><br>
+
+Here we consider a phenotype measured over time, and perform QTL
+analysis with each time point individually, to seek genetic loci that
+affect the response.<br><br>
+
+The top-left plot is a &ldquo;heat map&rdquo; of the LOD scores
+for each time point at each genomic position.  LOD scores are also
+colored to indicate the sign of the QTL effect, with red indicating
+that BB lines have larger phenotype values and blue indicating that AA lines
+have larger phenotype values.  We consider only those (position, time)
+pairs with LOD > 1.<br><br>
+
+When you hover over a point in the top-left plot, the LOD curves for the
+corresponding time are shown below, and the phenotype averages and
+estimated QTL effect (across time) for the corresponding genomic
+position are shown to the right.<br><br>
+
+Click on a point to show pointwise confidence bands on the QTL
+effect (&plusmn; 2 SE).  (We require a mouse click, as otherwise the graph
+was painfully slow to refresh.)
+</aside>
+
+
+<p class="codelink">
+<a href="Coffee/lod_alltimes.coffee" class="gray">code</a> |
+<a href="Data/all_lod.json" class="gray">data</a>
+
+<script type="text/javascript" src="JS/lod_alltimes.js"></script>
+
+
 </aside>
 
 <!--
