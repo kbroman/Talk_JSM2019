@@ -45,7 +45,11 @@ for high-dimensional genetic data</h2>
 
 <script type="text/javascript">
 d3.select("p#remove_stickies")
-  .on("click", function() { d3.selectAll("aside").style("opacity", 0); });
+  .on("click", function() {
+                             d3.selectAll("aside").style("opacity", 0);
+                             d3.selectAll("a").style("text-decoration", "none")
+                                              .style("border-bottom", "none");
+                          });
 </script>
 
 <aside>
