@@ -1,6 +1,6 @@
 ### Talk on &ldquo;Interactive graphics for high-dimensional genetic data&rdquo;
 
-These are slides for a talk that I will give at <a
+These are slides for a talk that I gave at <a
 href="http://biovis.net/year/2014/about">BioVis</a>, the 4th Symposium
 on Biological Data Visualization, in Boston, July 11-12, 2014.
 
