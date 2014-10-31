@@ -39,15 +39,14 @@ for high-dimensional genetic data</h2>
 <a href="https://twitter.com/kwbroman" class="gray">@kwbroman</a>
 </code></p>
 
-<p class="nopadding"><font class="gray">slides</a>: <code><a href="http://www.biostat.wisc.edu/~kbroman/presentations/BioVis">bit.ly/BioVis2014</a></code></p>
+<p class="nopadding"><font class="gray">slides</a>: <code><a href="http://www.biostat.wisc.edu/~kbroman/presentations/InteractiveGraphs4">bit.ly/Bro2014-11</a></code></font></p>
 
 <p class="codelink" style="cursor:pointer;" id="remove_stickies">Remove stickies</p>
 
 <script type="text/javascript" src="JS/handle_stickies.js"></script> <!-- Remove stickies -->
 
 <aside>
-These are slides for a talk for the 4th Symposium on Biological Data
-Visualization (BioVis), in Boston, Massachusetts, 12 July 2014.<br><br>
+These are slides for a seminar at Harvar Biostatistics, 6 Nov 2014.<br><br>
 
 Click on the link at the bottom-left to remove these
 notes.<br><br>
@@ -61,25 +60,56 @@ in some browsers.
 
 
 <section>
-<h3 class="abscenter">applied statistician</h3>
+<h3 class="abscenter">Why aren&rsquo;t all of our graphs
+<font id="flash" class="highlight">interactive</font>?</h3>
 <aside>
-I&rsquo;m an applied statistician, though I&rsquo;d prefer to drop the
-&ldquo;applied&rdquo; as if it&rsquo;s not applied, it&rsquo;s not
-statistics.<br><br>
+Statisticians (and computational biologists) produce a lot of graphs,
+but they&rsquo;re almost all static. The value of interactive graphics has
+long been understood, but they&rsquo;re still not routine.<br><br>
 
-My job is to help scientists make sense of data. Data visualization
-is always a big part of that.<br><br>
+They should be.<br><br>
 
-(The next slide is a gratuitous animation. Teach a person a bit of
-JavaScript, and you&rsquo;ll get gratuitous animations as a result.)
+(The word &ldquo;interactive&rdquo; here is interactive. Click on it
+to toggle among plain, glowing, and flashing. This is a joke.)
+
 </aside> <p class="pg">2</p></section>
 
+
+
 <section>
-<h3 class="abscenter"><font id="fadeout_applied">applied</font> statistician</h3>
-<p class="pg">2</p></section>
+<h3>1994</h3>
+<div id="density_estimate" class="chart"></div>
 
+<div style="font-size:28px;width:420px;align:center;margin-left:350px;margin-top:15px">
+  <div style="float:left;" id="bandwidth">Bandwidth = 1.00</div>
+  <div id="bgrect" style="float:right;width:135px;">
+     <input type="range" min="-2" max="1" step = "0.05" value="0"></div>
+</div>
+<script src="JS/density.js"></script>
+<script src="JS/plotframe.js"></script>
 
+<p class="codelink">
+<a href="Coffee/density.coffee" class="gray">code</a> |
+<a href="Coffee/plotframe.coffee" class="gray">plotframe</a>
 
+<aside>
+In graduate school (at UC Berkeley), I took a course on statistical
+computing from <a href="http://www.stat.berkeley.edu/~spector/">Phil
+Spector</a>.  One of the projects was to use <a
+href="http://homepage.cs.uiowa.edu/~luke/xls/xlispstat/">XLisp-Stat</a>
+to create an interactive plot of a density estimate, with a slider for
+bandwidth.<br><br>
+
+Why didn&rsquo;t I do anything like this in the
+subsequent 15 years?  Rather than make a bunch of static plots to find
+a good bandwidth, you can play around with the one interactive
+plot.<br><br>
+
+Of course, this isn't XLisp-Stat, but you get the idea of what we were
+doing.
+</aside>
+
+<p class="pg">3</p></section>
 
 
 
@@ -244,7 +274,7 @@ get back to the underlying details.<br><br>
 
 This is like a set of 500 box plots (for the gene expression values
 from 500 gene expression microarray), but going farther out into the
-tails: the lines connect various quantiles: the 
+tails: the lines connect various quantiles: the
 1, 5, 10, 25, 50, 75, 90, 95, and 99%iles.  <br><br>
 
 Hover over an array above and see the corresponding histogram.  Click
@@ -741,7 +771,7 @@ necessary design sense.
 
   <li>Write modular, reusable tools rather than scripts</li>
 
-  <li><a href="http://kbroman.github.io/qtlcharts" class="hilight">R/qtlcharts</a>, 
+  <li><a href="http://kbroman.github.io/qtlcharts" class="hilight">R/qtlcharts</a>,
   an R package for interactive graphs for QTL data</li>
 
 </ul>
@@ -897,7 +927,7 @@ In particular, you can find all of my papers, talks, and software.
 
 
 
+<script type="text/javascript" src="JS/flash_text.js"></script>
 <script type="text/javascript" src="JS/stack.v0.js"></script>
 </body>
 </html>
-
