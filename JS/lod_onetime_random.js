@@ -57,13 +57,16 @@ lod_permutation = function() {
       if (col >= data.phevals.length) {
         col = 1;
       }
+      if (col > 0) {
+        backbutton.transition().duration(250).attr("opacity", 1);
+      }
       lodpanel.remove();
       effpanel.remove();
       lodpanel = svg.append("g").attr("id", "random_lodpanel");
       effpanel = svg.append("g").attr("id", "random_effpanel");
       return drawRandom(data, col);
     });
-    backbutton.on("click", function() {
+    return backbutton.on("click", function() {
       col--;
       if (col < 0) {
         col = 0;
@@ -76,13 +79,6 @@ lod_permutation = function() {
         d3.select(this).transition().duration(250).attr("opacity", 0);
       }
       return drawRandom(data, col);
-    });
-    return backbutton.on("mouseover", function() {
-      if (col !== 0) {
-        return d3.select(this).transition().duration(250).attr("opacity", 1);
-      }
-    }).on("mouseout", function() {
-      return d3.select(this).transition().duration(1000).attr("opacity", 0);
     });
   };
   drawRandom = function(data, column) {

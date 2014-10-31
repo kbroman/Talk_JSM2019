@@ -110,6 +110,7 @@ lod_permutation = () ->
       permbutton.on "click", ->
         col++
         col = 1 if col >= data.phevals.length
+        backbutton.transition().duration(250).attr("opacity", 1) if col > 0
 
         lodpanel.remove()
         effpanel.remove()
@@ -133,12 +134,6 @@ lod_permutation = () ->
           d3.select(this).transition().duration(250).attr("opacity", 0)
 
         drawRandom(data, col)
-
-
-      backbutton.on("mouseover", ->
-                         if col != 0 # if not at beginning
-                          d3.select(this).transition().duration(250).attr("opacity", 1))
-                .on("mouseout", -> d3.select(this).transition().duration(1000).attr("opacity", 0))
 
     # function that does all of the work
     drawRandom = (data, column) ->
