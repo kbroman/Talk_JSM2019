@@ -1,8 +1,9 @@
 ### Talk on &ldquo;Interactive graphics for high-dimensional genetic data&rdquo;
 
-These are slides for a talk that I gave at <a
-href="http://biovis.net/year/2014/about">BioVis</a>, the 4th Symposium
-on Biological Data Visualization, in Boston, July 11-12, 2014.
+These are slides for a talk that I will give at
+[Harvard Biostatistics](http://www.hsph.harvard.edu/biostatistics/) on 6 Nov 2014.
+
+See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/InteractiveGraphs4/).
 
 ---
 

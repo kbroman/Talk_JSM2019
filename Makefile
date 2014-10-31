@@ -1,4 +1,3 @@
-
 all: presentation.html Figs JS
 
 Figs: Figs/intercross.png Figs/lodcurve_insulin.png
@@ -15,17 +14,17 @@ JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^
 
 web: presentation.html
-	scp *.html broman-2.biostat.wisc.edu:public_html/presentations/BioVis/
+	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4
 
 weball: presentation.html JS Figs
-	scp *.html broman-2.biostat.wisc.edu:public_html/presentations/BioVis/
-	scp JS/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/JS/
-	scp Coffee/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Coffee/
-	scp CSS/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/CSS/
-	scp Figs/*.png broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/
-	scp Figs/*.jpg broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/
-	scp Figs/Panels/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/Panels/
-	scp Figs/Charts/* broman-2.biostat.wisc.edu:public_html/presentations/BioVis/Figs/Charts/
+	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/
+	scp JS/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/JS/
+	scp Coffee/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Coffee/
+	scp CSS/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/CSS/
+	scp Figs/*.png broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/
+	scp Figs/*.jpg broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/
+	scp Figs/Panels/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/Panels/
+	scp Figs/Charts/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/Charts/
 
 tar: presentation.html JS Figs
-	cd ..;tar czvhf broman_biovis.tgz BioVis/[A-Za-z]*
+	cd ..;tar czvhf broman_biovis.tgz InteractiveGraphs4/[A-Za-z]*
