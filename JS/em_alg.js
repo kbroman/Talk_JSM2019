@@ -48,7 +48,7 @@ buttonw2 = 80;
 
 totalh = h + buttonh + margin.bottom * 1.5;
 
-svg = d3.select("div#chart").append("svg").attr("height", totalh).attr("width", w + margin.left * margin.right);
+svg = d3.select("div#em_alg").append("svg").attr("id", "em_alg").attr("height", totalh).attr("width", w + margin.left * margin.right);
 
 permbutton = null;
 
@@ -58,8 +58,9 @@ backbuttontext = null;
 
 iteration = 0;
 
-d3.json("data.json", function(data) {
-  var i, mychart, points, segments, segtip, thesvg, toplot, update;
+d3.json("Data/em_alg_data.json", function(data) {
+  var i, mychart, points, segments, thesvg, toplot, update;
+  console.log("hello");
   add_buttons();
   toplot = {
     data: {
@@ -72,17 +73,13 @@ d3.json("data.json", function(data) {
     toplot.indID[i] = d3.format(".3f")(data.p[0][i]);
   }
   mychart = scatterplot().xvar("x").yvar("y").xlab("Pr(AB | marker data)").ylab("Phenotype").xlim([-0.025, 1.025]).height(h).width(w).margin(margin).axispos(axispos).dataByInd(false).pointcolor(pointcolor).pointsize(radius).pointstroke(pointstrokecolor).title("Iteration 0, LOD = " + (d3.format(".2f")(data.lod[0])));
-  d3.select("svg").datum(toplot).call(mychart);
-  thesvg = d3.select("svg svg g");
+  d3.select("svg#em_alg").datum(toplot).call(mychart);
+  thesvg = d3.select("svg#em_alg svg g");
   points = mychart.pointsSelect().on("mouseover", function() {
     return d3.select(this).attr("fill", hilitpointcolor).attr("r", bigradius);
   }).on("mouseout", function() {
     return d3.select(this).attr("fill", pointcolor).attr("r", radius);
   });
-  segtip = d3.tip().attr('class', 'd3-tip').attr('id', 'violet').html(function(d, i) {
-    return d3.format(".2f")(data.theta[iteration][i]);
-  }).direction('e').offset([0, 10]);
-  thesvg.call(segtip);
   segments = thesvg.selectAll("empty").data([0, 1]).enter().append("line").attr("x1", function(d) {
     return mychart.xscale()(d) - segwidth / 2;
   }).attr("x2", function(d) {
@@ -91,7 +88,7 @@ d3.json("data.json", function(data) {
     return mychart.yscale()(data.theta[0][d]);
   }).attr("y2", function(d) {
     return mychart.yscale()(data.theta[0][d]);
-  }).attr("fill", "none").attr("stroke", segcolor).attr("stroke-width", seglwd).on("mouseover", segtip.show).on("mouseout", segtip.hide);
+  }).attr("fill", "none").attr("stroke", segcolor).attr("stroke-width", seglwd);
   permbutton.on("click", function() {
     if (!(iteration >= data.lod.length - 1)) {
       iteration++;
@@ -113,7 +110,7 @@ d3.json("data.json", function(data) {
     return update();
   });
   return update = function() {
-    d3.select("g.title text").text(("Iteration " + iteration + ", ") + ("LOD = " + (d3.format(".2f")(data.lod[iteration]))));
+    d3.select("g.title text").text(("Iteration " + iteration + ", ") + ("LOD = " + (d3.format(".2f")(data.lod[iteration])))).attr("fill", "slateblue");
     points.transition().duration(duration).attr("cx", function(d) {
       return mychart.xscale()(data.p[iteration][d]);
     });

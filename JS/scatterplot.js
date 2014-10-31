@@ -53,7 +53,7 @@ scatterplot = function() {
   dataByInd = true;
   chart = function(selection) {
     return selection.each(function(data) {
-      var g, gEnter, group, i, indID, indtip, na_value, ngroup, panelheight, paneloffset, panelwidth, points, svg, titlegrp, x, xaxis, xrange, xs, y, yaxis, yrange, ys, _i, _ref, _ref1, _ref2, _results;
+      var g, gEnter, group, i, indID, na_value, ngroup, panelheight, paneloffset, panelwidth, points, svg, titlegrp, x, xaxis, xrange, xs, y, yaxis, yrange, ys, _i, _ref, _ref1, _ref2, _results;
       if (dataByInd) {
         x = data.data.map(function(d) {
           return d[xvar];
@@ -216,10 +216,6 @@ scatterplot = function() {
       if (yNA.handle) {
         yaxis.append("text").attr("x", margin.left - axispos.ylabel).attr("y", margin.top + height - yNA.width / 2).text("N/A");
       }
-      indtip = d3.tip().attr('class', 'd3-tip').html(function(d, i) {
-        return indID[i];
-      }).direction('e').offset([0, 10]);
-      svg.call(indtip);
       points = g.append("g").attr("id", "points");
       pointsSelect = points.selectAll("empty").data(d3.range(x.length)).enter().append("circle").attr("cx", function(d, i) {
         return xscale(x[i]);
@@ -234,7 +230,7 @@ scatterplot = function() {
           return 1;
         }
         return 0;
-      }).on("mouseover.paneltip", indtip.show).on("mouseout.paneltip", indtip.hide);
+      });
       g.append("rect").attr("x", margin.left + paneloffset).attr("y", margin.top).attr("height", panelheight).attr("width", panelwidth).attr("fill", "none").attr("stroke", "black").attr("stroke-width", "none");
       if (xNA.handle) {
         g.append("rect").attr("x", margin.left).attr("y", margin.top).attr("height", panelheight).attr("width", xNA.width).attr("fill", "none").attr("stroke", "black").attr("stroke-width", "none");

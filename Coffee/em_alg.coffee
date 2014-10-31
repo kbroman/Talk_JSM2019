@@ -25,8 +25,8 @@ buttonw2 = 80
 totalh = h + buttonh + margin.bottom*1.5
 
 
-svg = d3.select("div#chart")
-        .append("svg")
+svg = d3.select("div#em_alg")
+        .append("svg").attr("id", "em_alg")
         .attr("height", totalh)
         .attr("width", w+margin.left*margin.right)
 
@@ -37,10 +37,12 @@ backbuttontext = null
 iteration = 0
 
 
-d3.json "data.json", (data) ->
+d3.json "Data/em_alg_data.json", (data) ->
+
+    console.log("hello")
 
     add_buttons()
-    
+
     toplot = {data:{x: data.p[0], y: data.y}, indID:[]}
 
     for i of data.y
@@ -61,12 +63,12 @@ d3.json "data.json", (data) ->
                            .pointsize(radius)
                            .pointstroke(pointstrokecolor)
                            .title("Iteration 0, LOD = #{d3.format(".2f")(data.lod[0])}")
-  
-    d3.select("svg")
+
+    d3.select("svg#em_alg")
       .datum(toplot)
       .call(mychart)
 
-    thesvg = d3.select("svg svg g")
+    thesvg = d3.select("svg#em_alg svg g")
 
     points = mychart.pointsSelect()
                     .on("mouseover", () ->
@@ -77,14 +79,6 @@ d3.json "data.json", (data) ->
                                 d3.select(this)
                                   .attr("fill", pointcolor)
                                   .attr("r", radius))
-
-    segtip = d3.tip()
-               .attr('class', 'd3-tip')
-               .attr('id', 'violet')
-               .html((d,i) -> d3.format(".2f")(data.theta[iteration][i]))
-               .direction('e')
-               .offset([0,10])
-    thesvg.call(segtip)
 
     segments = thesvg.selectAll("empty")
                      .data([0,1])
@@ -97,9 +91,7 @@ d3.json "data.json", (data) ->
                      .attr("fill", "none")
                      .attr("stroke", segcolor)
                      .attr("stroke-width", seglwd)
-                     .on("mouseover", segtip.show)
-                     .on("mouseout", segtip.hide)
-    
+
 
     permbutton.on "click", ->
                       iteration++ unless iteration >= data.lod.length - 1
@@ -125,7 +117,7 @@ d3.json "data.json", (data) ->
 
     update = () ->
                  d3.select("g.title text").text("Iteration #{iteration}, " +
-                                     "LOD = #{d3.format(".2f")(data.lod[iteration])}")
+                                     "LOD = #{d3.format(".2f")(data.lod[iteration])}").attr("fill", "slateblue")
                  points.transition().duration(duration)
                        .attr("cx", (d) -> mychart.xscale()(data.p[iteration][d]))
                  segments.transition().duration(duration)
@@ -178,4 +170,3 @@ add_buttons = () ->
                                 .style("pointer-events", "none")
                                 .attr("fill", "black")
                                 .attr("opacity", 0)
-

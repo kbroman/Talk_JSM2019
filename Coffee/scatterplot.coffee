@@ -226,12 +226,12 @@ scatterplot = () ->
                      .attr("y", margin.top+height-yNA.width/2)
                      .text("N/A")
 
-            indtip = d3.tip()
-                       .attr('class', 'd3-tip')
-                       .html((d,i) -> indID[i])
-                       .direction('e')
-                       .offset([0,10])
-            svg.call(indtip)
+#            indtip = d3.tip()
+#                       .attr('class', 'd3-tip')
+#                       .html((d,i) -> indID[i])
+#                       .direction('e')
+#                       .offset([0,10])
+#            svg.call(indtip)
 
             points = g.append("g").attr("id", "points")
             pointsSelect =
@@ -249,8 +249,8 @@ scatterplot = () ->
                       .attr("opacity", (d,i) ->
                                            return 1 if (x[i]? or xNA.handle) and (y[i]? or yNA.handle)
                                            return 0)
-                      .on("mouseover.paneltip", indtip.show)
-                      .on("mouseout.paneltip", indtip.hide)
+#                      .on("mouseover.paneltip", indtip.show)
+#                      .on("mouseout.paneltip", indtip.hide)
 
             # box
             g.append("rect")

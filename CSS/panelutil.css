@@ -1,4 +1,3 @@
-
 /* figures will always be within a div with class="qtlcharts" */
 div.qtlcharts {
     font-family: sans-serif;
@@ -7,13 +6,15 @@ div.qtlcharts {
 
 div.qtlcharts .title text {
     dominant-baseline: middle;
-    fill: blue;
+    fill: white;
     text-anchor: middle;
+    font-size:24pt;
 }
 
 div.qtlcharts .y.axis text {
     dominant-baseline: middle;
     text-anchor: end;
+    fill: white;
 }
 
 div.qtlcharts .y.axis text.title {
@@ -24,6 +25,7 @@ div.qtlcharts .y.axis text.title {
 div.qtlcharts .x.axis text {
     dominant-baseline: hanging;
     text-anchor: middle;
+    fill: white;
 }
 
 div.qtlcharts .x.axis text.title {
