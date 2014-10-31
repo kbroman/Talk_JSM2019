@@ -10,6 +10,7 @@
 @import url(CSS/figures.css);
 @import url(CSS/kbroman_talk.css);
 @import url(CSS/corr_w_scatter.css);
+@import url(CSS/panelutil.css);
 /* comment following line to get rid of notes; uncommented to show notes */
 /* @import url(CSS/kbroman_presentation.css); */
 </style>
@@ -90,7 +91,7 @@ to toggle among plain, glowing, and flashing. This is a joke.)
 
 <p class="codelink">
 <a href="Coffee/density.coffee" class="gray">code</a> |
-<a href="Coffee/plotframe.coffee" class="gray">plotframe</a>
+<a href="Coffee/plotframe.coffee" class="gray">plotframe</a></p>
 
 <aside>
 In graduate school (at UC Berkeley), I took a course on statistical
@@ -464,18 +465,14 @@ was painfully slow to refresh.)
 
 <p class="codelink">
 <a href="Coffee/lod_alltimes.coffee" class="gray">code</a> |
-<a href="Data/all_lod.json" class="gray">data</a>
+<a href="Data/all_lod.json" class="gray">data</a></p>
 
 <script type="text/javascript" src="JS/lod_alltimes.js"></script>
 
 
+<aside>
 </aside>
 
-<!--
-<p class="codelink">
-<a href="Coffee/corr_w_scatter.coffee" class="gray">code</a> |
-<a href="Data/corr_w_scatter.json" class="gray">data</a></p>
--->
 <p class="pg">11</p></section>
 
 
@@ -488,7 +485,7 @@ was painfully slow to refresh.)
 
 <p class="codelink">
 <a href="Coffee/lod_onetime_random.coffee" class="gray">code</a> |
-<a href="Data/onetime_random.json" class="gray">data</a>
+<a href="Data/onetime_random.json" class="gray">data</a></p>
 
 
 <script type="text/javascript" src="JS/lod_onetime_random.js"></script>
@@ -508,6 +505,36 @@ the phenotypes and re-draw the LOD curves.<br><br>
 
 There&rsquo;s a hidden &ldquo;back&rdquo; button a bit to the right of
 the green button.
+</aside>
+
+<p class="pg">12</p></section>
+
+
+<section>
+
+<h3>Why? &nbsp; <font class="lowlight">teaching</font></h3>
+
+<div id="em_alg" class="qtlcharts" style="margin-left:-30px;"></div>
+
+<p class="codelink">
+<a href="Coffee/em_alg.coffee" class="gray">code</a> |
+<a href="Data/em_alg_data.json" class="gray">data</a></p>
+
+
+<script type="text/javascript" src="JS/scatterplot.js"></script>
+<script type="text/javascript" src="JS/panelutil.js"></script>
+<script type="text/javascript" src="JS/em_alg.js"></script>
+
+<aside> Here&rsquo;s another teaching example, illustrating the EM algorithm
+in QTL mapping.<br><br>
+
+It&rsquo;s a plot of phenotype vs conditional genotype probabilities at each
+iteration of the EM algorithm. Each point is an individual; pink line
+segments are at the current estimated averages.
+
+Click on &ldquo;Next&rdquo; to go to next iteration and &rdquo;Back&ldquo; to go back. Hover
+over points to see the prior QTL genotype probabilities; hover over
+line segments to see estimated averages.
 </aside>
 
 <p class="pg">12</p></section>
