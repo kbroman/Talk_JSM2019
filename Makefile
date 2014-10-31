@@ -1,4 +1,4 @@
-all: presentation.html Figs JS
+all: Figs JS
 
 Figs: Figs/intercross.png Figs/lodcurve_insulin.png
 
@@ -13,7 +13,7 @@ Figs/%.png: R/%.R
 JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^
 
-web: presentation.html
+web:
 	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4
 
 weball: presentation.html JS Figs
