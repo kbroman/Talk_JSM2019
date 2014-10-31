@@ -717,7 +717,7 @@ I like this one, too.
 <section>
 <h3>An alternative to tables</h3>
 
-<div class="chart"><img src="Figs/carr_fig.png"></div>
+<div class="chart"><img width=650 src="Figs/carr_fig.png"></div>
 
 <p class="reference">
 Carr & Pickle (2010) <a
@@ -826,50 +826,6 @@ CoffeeScript (see the next slide).
 
 
 <section>
-<h3>Other options</h3>
-
-<ul class=reallytight>
-  <li><a href="http://homepage.cs.uiowa.edu/~luke/xls/xlispstat/">XLisp-Stat</a></li>
-  <li><code>locator()</code> and <code>identify()</code></li>
-  <li><a href="http://ggobi.org">ggobi</a> and <a href="https://github.com/ggobi/cranvas/wiki">cranvas</a></li>
-  <li><a href="http://4dpiecharts.com/2010/10/06/creating-guis-in-r-with-gwidgets/">gWidgets</a></li>
-  <li><a href="http://www.stats.gla.ac.uk/~adrian/rpanel/">rpanel</a></li>
-  <li><a href="http://rosuda.org/software/Mondrian/">Mondrian</a></li>
-  <li><a href="http://rforge.net/Acinonyx/">Acinonyx</a> (aka iPlots eXtreme)</li>
-  <li><a href="http://code.google.com/p/google-motion-charts-with-r/">googleVis</a></li>
-  <li><a href="http://rstudio.org/">RStudio</a>&rsquo;s <code><a
-  href="http://rstudio.org/docs/advanced/manipulate">manipulate()</a></code>
-  and <a href="http://www.rstudio.com/shiny/">Shiny</a></li>
-  <li><a href="http://r-forge.r-project.org/projects/gridsvg/">gridSVG</a></li>
-  <li><a href="http://rgl.neoscientists.org">RGL</a></li>
-  <li><a href="http://www.youtube.com/watch?v=iSXNfZESR5I">ggplot<font
-  class="highlight">3</font></a>?</li>
-</ul>
-
-<aside>There seem to be <font class="darkhighlight">too many</font> options for producing dynamic and
-  interactive graphics.  Many are simple to use but not easily extended.  <a
-  href="http://had.co.nz">Hadley Wickham</a> (developer of ggplot2) is
-  working on interactive graphics and big data; he might make things easier for
-  us.  The most polished interactive graphics are in javascript using
-  the D3 library, though for now it&rsquo;s <font class="darkhighlight">very</font>
-  low-level work.</aside>
-
-<p class="pg">24</p></section>
-
-<section>
-<h3>Trade-offs</h3>
-
-<p align="center" style="margin-top:200px;font-size: 48px;"> <a href="http://code.google.com/p/google-motion-charts-with-r/">Easy</a> <font
-  class="gray">or <a href="http://d3js.org" class="highlight">flexible</a>?</font>
-
-
-<aside>You have to choose between easy or flexible; you can&rsquo;t have
-  both.  I&rsquo;m going for flexible.</aside>
-
-<p class="pg">25</p></section>
-
-
-<section>
 <h3><a href="http://coffeescript.org">Coffeescript</a> is awesome!</h3>
 
 <div id="coffee" class="medtop">
@@ -902,6 +858,51 @@ You can use <a href="http://jsfiddle.net">jsfiddle</a> with
 CoffeeScript (see the next slide).
 </aside>
 <p class="pg">23</p></section>
+
+
+
+
+<section>
+<h3>Other options</h3>
+
+<ul class=reallytight>
+  <li><code>locator()</code> and <code>identify()</code></li>
+  <li><a href="http://ggobi.org">ggobi</a> and <a href="https://github.com/ggobi/cranvas/wiki">cranvas</a></li>
+  <li><a href="http://rosuda.org/software/Mondrian/">Mondrian</a></li>
+  <li><a href="http://4dpiecharts.com/2010/10/06/creating-guis-in-r-with-gwidgets/">gWidgets</a></li>
+  <li><a href="http://www.stats.gla.ac.uk/~adrian/rpanel/">rpanel</a></li>
+  <li><a href="http://rforge.net/Acinonyx/">Acinonyx</a> (aka iPlots eXtreme)</li>
+  <li><a href="http://r-forge.r-project.org/projects/gridsvg/">gridSVG</a></li>
+  <li><a href="http://rgl.neoscientists.org">RGL</a></li>
+  <li><a href="http://code.google.com/p/google-motion-charts-with-r/">googleVis</a></li>
+  <li><a href="http://rstudio.org/"><font class="highlight">RStudio</font></a>&rsquo;s
+  <a href="http://www.rstudio.com/shiny/">Shiny</a>, and <a href="http://ggvis.rstudio.com/">ggvis</a></li>
+</ul>
+
+<aside>
+  There are lots of other options; some of these are of only
+  historical interest.<br><br>
+
+  Most exciting are the tools being developed at <a href="http://rstudio.com">RStudio</a>.
+  In particular, <a href="http://had.co.nz">Hadley Wickham</a> (developer of ggplot2) is
+  working on interactive graphics and big data. I'm hoping he'll
+  develop a grammar of interactive graphics.
+</aside>
+
+<p class="pg">24</p></section>
+
+<section>
+<h3>Trade-offs</h3>
+
+<p align="center" style="margin-top:200px;font-size: 48px;"> <a href="http://code.google.com/p/google-motion-charts-with-r/">Easy</a> <font
+  class="gray">or <a href="http://d3js.org" class="highlight">flexible</a>?</font>
+
+
+<aside>You have to choose between easy or flexible; you can&rsquo;t have
+  both.  I&rsquo;m going for flexible.</aside>
+
+<p class="pg">25</p></section>
+
 
 
 
@@ -943,7 +944,7 @@ phenotype-vs-genotype plot in the top-right.
 <a href="Coffee/cistrans.coffee" class="gray">code</a></p>
 
 <script type="text/javascript" src="JS/cistrans.js"></script>
-<p class="pg">16</p></section>
+<p class="pg">26</p></section>
 
 
 
@@ -989,7 +990,7 @@ format, and links to the javascript code) to a file and then opens it
 in a browser. For small-to-medium-scale charts, this is fast and
 effective.
 </aside>
-<p class="pg">17</p></section>
+<p class="pg">27</p></section>
 
 
 
@@ -1027,7 +1028,7 @@ There are also a set of functions for generating specific multi-panel
 charts that combine several of the basic panels and define the
 interactions that glue them together.
 </aside>
-<p class="pg">18</p></section>
+<p class="pg">28</p></section>
 
 
 
@@ -1064,7 +1065,7 @@ stuff.<br><br>
 Finally, I love this stuff, but I fear that I&rsquo;m lacking the
 necessary design sense.
 </aside>
-<p class="pg">19</p></section>
+<p class="pg">29</p></section>
 
 
 
@@ -1103,7 +1104,7 @@ necessary design sense.
 <aside>
 It&rsquo;s always good to have a summary slide with your key points.
 </aside>
-<p class="pg">20</p></section>
+<p class="pg">30</p></section>
 
 
 
@@ -1159,7 +1160,7 @@ It&rsquo;s always good to have a summary slide with your key points.
 <aside>
 Many people are involved in the studies that led to this work.
 </aside>
-<p class="pg">21</p></section>
+<p class="pg">31</p></section>
 
 
 
@@ -1212,7 +1213,7 @@ href="https://github.com/mbostock/stack">stack.js</a>.  I used <a
 href="http://github.com/kbroman/d3-tip">a modified version</a> of <a
 href="http://github.com/Caged/d3-tip">d3-tip</a> for tool tips.
 </aside>
-<p class="pg">22</p></section>
+<p class="pg">32</p></section>
 
 
 
@@ -1250,7 +1251,7 @@ This is where to find me.<br><br>
 
 In particular, you can find all of my papers, talks, and software.
 </aside>
-<p class="pg">23</p></section>
+<p class="pg">33</p></section>
 
 
 
