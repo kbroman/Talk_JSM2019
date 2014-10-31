@@ -59,8 +59,7 @@ backbuttontext = null;
 iteration = 0;
 
 d3.json("Data/em_alg_data.json", function(data) {
-  var i, mychart, points, segments, thesvg, toplot, update;
-  console.log("hello");
+  var i, mychart, points, pointtip, segments, segtip, thesvg, toplot, update;
   add_buttons();
   toplot = {
     data: {
@@ -75,11 +74,19 @@ d3.json("Data/em_alg_data.json", function(data) {
   mychart = scatterplot().xvar("x").yvar("y").xlab("Pr(AB | marker data)").ylab("Phenotype").xlim([-0.025, 1.025]).height(h).width(w).margin(margin).axispos(axispos).dataByInd(false).pointcolor(pointcolor).pointsize(radius).pointstroke(pointstrokecolor).title("Iteration 0, LOD = " + (d3.format(".2f")(data.lod[0])));
   d3.select("svg#em_alg").datum(toplot).call(mychart);
   thesvg = d3.select("svg#em_alg svg g");
-  points = mychart.pointsSelect().on("mouseover", function() {
-    return d3.select(this).attr("fill", hilitpointcolor).attr("r", bigradius);
+  pointtip = d3.svg.tip().orient("right").padding(3).text(function(z) {
+    return d3.format(".3f")(z);
+  }).attr("class", "d3-tip").attr("id", "em_pointtip");
+  points = mychart.pointsSelect().on("mouseover", function(d) {
+    d3.select(this).attr("fill", hilitpointcolor).attr("r", bigradius);
+    return pointtip.call(this, data.p[0][d]);
   }).on("mouseout", function() {
-    return d3.select(this).attr("fill", pointcolor).attr("r", radius);
+    d3.select(this).attr("fill", pointcolor).attr("r", radius);
+    return d3.selectAll("#em_pointtip").remove();
   });
+  segtip = d3.svg.tip().orient("right").padding(3).text(function(z) {
+    return d3.format(".1f")(z);
+  }).attr("class", "d3-tip").attr("id", "em_segtip");
   segments = thesvg.selectAll("empty").data([0, 1]).enter().append("line").attr("x1", function(d) {
     return mychart.xscale()(d) - segwidth / 2;
   }).attr("x2", function(d) {
@@ -88,7 +95,12 @@ d3.json("Data/em_alg_data.json", function(data) {
     return mychart.yscale()(data.theta[0][d]);
   }).attr("y2", function(d) {
     return mychart.yscale()(data.theta[0][d]);
-  }).attr("fill", "none").attr("stroke", segcolor).attr("stroke-width", seglwd);
+  }).attr("fill", "none").attr("stroke", segcolor).attr("stroke-width", seglwd).on("mouseover", function(d) {
+    console.log(d);
+    return segtip.call(this, data.theta[iteration][d]);
+  }).on("mouseout", function() {
+    return d3.selectAll("#em_segtip").remove();
+  });
   permbutton.on("click", function() {
     if (!(iteration >= data.lod.length - 1)) {
       iteration++;

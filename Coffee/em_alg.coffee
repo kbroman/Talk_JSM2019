@@ -39,8 +39,6 @@ iteration = 0
 
 d3.json "Data/em_alg_data.json", (data) ->
 
-    console.log("hello")
-
     add_buttons()
 
     toplot = {data:{x: data.p[0], y: data.y}, indID:[]}
@@ -70,15 +68,33 @@ d3.json "Data/em_alg_data.json", (data) ->
 
     thesvg = d3.select("svg#em_alg svg g")
 
+    pointtip = d3.svg.tip()
+                 .orient("right")
+                 .padding(3)
+                 .text((z) -> d3.format(".3f")(z))
+                 .attr("class", "d3-tip")
+                 .attr("id", "em_pointtip")
+
+
+
     points = mychart.pointsSelect()
-                    .on("mouseover", () ->
+                    .on("mouseover", (d) ->
                                 d3.select(this)
                                   .attr("fill", hilitpointcolor)
-                                  .attr("r", bigradius))
+                                  .attr("r", bigradius)
+                                pointtip.call(this, data.p[0][d]))
                     .on("mouseout", () ->
                                 d3.select(this)
                                   .attr("fill", pointcolor)
-                                  .attr("r", radius))
+                                  .attr("r", radius)
+                                d3.selectAll("#em_pointtip").remove())
+
+    segtip = d3.svg.tip()
+               .orient("right")
+               .padding(3)
+               .text((z) -> d3.format(".1f")(z))
+               .attr("class", "d3-tip")
+               .attr("id", "em_segtip")
 
     segments = thesvg.selectAll("empty")
                      .data([0,1])
@@ -91,6 +107,11 @@ d3.json "Data/em_alg_data.json", (data) ->
                      .attr("fill", "none")
                      .attr("stroke", segcolor)
                      .attr("stroke-width", seglwd)
+                     .on("mouseover", (d) ->
+                         console.log(d)
+                         segtip.call(this,data.theta[iteration][d]))
+                     .on("mouseout", () ->
+                        d3.selectAll("#em_segtip").remove())
 
 
     permbutton.on "click", ->
