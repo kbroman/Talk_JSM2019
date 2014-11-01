@@ -19,7 +19,7 @@ div.qtlcharts .y.axis text {
 
 div.qtlcharts .y.axis text.title {
     text-anchor: middle;
-    fill: slateblue;
+    fill: wheat;
 }
 
 div.qtlcharts .x.axis text {
@@ -29,7 +29,7 @@ div.qtlcharts .x.axis text {
 }
 
 div.qtlcharts .x.axis text.title {
-    fill: slateblue;
+    fill: wheat;
 }
 
 div.qtlcharts line.axis.grid {
