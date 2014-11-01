@@ -27,4 +27,4 @@ weball: JS Figs
 	scp Figs/Charts/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/Charts/
 
 tar: all
-	cd ..;tar czvhf InteractiveGraphs4 InteractiveGraphs4/[A-Za-z]*
+	cd ..;tar czhf InteractiveGraphs4.tgz InteractiveGraphs4/[A-Za-z]*
