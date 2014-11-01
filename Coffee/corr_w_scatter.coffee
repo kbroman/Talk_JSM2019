@@ -91,7 +91,12 @@ d3.json "Data/corr_w_scatter.json", (data) ->
                  d3.selectAll("text.corrlabel").remove()
                  d3.selectAll("text#corrtext").remove()
                  d3.select(this).attr("stroke","none"))
-             .on("click",(d) -> drawScatter(d.col, d.row))
+             .on("click",(d) ->
+                 drawScatter(d.col, d.row)
+                 d3.select("font.heatmap_hide")
+                   .style("opacity", 1)
+                   .attr("class", "lowlight") )
+
 
   # colors for scatterplot
   nGroup = d3.max(data.group)
@@ -99,7 +104,7 @@ d3.json "Data/corr_w_scatter.json", (data) ->
     colors = [ d3.rgb(150, 150, 150) ]
   else if nGroup <= 3
     colors = ["crimson", "green", "darkslateblue"]
-  else 
+  else
     if nGroup <= 10
       colorScale = d3.scale.category10()
     else
