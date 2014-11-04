@@ -58,7 +58,7 @@ d3.json "Data/density.json", (mixData) ->
   bwtext = d3.select("body")
              .selectAll("#bandwidth")
 
-  d3.select("input[type=range]").on "change", ->
+  d3.select("input[type=range]").on "input", ->
          bandwidth = Math.pow(10, this.value)
          path.transition().attr("d", line(densityEstimate(mixData, bandwidth, xMin, xMax, nPoints)))
          if bandwidth > 0.095

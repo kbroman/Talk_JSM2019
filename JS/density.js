@@ -48,7 +48,7 @@ d3.json("Data/density.json", function(mixData) {
   }).interpolate("linear");
   path = svgscale.svg.append("svg:path").attr("fill", "none").attr("stroke", "slateblue").attr("stroke-width", 3).attr("d", line(densityEstimate(mixData, bandwidth, xMin, xMax, nPoints)));
   bwtext = d3.select("body").selectAll("#bandwidth");
-  return d3.select("input[type=range]").on("change", function() {
+  return d3.select("input[type=range]").on("input", function() {
     bandwidth = Math.pow(10, this.value);
     path.transition().attr("d", line(densityEstimate(mixData, bandwidth, xMin, xMax, nPoints)));
     if (bandwidth > 0.095) {
