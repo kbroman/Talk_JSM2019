@@ -1,4 +1,3 @@
-
 ##############################
 # The intercross
 ##############################
@@ -43,21 +42,23 @@ f2 <- vector("list",10)
 for(i in 1:10) f2[[i]] <- cross(f1,f1,m=10,obl=TRUE)
 
 xloc <- 38
-mult <- 95/f2[[1]]$mat[1,ncol(f2[[1]]$mat)]
+mult <- 95/max(f2[[1]]$mat$locations)
 for(i in 1:10) {
     rect(xloc,0,xloc+10,95,   col=color[1],border=color[1], lend=1, ljoin=1)
     rect(xloc+28,0,xloc+38,95,col=color[1],border=color[1], lend=1, ljoin=1)
 
     f2m <- f2[[i]]$mat
-    for(j in 2:ncol(f2m)) {
-        if(f2m[2,j]==2) {
-            rect(xloc,f2m[1,j]*mult,xloc+10,f2m[1,j-1]*mult,col=color[2],border=color[2], lend=1, ljoin=1)
+    f2m$locations <- c(0, f2m$locations)
+    for(j in 2:length(f2m$locations)) {
+        if(f2m$alleles[j-1]==2) {
+            rect(xloc,f2m$locations[j]*mult,xloc+10,f2m$locations[j-1]*mult,col=color[2],border=color[2], lend=1, ljoin=1)
         }
     }
     f2p <- f2[[i]]$pat
-    for(j in 2:ncol(f2p)) {
-        if(f2p[2,j]==2) {
-            rect(xloc+28,f2p[1,j]*mult,xloc+38,f2p[1,j-1]*mult,col=color[2],border=color[2], lend=1, ljoin=1)
+    f2p$locations <- c(0, f2p$locations)
+    for(j in 2:length(f2p$locations)) {
+        if(f2p$alleles[j-1]==2) {
+            rect(xloc+28,f2p$locations[j]*mult,xloc+38,f2p$locations[j-1]*mult,col=color[2],border=color[2], lend=1, ljoin=1)
         }
     }
     xloc <- xloc+38+50
