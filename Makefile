@@ -23,8 +23,6 @@ weball: JS Figs
 	scp CSS/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/CSS/
 	scp Figs/*.png broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/
 	scp Figs/*.jpg broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/
-	scp Figs/Panels/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/Panels/
-	scp Figs/Charts/* broman-9.biostat.wisc.edu:public_html/presentations/InteractiveGraphs4/Figs/Charts/
 
 tar: all
 	cd ..;tar czhf InteractiveGraphs4.tgz InteractiveGraphs4/[A-Za-z]*
