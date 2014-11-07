@@ -341,3 +341,12 @@ div.medtop {
 img.indent {
     margin-left: 100px;
 }
+
+p.remove_stickies{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: rgb(200,200,200);
+    font-size: 18px;
+    cursor:pointer;
+}

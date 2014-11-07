@@ -4,25 +4,31 @@ var handle_stickies, stickies_on;
 stickies_on = true;
 
 handle_stickies = function() {
-  return d3.select("p#remove_stickies").on("click", function() {
+  var stickies;
+  stickies = d3.selectAll("section").append("p").attr("class", "remove_stickies").text("Remove stickies").style("opacity", 0).on("mouseover", function() {
+    d3.select(this).style("opacity", 1);
+    if (stickies_on) {
+      return d3.select("p.remove_stickies").style("opacity", 1);
+    }
+  }).on("mouseout", function() {
+    d3.select(this).style("opacity", 0);
+    if (stickies_on) {
+      return d3.select("p.remove_stickies").style("opacity", 1);
+    }
+  });
+  d3.select("p.remove_stickies").style("opacity", 1);
+  return stickies.on("click", function() {
     if (stickies_on) {
       stickies_on = false;
-      d3.select(this).text("Show stickies").on("mouseover", function() {
-        return d3.select(this).style("opacity", 1);
-      }).on("mouseout", function() {
-        return d3.select(this).style("opacity", 0);
-      });
+      d3.selectAll("p.remove_stickies").text("Show stickies");
       d3.selectAll("aside").style("opacity", 0).style("pointer-events", "none");
       return d3.selectAll("a").style("border-bottom", "none");
     } else {
       stickies_on = true;
-      d3.select(this).text("Remove stickies").on("mouseover", function() {
-        return [];
-      }).on("mouseout", function() {
-        return [];
-      });
+      d3.selectAll("p.remove_stickies").text("Remove stickies");
       d3.selectAll("aside").style("opacity", 1).style("pointer-events", "auto");
-      return d3.selectAll("a").style("border-bottom", "").style("border-bottom", "dotted 1px #555;");
+      d3.selectAll("a").style("border-bottom", "").style("border-bottom", "dotted 1px #555;");
+      return d3.select("p.remove_stickies").style("opacity", 1);
     }
   });
 };
