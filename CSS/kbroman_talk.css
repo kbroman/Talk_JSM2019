@@ -1,95 +1,95 @@
 /* modified versions of stack.css */
 .stack {
-  padding: 20px 80px;
-  height: 960px;
-  width: 1280px;
-  background: #181818;
+    padding: 20px 80px;
+    height: 960px;
+    width: 1280px;
+    background: #181818;
 }
 
 .titlepage {
-  padding: 160px 80px;
+    padding: 160px 80px;
 }
 
 body {
-  height: 960px;
-  width: 1280px;
-  background: #181818;
-  color: #fff;
-  font-family: "Helvetica Neue";
+    height: 960px;
+    width: 1280px;
+    background: #181818;
+    color: #fff;
+    font-family: "Helvetica Neue";
 }
 
 
 a {
-  text-decoration: none;
-  border-bottom: dotted 1px #555;
+    text-decoration: none;
+    border-bottom: dotted 1px #555;
 }
 
 a.gray {
-  color: #C8C8C8;
+    color: #C8C8C8;
 }
 
 
 aside a {
-  color: #06f;
+    color: #06f;
 }
 
 a.invisiblelink {
-  text-decoration: none;
-  border-bottom: none;
-  opacity: 0;
-  color: #C8C8C8;
+    text-decoration: none;
+    border-bottom: none;
+    opacity: 0;
+    color: #C8C8C8;
 }
 
 a.invisiblelink:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 
 
 
 .gray {
-  color: #C8C8C8;
+    color: #C8C8C8;
 }
 
 .darkgray {
-  color: #989898;
+    color: #989898;
 }
 
 .small {
-  font-size: 28px;
+    font-size: 28px;
 }
 
 .vsmall {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .small sub {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 
 
 ul {
-  margin-left: 120px;
+    margin-left: 120px;
 }
 
 ul.small {
-  font-size: 32px;
-  color: #C8C8C8;
+    font-size: 32px;
+    color: #C8C8C8;
 }
 
 ul.small ul {
-  margin-left: 40px;
-  font-size: 26px;
+    margin-left: 40px;
+    font-size: 26px;
 }
 
 li {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 ul.tight {
-  font-size: 32px;
-  color: #C8C8C8;
+    font-size: 32px;
+    color: #C8C8C8;
 }
 
 /*
@@ -99,227 +99,227 @@ ul.tight li {
 */
 
 ul.tight ul {
-  margin-left: 40px;
-  font-size: 26px;
+    margin-left: 40px;
+    font-size: 26px;
 }
 
 ul.reallytight {
-  font-size: 30px;
-  color: #C8C8C8;
+    font-size: 30px;
+    color: #C8C8C8;
 }
 
 ul.reallytight li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 ul.tight ul li {
-  margin-top: -20px;
-  margin-bottom: 24px;
+    margin-top: -20px;
+    margin-bottom: 24px;
 }
 
 
 
 
 .big {
-  font-size: 128px;
+    font-size: 128px;
 }
 
 .caption {
-  font-size: 96px;
-  text-align: center;
-  text-shadow: 0px 2px 6px rgba(0,0,0,.5);
+    font-size: 96px;
+    text-align: center;
+    text-shadow: 0px 2px 6px rgba(0,0,0,.5);
 }
 
 
 
 
 code.small {
-  font-size: 26px;
+    font-size: 26px;
 }
 
 
 
 
 .reversecolor {
-  background-color: #fff;
+    background-color: #fff;
 }
 .reversecolor text {
-  color: #181818;
+    color: #181818;
 }
 .reversecolor h2 {
-  color: #181818;
+    color: #181818;
 }
 
 
 
 .axis path,
 .axis line {
-   fill: none;
-   shape-rendering: crispEdges;
- }
+    fill: none;
+    shape-rendering: crispEdges;
+}
 
 .axis text {
-  font-family: sans-serif;
-  font-size: 22px;
+    font-family: sans-serif;
+    font-size: 22px;
 }
 
 
 
 #bgrect {
-  fill: rgb(190,190,190);
-  background-color: rgb(190,190,190);
-  stroke: #fff;
+    fill: rgb(190,190,190);
+    background-color: rgb(190,190,190);
+    stroke: #fff;
 }
 
 .axislabel {
-   font-family: sans-serif;
-   font-size: 24px;
-   fill: rgb(125,250,125);
+    font-family: sans-serif;
+    font-size: 24px;
+    fill: rgb(125,250,125);
 }
 
 #tooltip {
-   font-size: 24px;
- }
+    font-size: 24px;
+}
 
 .darkhighlight {
-  color: #ff0099;
+    color: #ff0099;
 }
 
 .highlight {
-  color: rgb(125,250,125);
+    color: rgb(125,250,125);
 }
 
 aside .highlight {
-  color: #ff0099;
+    color: #ff0099;
 }
 
 .lowlight {
-  color: #6baed6;
+    color: #6baed6;
 }
 
 .glow {
-  color: rgb(175,255,175);
-  text-shadow: 0 0 50px #0af, 0 0 3px #fff;
+    color: rgb(175,255,175);
+    text-shadow: 0 0 50px #0af, 0 0 3px #fff;
 }
 
 p {
-  padding: 5px 30px;
-  font-size: 32px;
+    padding: 5px 30px;
+    font-size: 32px;
 }
 
 .nopadding {
-  padding: 0px 0px;
+    padding: 0px 0px;
 }
 
 .nopadding h3 {
-  padding: 20px 80px;
+    padding: 20px 80px;
 }
 
 h4 {
- font-size: 38px;
+    font-size: 38px;
 }
 
 .chart {
-  text-align: center;
+    text-align: center;
 }
 
 p.pg {
-  color: rgb(200,200,200);
-  position:absolute;
-  bottom:3px;
-  right: 3px;
-  font-size: 28px;
+    color: rgb(200,200,200);
+    position:absolute;
+    bottom:3px;
+    right: 3px;
+    font-size: 28px;
 }
 
 p.codelink {
-  color: rgb(200,200,200);
-  position:absolute;
-  bottom:3px;
-  left: 3px;
-  margin-left: 40px;
-  font-size: 18px;
+    color: rgb(200,200,200);
+    position:absolute;
+    bottom:3px;
+    left: 3px;
+    margin-left: 40px;
+    font-size: 18px;
 }
 
 p.reference {
-  color: rgb(200,200,200);
-  position:absolute;
-  bottom:3px;
-  left: 3px;
-  margin-left: 40px;
-  font-size: 28px;
+    color: rgb(200,200,200);
+    position:absolute;
+    bottom:3px;
+    left: 3px;
+    margin-left: 40px;
+    font-size: 28px;
 }
 
 p.Rreference {
-  color: rgb(200,200,200);
-  position:absolute;
-  bottom:3px;
-  right: 3px;
-  margin-right: 40px;
-  font-size: 28px;
+    color: rgb(200,200,200);
+    position:absolute;
+    bottom:3px;
+    right: 3px;
+    margin-right: 40px;
+    font-size: 28px;
 }
 
 
 /* aside (sticky notes) */
 
 section aside {
-  background: #FFF8B8;
-  background-image: -webkit-linear-gradient(top, #FFF8B8, #FEED77);
-  box-shadow: 0 8px 16px rgba(0,0,0,.5);
-  color: #000;
-  display: block;
-  font-size: 16px;
-  padding: 16px;
-  position: absolute;
-  right: 40px;
-  bottom: 120px;
-  width: 328px;
-  -o-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  -moz-transform: rotate(-1deg);
-  -webkit-transform: rotate(-1deg);
-  -o-transition: opacity 100ms linear;
-  -ms-transition: opacity 100ms linear;
-  -moz-transition: opacity 100ms linear;
-  -webkit-transition: opacity 100ms linear;
+    background: #FFF8B8;
+    background-image: -webkit-linear-gradient(top, #FFF8B8, #FEED77);
+    box-shadow: 0 8px 16px rgba(0,0,0,.5);
+    color: #000;
+    display: block;
+    font-size: 16px;
+    padding: 16px;
+    position: absolute;
+    right: 40px;
+    bottom: 120px;
+    width: 328px;
+    -o-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+    -o-transition: opacity 100ms linear;
+    -ms-transition: opacity 100ms linear;
+    -moz-transition: opacity 100ms linear;
+    -webkit-transition: opacity 100ms linear;
 }
 
 section aside p:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 section aside:hover {
-  opacity: 0.35;
+    opacity: 0.35;
 }
 
 section:nth-child(odd) aside {
-  -o-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -moz-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
 }
 
 ul ul {
-  list-style-type: none;  
-}  
-ul ul li:before {  
-  content: "\2013  ";
-}  
+    list-style-type: none;
+}
+ul ul li:before {
+    content: "\2013  ";
+}
 
 ul ul.nodash {
-  list-style-type: none;
+    list-style-type: none;
 }
-ul ul.nodash li:before {  
-  content: "";
+ul ul.nodash li:before {
+    content: "";
 }
 
 table {
-  color: #C8C8C8;
+    color: #C8C8C8;
 }
 
 h3.abscenter {
-  position: absolute;
-  top: 320px;
-  left: 340px;
+    position: absolute;
+    top: 320px;
+    left: 340px;
 }
 
 p.large {
@@ -341,4 +341,3 @@ div.medtop {
 img.indent {
     margin-left: 100px;
 }
-
