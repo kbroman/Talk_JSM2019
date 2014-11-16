@@ -1,6 +1,6 @@
 ### Talk on &ldquo;Interactive graphics for high-dimensional genetic data&rdquo;
 
-These are slides for a talk that I will give at
+These are slides for a talk that I gave at
 [Harvard Biostatistics](http://www.hsph.harvard.edu/biostatistics/) on 6 Nov 2014.
 
 See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/InteractiveGraphs4/).
