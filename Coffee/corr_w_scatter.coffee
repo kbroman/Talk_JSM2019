@@ -11,9 +11,10 @@ d3.json "Data/corr_w_scatter.json", (data) ->
   pad = {left:70, top:40, right:15, bottom: 70}
   extraPad = 70
   innerPad = 5
+  extraRight = 500
 
   totalh = h + pad.top + pad.bottom
-  totalw = (w + pad.left + pad.right)*2 + extraPad
+  totalw = (w + pad.left + pad.right)*2 + extraPad + extraRight
 
   svg = d3.select("div#corr_w_scatter")
           .append("svg")
@@ -136,6 +137,13 @@ d3.json "Data/corr_w_scatter.json", (data) ->
                .attr("pointer-events", "none")
       firsttime = false
 
+    indtip = d3.svg.tip()
+               .orient("right")
+               .padding(3)
+               .text((d,i) -> "Mouse#{d3.format("03d")(i)}")
+               .attr("class", "d3-tip")
+               .attr("id", "indtip")
+
     d3.selectAll("circle.points").remove()
     d3.selectAll("text.axes").remove()
     d3.selectAll("line.axes").remove()
@@ -227,6 +235,22 @@ d3.json "Data/corr_w_scatter.json", (data) ->
                .attr("stroke", "black")
                .attr("stroke-width", 1)
                .attr("fill", (d) -> colors[data.group[d]-1])
+               .on "mouseover", (d,i) ->
+                   d3.select(this).attr("r", 6)
+                   x = d3.select(this).attr("cx")
+                   y = d3.select(this).attr("cy")
+                   indtip.call(this, d, i)
+                   d3.select("g#indtip")
+                     .attr("transform", (d) ->
+                         tx = pad.left*2+pad.right+w+extraPad
+                         ty = pad.top
+                         hx = 20
+                         hy = -15
+                         console.log(x, tx, y, ty, x+tx, y+ty)
+                         "translate(#{+x+tx+hx},#{+y+ty+hy})")
+               .on "mouseout", (d,i) ->
+                   d3.select(this).attr("r", 3)
+                   d3.selectAll("#indtip").remove()
 
     scatterplot.append("rect")
              .attr("height", h)
