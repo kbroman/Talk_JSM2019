@@ -1,4 +1,4 @@
-flashText = d3.select("body").select("font#flash")
+flashText = d3.select("body").select("span#flash")
 
 flashToggle = 0 # when flashing, keeps track of on/off
 stateToggle = 1 # goes between 0 (off), 1 (on) and 2 (flashing)
