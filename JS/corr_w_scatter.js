@@ -79,6 +79,7 @@ d3.json("Data/corr_w_scatter.json", function(data) {
     d3.selectAll("rect#corrtext").remove();
     return d3.select(this).attr("stroke", "none");
   }).on("click", function(d) {
+    d3.select("span#heatmap_hide").style("opacity", 1);
     return drawScatter(d.col, d.row);
   });
   nGroup = d3.max(data.group);

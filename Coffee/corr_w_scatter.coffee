@@ -107,7 +107,9 @@ d3.json "Data/corr_w_scatter.json", (data) ->
                  d3.selectAll("text#corrtext").remove()
                  d3.selectAll("rect#corrtext").remove()
                  d3.select(this).attr("stroke","none"))
-             .on("click",(d) -> drawScatter(d.col, d.row))
+             .on("click",(d) ->
+                 d3.select("span#heatmap_hide").style("opacity", 1)
+                 drawScatter(d.col, d.row))
 
   # colors for scatterplot
   nGroup = d3.max(data.group)
