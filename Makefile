@@ -14,15 +14,15 @@ JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^
 
 web:
-	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015
+	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/BioC2015
 
 weball: JS Figs
-	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015/
-	scp JS/* broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015/JS/
-	scp Coffee/* broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015/Coffee/
-	scp CSS/* broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015/CSS/
-	scp Figs/*.png broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015/Figs/
-	scp Figs/*.jpg broman-9.biostat.wisc.edu:public_html/presentations/WEHI2015/Figs/
+	scp *.html broman-9.biostat.wisc.edu:public_html/presentations/BioC2015/
+	scp JS/* broman-9.biostat.wisc.edu:public_html/presentations/BioC2015/JS/
+	scp Coffee/* broman-9.biostat.wisc.edu:public_html/presentations/BioC2015/Coffee/
+	scp CSS/* broman-9.biostat.wisc.edu:public_html/presentations/BioC2015/CSS/
+	scp Figs/*.png broman-9.biostat.wisc.edu:public_html/presentations/BioC2015/Figs/
+	scp Figs/*.jpg broman-9.biostat.wisc.edu:public_html/presentations/BioC2015/Figs/
 
 tar: all
-	cd ..;tar czhf WEHI2015.tgz WEHI2015/[A-Za-z]*
+	cd ..;tar czhf BioC2015.tgz BioC2015/[A-Za-z]*
