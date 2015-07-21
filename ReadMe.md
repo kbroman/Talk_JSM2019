@@ -1,6 +1,6 @@
 ### Talk on &ldquo;Interactive graphics for genetic data&rdquo;
 
-These are slides for a talk that I will give at
+These are slides for a talk that I gave at
 [BioC 2015](http://bioconductor.org/help/course-materials/2015/BioC2015/) in Seattle on 21 July 2015.
 
 See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/BioC2015).
