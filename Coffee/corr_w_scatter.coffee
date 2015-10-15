@@ -65,7 +65,7 @@ corr_w_scatter = () ->
                              .attr("fill", "white")
                              .attr("stroke", "#181818")
                              .attr("stroke-width", "1")
-                             .attr("opacity", 0.5)
+                             .attr("opacity", 0)
                              .style("pointer-events", "none")
 
       corrtip_lab=corrtip.append("text").attr("id", "corrtext")

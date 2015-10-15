@@ -40,7 +40,7 @@ corr_w_scatter = function() {
     corrlabX = corrlab.append("text").attr("id", "corrlabelX").attr("class", "corrlabel").attr("dominant-baseline", "middle").attr("text-anchor", "middle").attr("fill", "Wheat");
     corrlabY = corrlab.append("text").attr("id", "corrlabelY").attr("class", "corrlabel").attr("dominant-baseline", "middle").attr("text-anchor", "end").attr("fill", "Wheat");
     corrtip = corrplot.append("g").attr("id", "corrtip");
-    corrtip_rect = corrtip.append("rect").attr("id", "corrrect").attr("height", 50).attr("width", 100).attr("fill", "white").attr("stroke", "#181818").attr("stroke-width", "1").attr("opacity", 0.5).style("pointer-events", "none");
+    corrtip_rect = corrtip.append("rect").attr("id", "corrrect").attr("height", 50).attr("width", 100).attr("fill", "white").attr("stroke", "#181818").attr("stroke-width", "1").attr("opacity", 0).style("pointer-events", "none");
     corrtip_lab = corrtip.append("text").attr("id", "corrtext").attr("fill", "black").attr("dominant-baseline", "middle");
     cells = cellgroup.selectAll("empty").data(corr).enter().append("rect").attr("class", "cell").attr("x", function(d) {
       return corXscale(d.col);
