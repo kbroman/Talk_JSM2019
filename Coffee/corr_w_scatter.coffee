@@ -92,6 +92,7 @@ corr_w_scatter = () ->
                              .attr("y", ->
                                  return corYscale(d.row) - 40 if d.row < nvar/2
                                  corYscale(d.row))
+                             .attr("opacity", 0.5)
                      corrtip_lab.attr("x", ->
                                  mult = -1
                                  mult = +1 if d.col < nvar/2
@@ -104,14 +105,21 @@ corr_w_scatter = () ->
                              .attr("text-anchor", ->
                                  return "start" if d.col < nvar/2
                                  "end")
+                             .attr("opacity", 1)
                      corrlabX.attr("x", corXscale(d.col))
                              .attr("y", h+pad.bottom*0.2)
                              .text(data.var[d.col])
+                             .attr("opacity", 1)
                      corrlabY.attr("y", corYscale(d.row))
                              .attr("x", -pad.left*0.1)
                              .text(data.var[d.row])
+                             .attr("opacity", 1)
                  .on "mouseout", ->
                      d3.select(this).attr("stroke","none")
+                     corrtip.select("rect").attr("opacity", 0)
+                     corrtip.select("text").attr("opacity", 0)
+                     corrlabX.attr("opacity", 0)
+                     corrlabY.attr("opacity", 0)
                  .on("click",(d) ->
                      drawScatter(d.col, d.row))
 

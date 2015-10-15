@@ -60,7 +60,7 @@ corr_w_scatter = function() {
           return corYscale(d.row) - 40;
         }
         return corYscale(d.row);
-      });
+      }).attr("opacity", 0.5);
       corrtip_lab.attr("x", function() {
         var mult;
         mult = -1;
@@ -80,11 +80,15 @@ corr_w_scatter = function() {
           return "start";
         }
         return "end";
-      });
-      corrlabX.attr("x", corXscale(d.col)).attr("y", h + pad.bottom * 0.2).text(data["var"][d.col]);
-      return corrlabY.attr("y", corYscale(d.row)).attr("x", -pad.left * 0.1).text(data["var"][d.row]);
+      }).attr("opacity", 1);
+      corrlabX.attr("x", corXscale(d.col)).attr("y", h + pad.bottom * 0.2).text(data["var"][d.col]).attr("opacity", 1);
+      return corrlabY.attr("y", corYscale(d.row)).attr("x", -pad.left * 0.1).text(data["var"][d.row]).attr("opacity", 1);
     }).on("mouseout", function() {
-      return d3.select(this).attr("stroke", "none");
+      d3.select(this).attr("stroke", "none");
+      corrtip.select("rect").attr("opacity", 0);
+      corrtip.select("text").attr("opacity", 0);
+      corrlabX.attr("opacity", 0);
+      return corrlabY.attr("opacity", 0);
     }).on("click", function(d) {
       return drawScatter(d.col, d.row);
     });
