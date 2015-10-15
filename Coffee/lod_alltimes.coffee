@@ -553,5 +553,5 @@ draw_lod_alltimes = (data) ->
                     0)
 
 
-# load json file and call draw function
-d3.json("Data/all_lod.json", draw_lod_alltimes)
+stop_lod_over_time = () ->
+    d3.selectAll("div#lod_alltimes_fig svg").remove()

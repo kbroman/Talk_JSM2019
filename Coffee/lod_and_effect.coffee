@@ -667,5 +667,5 @@ draw_lod_and_effect = (data) ->
            .attr("width", wInner[j])
            .attr("class", "outerBox")
 
-# load json file and call draw function
-d3.json("Data/insulinlod.json", draw_lod_and_effect)
+stop_lod_and_effect = () ->
+  d3.selectAll("div#lod_and_effect svg").remove()

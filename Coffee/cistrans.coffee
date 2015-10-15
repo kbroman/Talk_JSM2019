@@ -746,5 +746,5 @@ draw_cistrans = (data) ->
        .attr("width", w[j])
        .attr("class", "outerBox")
 
-# load json file and call draw function
-d3.json("Data/islet_eqtl.json", draw_cistrans)
+stop_cistrans = () ->
+  d3.selectAll("div#cistrans svg").remove()

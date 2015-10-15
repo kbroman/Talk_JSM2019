@@ -13,9 +13,6 @@
 @import url(CSS/panelutil.css);
 </style>
 
-<script charset="utf-8" type="text/javascript" src="JS/d3.min.js"></script>
-<script type="text/javascript" src="JS/d3.tip.js"></script>
-<script type="text/javascript" src="JS/slide_transition.js"></script>
 
 
 <title>Interactive graphics for genetic data</title>
@@ -24,7 +21,7 @@
 
 
 
-<section class="titlepage">
+<section class="titlepage" id="titlepage">
 <h3 style="margin-top:-10px;" class="highlight">Interactive graphics for genetic data</h3>
 
 <h4><a href="http://kbroman.org">Karl Broman</a></h4>
@@ -77,7 +74,7 @@ to toggle among plain, glowing, and flashing. This is a joke.)
 
 
 
-<section>
+<section id="density">
 <h3>1994</h3>
 <div id="density_estimate" class="chart"></div>
 
@@ -86,8 +83,6 @@ to toggle among plain, glowing, and flashing. This is a joke.)
   <div id="bgrect" style="float:right;width:135px;">
      <input type="range" min="-2" max="1" step = "0.05" value="0"></div>
 </div>
-<script src="JS/density.js"></script>
-<script src="JS/plotframe.js"></script>
 
 <p class="codelink">
 <a href="Coffee/density.coffee" class="gray">code</a> |
@@ -173,13 +168,12 @@ graphics, not so much.
 <p class="pg">7</p></section>
 
 
-<section>
+<section id="corr_w_scatter">
 
 <h3>Why? &nbsp; <span class="lowlight" id="heatmap_hide" style="opacity:0;">summary + details</span></h3>
 
 <div id="corr_w_scatter" style="margin-left:-50px;"></div>
 
-<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
 
 <aside>
 Heatmaps of things like correlation matrices can be quite useful, but
@@ -389,7 +383,7 @@ But it&rsquo;s hard to look at the data, given the scale.
 
 
 
-<section>
+<section id="manyboxplots">
 
 <h3>Why? &nbsp; <span class="lowlight">summary + details</span></h3>
 
@@ -418,7 +412,6 @@ common batch that went bad.
 <a href="Coffee/manyboxplots.coffee" class="gray">code</a> |
 <a href="Data/hypo.json" class="gray">data</a></p>
 
-<script type="text/javascript" src="JS/manyboxplots.js"></script>
 <p class="pg">16</p></section>
 
 
@@ -428,7 +421,7 @@ common batch that went bad.
 
 
 
-<section>
+<section id="lod_and_effect">
 <h3>Why? &nbsp; <span class="lowlight">people are busy</span></h3>
 
 <div id="lod_and_effect" class="fig"></div>
@@ -454,13 +447,12 @@ right to get some further information.
 <a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
 <a href="Data/insulinlod.json" class="gray">data</a></p>
 
-<script type="text/javascript" src="JS/lod_and_effect.js"></script>
 <p class="pg">17</p></section>
 
 
 
 
-<section>
+<section id="lod_over_time">
 
 <h3>Why? &nbsp; <span class="lowlight">reports to collaborators</span></h3>
 
@@ -505,13 +497,12 @@ was painfully slow to refresh.)
 <a href="Coffee/lod_alltimes.coffee" class="gray">code</a> |
 <a href="Data/all_lod.json" class="gray">data</a></p>
 
-<script type="text/javascript" src="JS/lod_alltimes.js"></script>
 
 <p class="pg">18</p></section>
 
 
 
-<section>
+<section id="permutation">
 
 <h3>Why? &nbsp; <span class="lowlight">teaching</span></h3>
 
@@ -522,7 +513,6 @@ was painfully slow to refresh.)
 <a href="Data/onetime_random.json" class="gray">data</a></p>
 
 
-<script type="text/javascript" src="JS/lod_onetime_random.js"></script>
 
 <aside>
 Interactive graphs are incredibly valuable educational tools.<br><br>
@@ -564,7 +554,7 @@ visualizations, at all.
 <p class="pg">20</p></section>
 
 
-<section nopadding>
+<section nopadding id="D3">
 <h3><a href="http://d3js.org">D3</a> is awesome!</h3>
 
 <div id="learnd3" class="medtop">
@@ -595,7 +585,6 @@ My most common mistake is to forget to include <code>.enter()</code>.
 No error is given, but nothing shows up in the plot.
 </aside>
 <p class="pg">21</p></section>
-<script type="text/javascript" src="JS/collision.js"></script>
 
 
 
@@ -721,7 +710,7 @@ apps, too.
 
 
 
-<section nopadding>
+<section nopadding id="cistrans">
 
 <h3 style="margin-top:10px;margin-left:-20px;">Interactive eQTL plot</h3>
 
@@ -753,7 +742,6 @@ phenotype-vs-genotype plot in the top-right.
 <p class="codelink">
 <a href="Coffee/cistrans.coffee" class="gray">code</a></p>
 
-<script type="text/javascript" src="JS/cistrans.js"></script>
 <p class="pg">26</p></section>
 
 
@@ -988,8 +976,27 @@ In particular, you can find all of my papers, talks, and software.
 
 
 
+<script charset="utf-8" type="text/javascript" src="JS/d3.min.js"></script>
+<script type="text/javascript" src="JS/d3.tip.js"></script>
+
+<script src="JS/density.js"></script>
+<script src="JS/plotframe.js"></script>
+
+<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
+
+<script type="text/javascript" src="JS/manyboxplots.js"></script>
+<script type="text/javascript" src="JS/lod_and_effect.js"></script>
+<script type="text/javascript" src="JS/lod_alltimes.js"></script>
+<script type="text/javascript" src="JS/lod_onetime_random.js"></script>
+<script type="text/javascript" src="JS/cistrans.js"></script>
+
+<script type="text/javascript" src="JS/collision.js"></script>
+
+<script type="text/javascript" src="JS/slide_transition.js"></script>
 <script type="text/javascript" src="JS/flash_text.js"></script>
 <script type="text/javascript" src="JS/stack.v0.js"></script>
 <script type="text/javascript" src="JS/handle_stickies.js"></script>
+
+
 </body>
 </html>

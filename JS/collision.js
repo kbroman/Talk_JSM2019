@@ -1,7 +1,4 @@
-
-
-collision = function() {
-                       
+function collision() {
 
 var w = 1280,
     h = 960;
@@ -79,8 +76,10 @@ function collide(node) {
   };
 }
 
-    
+
 
 }
 
-collision();
+function stop_collision() {
+    d3.selectAll("div#collision svg").remove()
+}

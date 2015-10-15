@@ -413,6 +413,5 @@ draw_manyboxplots = (data) ->
      .attr("dominant-baseline", "middle")
      .attr("text-anchor", "middle")
 
-
-# load json file and call draw function
-d3.json("Data/hypo.json", draw_manyboxplots)
+stop_manyboxplots = () ->
+  d3.selectAll("div#manyboxplots svg").remove()
