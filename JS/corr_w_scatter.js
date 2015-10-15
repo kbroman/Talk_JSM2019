@@ -3,7 +3,7 @@ var corr_w_scatter, stop_corr_w_scatter;
 
 corr_w_scatter = function() {
   return d3.json("Data/corr_w_scatter.json", function(data) {
-    var cellgroup, cells, colorScale, colors, corXscale, corYscale, corZscale, corr, corrlab, corrlabX, corrlabY, corrplot, corrtip, corrtip_lab, corrtip_rect, drawScatter, extraPad, extraRight, firsttime, h, i, innerPad, j, nGroup, nind, nvar, pad, scatterplot, svg, totalh, totalw, w;
+    var cellgroup, cells, colorScale, colors, corXscale, corYscale, corZscale, corr, corrlab, corrlabX, corrlabY, corrplot, corrtip, corrtip_lab, corrtip_rect, drawScatter, extraPad, extraRight, firsttime, h, i, indtip, innerPad, j, nGroup, nind, nvar, pad, scatterplot, svg, totalh, totalw, w;
     h = 450;
     w = h;
     pad = {
@@ -110,6 +110,9 @@ corr_w_scatter = function() {
         return results;
       })();
     }
+    indtip = d3.svg.tip().orient("right").padding(3).text(function(d, i) {
+      return "Mouse" + (d3.format("03d")(i));
+    }).attr("class", "d3-tip").attr("id", "indtip");
     firsttime = true;
     drawScatter = function(i, j) {
       var xScale, xticks, yScale, yticks;
@@ -153,8 +156,27 @@ corr_w_scatter = function() {
         return yScale(data.dat[j][d]);
       }).attr("r", 3).attr("stroke", "black").attr("stroke-width", 1).attr("fill", function(d) {
         return colors[data.group[d] - 1];
+      }).on("mouseover", function(d, i) {
+        var x, y;
+        d3.select(this).attr("r", 6);
+        x = d3.select(this).attr("cx");
+        y = d3.select(this).attr("cy");
+        indtip.call(this, d, i);
+        return d3.select("g#indtip").attr("transform", function(d) {
+          var hx, hy, tx, ty;
+          tx = pad.left * 2 + pad.right + w + extraPad;
+          ty = pad.top;
+          hx = 20;
+          hy = -15;
+          console.log(x, tx, y, ty, x + tx, y + ty);
+          return "translate(" + (+x + tx + hx) + "," + (+y + ty + hy) + ")";
+        });
+      }).on("mouseout", function(d, i) {
+        d3.select(this).attr("r", 3);
+        return d3.selectAll("#indtip").remove();
       });
     };
+    scatterplot.append("rect").attr("height", h).attr("width", w).attr("id", "scatter_outerbox").attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
     return corrplot.append("rect").attr("height", h).attr("width", w).attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
   });
 };

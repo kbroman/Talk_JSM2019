@@ -130,6 +130,13 @@ corr_w_scatter = () ->
           colorScale = d3.scale.category20()
         colors = (colorScale(i) for i of d3.range(nGroup))
 
+      indtip = d3.svg.tip()
+               .orient("right")
+               .padding(3)
+               .text((d,i) -> "Mouse#{d3.format("03d")(i)}")
+               .attr("class", "d3-tip")
+               .attr("id", "indtip")
+
       firsttime = true
       drawScatter = (i,j) ->
         if firsttime
@@ -235,10 +242,33 @@ corr_w_scatter = () ->
                    .attr("stroke", "black")
                    .attr("stroke-width", 1)
                    .attr("fill", (d) -> colors[data.group[d]-1])
-
-
+               .on "mouseover", (d,i) ->
+                   d3.select(this).attr("r", 6)
+                   x = d3.select(this).attr("cx")
+                   y = d3.select(this).attr("cy")
+                   indtip.call(this, d, i)
+                   d3.select("g#indtip")
+                     .attr("transform", (d) ->
+                         tx = pad.left*2+pad.right+w+extraPad
+                         ty = pad.top
+                         hx = 20
+                         hy = -15
+                         console.log(x, tx, y, ty, x+tx, y+ty)
+                         "translate(#{+x+tx+hx},#{+y+ty+hy})")
+               .on "mouseout", (d,i) ->
+                   d3.select(this).attr("r", 3)
+                   d3.selectAll("#indtip").remove()
 
       # boxes around panels
+      scatterplot.append("rect")
+             .attr("height", h)
+             .attr("width", w)
+             .attr("id", "scatter_outerbox")
+             .attr("fill", "none")
+             .attr("stroke", "black")
+             .attr("stroke-width", 1)
+             .attr("pointer-events", "none")
+
       corrplot.append("rect")
              .attr("height", h)
              .attr("width", w)
