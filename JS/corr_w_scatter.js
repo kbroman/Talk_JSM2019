@@ -114,6 +114,7 @@ corr_w_scatter = function() {
     drawScatter = function(i, j) {
       var xScale, xticks, yScale, yticks;
       if (firsttime) {
+        d3.select("span#heatmap_hide").style("opacity", 1);
         scatterplot.append("rect").attr("height", h).attr("width", w).attr("fill", d3.rgb(200, 200, 200)).attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
         firsttime = false;
       }

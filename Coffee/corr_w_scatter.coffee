@@ -112,10 +112,7 @@ corr_w_scatter = () ->
                              .text(data.var[d.row])
                  .on "mouseout", ->
                      d3.select(this).attr("stroke","none")
-#                     corrlab.select("text#corrlabelX").remove()
-#                     corrlab.select("text#corrlabelY").remove())
                  .on("click",(d) ->
-#                     d3.select("span#heatmap_hide").style("opacity", 1)
                      drawScatter(d.col, d.row))
 
       # colors for scatterplot
@@ -136,6 +133,8 @@ corr_w_scatter = () ->
       firsttime = true
       drawScatter = (i,j) ->
         if firsttime
+          d3.select("span#heatmap_hide").style("opacity", 1)
+
           # gray background on scatterplot
           scatterplot.append("rect")
                    .attr("height", h)
