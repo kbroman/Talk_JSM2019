@@ -3,7 +3,7 @@ var corr_w_scatter, stop_corr_w_scatter;
 
 corr_w_scatter = function() {
   return d3.json("Data/corr_w_scatter.json", function(data) {
-    var cells, colorScale, colors, corXscale, corYscale, corZscale, corr, corrplot, drawScatter, extraPad, extraRight, firsttime, h, i, innerPad, j, nGroup, nind, nvar, pad, scatterplot, svg, totalh, totalw, w;
+    var cellgroup, cells, colorScale, colors, corXscale, corYscale, corZscale, corr, corrlab, corrlabX, corrlabY, corrplot, corrtip, corrtip_lab, corrtip_rect, drawScatter, extraPad, extraRight, firsttime, h, i, innerPad, j, nGroup, nind, nvar, pad, scatterplot, svg, totalh, totalw, w;
     h = 450;
     w = h;
     pad = {
@@ -35,7 +35,14 @@ corr_w_scatter = function() {
         });
       }
     }
-    cells = corrplot.selectAll("empty").data(corr).enter().append("rect").attr("class", "cell").attr("x", function(d) {
+    cellgroup = corrplot.append("g").attr("id", "cells");
+    corrlab = corrplot.append("g").attr("id", "corrlab");
+    corrlabX = corrlab.append("text").attr("id", "corrlabelX").attr("class", "corrlabel").attr("dominant-baseline", "middle").attr("text-anchor", "middle").attr("fill", "Wheat");
+    corrlabY = corrlab.append("text").attr("id", "corrlabelY").attr("class", "corrlabel").attr("dominant-baseline", "middle").attr("text-anchor", "end").attr("fill", "Wheat");
+    corrtip = corrplot.append("g").attr("id", "corrtip");
+    corrtip_rect = corrtip.append("rect").attr("id", "corrrect").attr("height", 50).attr("width", 100).attr("fill", "white").attr("stroke", "#181818").attr("stroke-width", "1").attr("opacity", 0.5).style("pointer-events", "none");
+    corrtip_lab = corrtip.append("text").attr("id", "corrtext").attr("fill", "black").attr("dominant-baseline", "middle");
+    cells = cellgroup.selectAll("empty").data(corr).enter().append("rect").attr("class", "cell").attr("x", function(d) {
       return corXscale(d.col);
     }).attr("y", function(d) {
       return corYscale(d.row);
@@ -43,7 +50,7 @@ corr_w_scatter = function() {
       return corZscale(d.value);
     }).attr("stroke", "none").attr("stroke-width", 2).on("mouseover", function(d) {
       d3.select(this).attr("stroke", "black");
-      corrplot.append("rect").attr("id", "corrtext").attr("x", function() {
+      corrtip_rect.attr("x", function() {
         if (d.col < nvar / 2) {
           return corXscale(d.col) + 15;
         }
@@ -53,8 +60,8 @@ corr_w_scatter = function() {
           return corYscale(d.row) - 40;
         }
         return corYscale(d.row);
-      }).attr("height", 50).attr("width", 100).attr("fill", "white").attr("stroke", "#181818").attr("stroke-width", "1").attr("opacity", 0.5).style("pointer-events", "none");
-      corrplot.append("text").attr("id", "corrtext").text(d3.format(".2f")(d.value)).attr("x", function() {
+      });
+      corrtip_lab.attr("x", function() {
         var mult;
         mult = -1;
         if (d.col < nvar / 2) {
@@ -68,21 +75,17 @@ corr_w_scatter = function() {
           mult = -1;
         }
         return corYscale(d.row) + (mult + 0.35) * 20;
-      }).attr("fill", "black").attr("dominant-baseline", "middle").attr("text-anchor", function() {
+      }).text(d3.format(".2f")(d.value)).attr("text-anchor", function() {
         if (d.col < nvar / 2) {
           return "start";
         }
         return "end";
       });
-      corrplot.append("text").attr("class", "corrlabel").attr("x", corXscale(d.col)).attr("y", h + pad.bottom * 0.2).text(data["var"][d.col]).attr("dominant-baseline", "middle").attr("text-anchor", "middle").attr("fill", "Wheat");
-      return corrplot.append("text").attr("class", "corrlabel").attr("y", corYscale(d.row)).attr("x", -pad.left * 0.1).text(data["var"][d.row]).attr("dominant-baseline", "middle").attr("text-anchor", "end").attr("fill", "Wheat");
+      corrlabX.attr("x", corXscale(d.col)).attr("y", h + pad.bottom * 0.2).text(data["var"][d.col]);
+      return corrlabY.attr("y", corYscale(d.row)).attr("x", -pad.left * 0.1).text(data["var"][d.row]);
     }).on("mouseout", function() {
-      d3.selectAll("text.corrlabel").remove();
-      d3.selectAll("text#corrtext").remove();
-      d3.selectAll("rect#corrtext").remove();
       return d3.select(this).attr("stroke", "none");
     }).on("click", function(d) {
-      d3.select("span#heatmap_hide").style("opacity", 1);
       return drawScatter(d.col, d.row);
     });
     nGroup = d3.max(data.group);
@@ -114,10 +117,9 @@ corr_w_scatter = function() {
         scatterplot.append("rect").attr("height", h).attr("width", w).attr("fill", d3.rgb(200, 200, 200)).attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
         firsttime = false;
       }
-      d3.selectAll("circle.points").remove();
-      d3.selectAll("text.axes").remove();
-      d3.selectAll("line.axes").remove();
-      d3.select("rect#scatter_outerbox").remove();
+      scatterplot.selectAll("circle.points").remove();
+      scatterplot.selectAll("text.axes").remove();
+      scatterplot.selectAll("line.axes").remove();
       xScale = d3.scale.linear().domain(d3.extent(data.dat[i])).range([innerPad, w - innerPad]);
       yScale = d3.scale.linear().domain(d3.extent(data.dat[j])).range([h - innerPad, innerPad]);
       scatterplot.append("text").attr("id", "xaxis").attr("class", "axes").attr("x", w / 2).attr("y", h + pad.bottom * 0.7).text(data["var"][i]).attr("dominant-baseline", "middle").attr("text-anchor", "middle").attr("fill", "wheat");
@@ -144,14 +146,13 @@ corr_w_scatter = function() {
       }).attr("y2", function(d) {
         return yScale(d);
       }).attr("x1", 0).attr("x2", w).attr("stroke", "white").attr("stroke-width", 1).attr("fill", "white");
-      scatterplot.selectAll("empty").data(d3.range(nind)).enter().append("circle").attr("class", "points").attr("cx", function(d) {
+      return scatterplot.selectAll("empty").data(d3.range(nind)).enter().append("circle").attr("class", "points").attr("cx", function(d) {
         return xScale(data.dat[i][d]);
       }).attr("cy", function(d) {
         return yScale(data.dat[j][d]);
       }).attr("r", 3).attr("stroke", "black").attr("stroke-width", 1).attr("fill", function(d) {
         return colors[data.group[d] - 1];
       });
-      return scatterplot.append("rect").attr("height", h).attr("width", w).attr("id", "scatter_outerbox").attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
     };
     return corrplot.append("rect").attr("height", h).attr("width", w).attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
   });
