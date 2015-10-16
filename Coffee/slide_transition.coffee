@@ -73,7 +73,7 @@ slide_transition = (slidenumber) ->
         console.log("animate d3 slide")
         d3.select("p#dotenter").transition()
                                .style("opacity", 1)
-                               .delay(5000)
+                               .delay(20000)
                                .duration(5000)
                                .ease("linear")
         collision()

@@ -80,7 +80,7 @@ slide_transition = function(slidenumber) {
   }
   if (slidenumber === d3_index) {
     console.log("animate d3 slide");
-    d3.select("p#dotenter").transition().style("opacity", 1).delay(5000).duration(5000).ease("linear");
+    d3.select("p#dotenter").transition().style("opacity", 1).delay(20000).duration(5000).ease("linear");
     collision();
   }
   if (slidenumber === d3_index + 1 || slidenumber === d3_index - 1) {
