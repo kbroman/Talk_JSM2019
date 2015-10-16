@@ -92,6 +92,7 @@ corr_w_scatter = function() {
     }).on("click", function(d) {
       return drawScatter(d.col, d.row);
     });
+    corrplot.append("rect").attr("height", h).attr("width", w).attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
     nGroup = d3.max(data.group);
     if (nGroup === 1) {
       colors = [d3.rgb(150, 150, 150)];
@@ -118,7 +119,7 @@ corr_w_scatter = function() {
       return "Mouse" + (d3.format("03d")(i));
     }).attr("class", "d3-tip").attr("id", "indtip");
     firsttime = true;
-    drawScatter = function(i, j) {
+    return drawScatter = function(i, j) {
       var xScale, xticks, yScale, yticks;
       if (firsttime) {
         d3.select("span#heatmap_hide").style("opacity", 1);
@@ -154,7 +155,7 @@ corr_w_scatter = function() {
       }).attr("y2", function(d) {
         return yScale(d);
       }).attr("x1", 0).attr("x2", w).attr("stroke", "white").attr("stroke-width", 1).attr("fill", "white");
-      return scatterplot.selectAll("empty").data(d3.range(nind)).enter().append("circle").attr("class", "points").attr("cx", function(d) {
+      scatterplot.selectAll("empty").data(d3.range(nind)).enter().append("circle").attr("class", "points").attr("cx", function(d) {
         return xScale(data.dat[i][d]);
       }).attr("cy", function(d) {
         return yScale(data.dat[j][d]);
@@ -179,9 +180,8 @@ corr_w_scatter = function() {
         d3.select(this).attr("r", 3);
         return d3.selectAll("#indtip").remove();
       });
+      return scatterplot.append("rect").attr("height", h).attr("width", w).attr("id", "scatter_outerbox").attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
     };
-    scatterplot.append("rect").attr("height", h).attr("width", w).attr("id", "scatter_outerbox").attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
-    return corrplot.append("rect").attr("height", h).attr("width", w).attr("fill", "none").attr("stroke", "black").attr("stroke-width", 1).attr("pointer-events", "none");
   });
 };
 
