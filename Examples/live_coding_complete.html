@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<div id="chart"></div>
+
+<script type="text/javascript" src="../JS/d3.min.js"></script>
+
+<script type="text/javascript">
+h = 500
+w = 500
+svg = d3.select("div#chart")
+        .append("svg")
+        .attr("height", h)
+        .attr("width", w)
+
+svg.append("rect")
+   .attr("height", h)
+   .attr("width", w)
+   .attr("fill", "#ccc")
+   .attr("stroke", "black")
+   .attr("stroke-width", 3)
+
+n = 20
+xy = []
+for(i=0; i<n; i++) {
+  xy.push({x:Math.random()*w, y:Math.random()*h, state:0})
+}
+
+svg.selectAll("empty")
+   .data(xy)
+   .enter()
+   .append("circle")
+   .attr("cx", function(d) { return d.x; })
+   .attr("cy", function(d) { return d.y; })
+   .attr("r", 4)
+   .attr("fill", "slateblue")
+   .attr("stroke", "black")
+   .on("click", function(d) {
+       d3.select(this)
+         .attr("fill", function(d) {
+              d.state = 1 - d.state
+              if(d.state==1) { return "Orchid"; }
+              return "slateblue" })
+       })
+</script>
+
+</body></html>
