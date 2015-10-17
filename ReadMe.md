@@ -1,6 +1,6 @@
 ### Talk on &ldquo;Interactive graphics for genetic data&rdquo;
 
-These are slides for a talk that I will give in the
+These are slides for a talk that I gave in the
 [Department of Biostatistics and Medical Informatics](https://www.biostat.wisc.edu)
 at the University of Wisconsin&ndash;Madison on 16 October 2015.
 
