@@ -2,7 +2,11 @@
 
 These are slides for a talk that I gave in the
 [Department of Biostatistics and Medical Informatics](https://www.biostat.wisc.edu)
-at the University of Wisconsin&ndash;Madison on 16 October 2015.
+at the University of Wisconsin&ndash;Madison on 16 October 2015, and at
+the
+[Division of Biostatistics](https://www.uthsc.edu/prevmed/biostats.php),
+[University of Tennessee Health Science Center](https://www.uthsc.edu)
+in Memphis, TN, on 2 November 2015.
 
 See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/BMI2015).
 
