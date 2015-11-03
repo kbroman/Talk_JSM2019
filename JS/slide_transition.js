@@ -4,7 +4,7 @@ var cistrans_index, corr_w_scatter_index, current_slide, d3_index, density_index
 current_slide = null;
 
 get_slide_index = function(section_id) {
-  return d3.selectAll("section")[0].indexOf(d3.select("#" + section_id).node()) + 1;
+  return d3.selectAll("section")[0].indexOf(d3.select("#" + section_id).node());
 };
 
 density_index = get_slide_index("density");

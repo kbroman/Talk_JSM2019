@@ -1,7 +1,7 @@
 current_slide = null
 
 get_slide_index = (section_id) ->
-    d3.selectAll("section")[0].indexOf(d3.select("##{section_id}").node()) + 1
+    d3.selectAll("section")[0].indexOf(d3.select("##{section_id}").node())
 
 density_index = get_slide_index("density")
 corr_w_scatter_index = get_slide_index("corr_w_scatter")
