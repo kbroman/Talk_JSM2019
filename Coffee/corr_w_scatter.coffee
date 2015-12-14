@@ -270,7 +270,6 @@ corr_w_scatter = () ->
                          ty = pad.top
                          hx = 20
                          hy = -15
-                         console.log(x, tx, y, ty, x+tx, y+ty)
                          "translate(#{+x+tx+hx},#{+y+ty+hy})")
                .on "mouseout", (d,i) ->
                    d3.select(this).attr("r", 3)

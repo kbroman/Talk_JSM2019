@@ -173,7 +173,6 @@ corr_w_scatter = function() {
           ty = pad.top;
           hx = 20;
           hy = -15;
-          console.log(x, tx, y, ty, x + tx, y + ty);
           return "translate(" + (+x + tx + hx) + "," + (+y + ty + hy) + ")";
         });
       }).on("mouseout", function(d, i) {
