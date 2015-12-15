@@ -1,7 +1,7 @@
 ### Talk on &ldquo;Interactive graphics for genetic data&rdquo;
 
 These are slides for a talk that I gave for the Chicago ASA
-on 15 December 2015.at the University of Wisconsin&ndash;Madison on 16 October 2015.
+on 15 December 2015.
 
 See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/ChiASA2015).
 
