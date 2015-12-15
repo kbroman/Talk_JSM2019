@@ -147,7 +147,13 @@ code.small {
     font-size: 26px;
 }
 
+code.lolit {
+    color: #555;
+}
 
+code.normal {
+    color: #eee;
+}
 
 
 .reversecolor {
