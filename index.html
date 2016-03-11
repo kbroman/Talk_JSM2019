@@ -30,8 +30,8 @@
 &ndash; Madison</p>
 
 <p class="nopadding"><code>
-<a href="http://kbroman.org" class="gray">kbroman.org</a><br>
-<a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br>
+<a href="http://kbroman.org" class="gray">kbroman.org</a><br/>
+<a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br/>
 <a href="https://twitter.com/kwbroman" class="gray">@kwbroman</a>
 </code></p>
 
@@ -44,16 +44,16 @@
 <aside>
 These are slides for a talk I will give at <a href="http://www.gene.com">Genentech</a>
 on 15 April 2016.
-<br><br>
+<br/><br/>
 
 Click on the link at the top-right to remove these
-notes.<br><br>
+notes.<br/><br/>
 
 (The word &ldquo;interactive&rdquo; here is interactive. Click on it
-to toggle among plain, glowing, and flashing. This is a joke.)<br><br>
+to toggle among plain, glowing, and flashing. This is a joke.)<br/><br/>
 
 These slides were tested for Chrome on a Mac and might look terrible
-in some browsers.<br><br>
+in some browsers.<br/><br/>
 
 I&rsquo;ve had some technical difficulties with the slides. If an
 interactive figure is not showing up, trying zooming your browser in
@@ -73,14 +73,14 @@ and then back out.
 <aside>
 Why interactivity? My primary interest is in the display of an overall
 summary of high-dimensional data, but with access to the underlying
-details.<br><br>
+details.<br/><br/>
 
 Heatmaps of things like correlation matrices can be quite useful, but
 they are often hard to read.  It&rsquo;s nice to be able to read off the
-values by hovering.<br><br>
+values by hovering.<br/><br/>
 
 Even better: to be able to click on a pixel and view the corresponding
-scatterplot.<br><br>
+scatterplot.<br/><br/>
 
 This is a set of genes whose expression values are associated with
 genotype at a common locus. In the scatterplots, the points are colored
@@ -98,9 +98,9 @@ by genotype at that locus.
 <img style="position:fixed;bottom: 0px; left:0px; z-index: -1;" width="1280px" src="Figs/inbredmice.jpg" />
 
 <aside>
-Let me first say a bit about my own research.<br><br>
+Let me first say a bit about my own research.<br/><br/>
 
-I focus on genetics problems, and particularly on mouse genetics.<br><br>
+I focus on genetics problems, and particularly on mouse genetics.<br/><br/>
 
 I think these are <a
 href="http://jaxmice.jax.org/strain/000689.html">SWR mice</a>; the
@@ -126,7 +126,7 @@ Threadgill</a>.
 
 <aside>
 Mice are not humans, but you can learn a great deal about human
-biology and disease from mice.<br><br>
+biology and disease from mice.<br/><br/>
 
 The figure on the right is from <a
 href="http://www.daviddeen.com">David Deen</a>.
@@ -146,11 +146,11 @@ href="http://www.daviddeen.com">David Deen</a>.
 
 <aside>
 The main problem I tackle is to try to identify genes that underlie
-phenotypic variation.<br><br>
+phenotypic variation.<br/><br/>
 
 The basic experiment I consider is an experimental cross: we start
 with two inbred strains that differ in the phenotype and perform a
-couple of generations of breeding to mix up the genomes.<br><br>
+couple of generations of breeding to mix up the genomes.<br/><br/>
 
 We gather phenotype data on the progeny, along with genome-wide genotype
 data, and we seek to identify genomic regions for which genotype is
@@ -173,13 +173,13 @@ loci (QTL): genetic loci that influence a quantitative trait.
 <aside>
 The simplest analysis is to do a statistical test at each locus in the
 genome, to assess the association between genotype and
-phenotype.<br><br>
+phenotype.<br/><br/>
 
 We measure the association with a LOD score. LOD scores are log<sub>10</sub>
 likelihood ratios &mdash; a transformation of the F statistic from
 ANOVA. The details aren&rsquo;t
 important for our purposes here. The key is that large LOD scores indicate evidence for an
-association.<br><br>
+association.<br/><br/>
 
 It is important to account for the scan across the genome. The dashed
 horizontal line is a threshold for statistical significance. If there
@@ -201,7 +201,7 @@ were no association between genotype and phenotype, there&rsquo;d still be a
 <aside>
 Underneath each of these peaks is an association between genotype and
 phenotype: If you group the mice by genotype at that location, you&rsquo;ll
-see a difference in the average phenotype among the groups.<br><br>
+see a difference in the average phenotype among the groups.<br/><br/>
 
 The BB, BR, and RR indicate the three different genotypes, as these
 data concern a cross between two strains labeled B and R.
@@ -222,17 +222,17 @@ data concern a cross between two strains labeled B and R.
 <aside>
 My data visualizations have been pretty pedestrian. But in the past
 decade, I&rsquo;ve come to be swamped with data, and I&rsquo;m just beginning to
-come to grips with that.<br><br>
+come to grips with that.<br/><br/>
 
 This is a picture of a pile of gene expression arrays. More and more,
 we&rsquo;re seeing genome-scale phenotype information. For example, in
 one of my collaborations, we have data on 500 mice, each with gene
-expression microarrays for 6 different tissues.<br><br>
+expression microarrays for 6 different tissues.<br/><br/>
 
 You&rsquo;d think that with such high-dimensional data, we&rsquo;d be
 making a lot more graphs. But there&rsquo;s a tendency actually to
 make <em>fewer</em> graphs, or even <em>no</em> graphs. It&rsquo;s
-hard to look at 500 histograms, so why bother?<br><br>
+hard to look at 500 histograms, so why bother?<br/><br/>
 
 The photo is from <a
 href="http://www.biochem.wisc.edu/faculty/attie/">Alan Attie</a>.
@@ -292,16 +292,16 @@ But it&rsquo;s hard to look at the data, given the scale.
 <aside>
 Visualization of large data sets necessarily involves making a
 compressed summary. But with interactive graphs, you can easily
-get back to the underlying details.<br><br>
+get back to the underlying details.<br/><br/>
 
 This is like a set of 500 box plots (for the gene expression values
 from 500 gene expression microarray), but going farther out into the
 tails: the lines connect various quantiles: the
-1, 5, 10, 25, 50, 75, 90, 95, and 99%iles.  <br><br>
+1, 5, 10, 25, 50, 75, 90, 95, and 99%iles.  <br/><br/>
 
 Hover over an array above and see the corresponding histogram.  Click
 on an array for the histogram to persist; click again to make it go
-away.<br><br>
+away.<br/><br/>
 
 The first 120 or so arrays are badly behaved; they all came from a
 common batch that went bad.
@@ -328,13 +328,13 @@ common batch that went bad.
 <aside>
 We know we should not rely solely on summary statistics (like the LOD
 score), but if it takes an extra step to plot the underlying details,
-we tend not to do it, or at least not so much as we should.<br><br>
+we tend not to do it, or at least not so much as we should.<br/><br/>
 
 I&rsquo;ve come to the conclusion that <em>every</em> graph could be
-improved with interactivity. You at least want tooltips.<br><br>
+improved with interactivity. You at least want tooltips.<br/><br/>
 
 The curves at the top are the same LOD curves we saw before. The LOD
-score is a measure of association between genotype and phenotype.<br><br>
+score is a measure of association between genotype and phenotype.<br/><br/>
 
 Click on a chromosome in the top panel to see a detailed view in the
 lower-left panel.  Click on a marker in the lower-left panel to see
@@ -362,29 +362,29 @@ I write a lot of reports to collaborators, describing my analysis
 results and conclusions.
 It&rsquo;s hard to anticipate all possible questions that a collaborator
 might have. (&ldquo;What gene is that?&rdquo;) And you can only show
-so many pictures. <br><br>
+so many pictures. <br/><br/>
 
 Including interactive graphs in a report allows my collaborators to
 answer a lot of their own questions on their own and to more fully
 explore their own data.
 And a single interactive graph can take the place of thousands of
-static ones.<br><br>
+static ones.<br/><br/>
 
 Here we consider a phenotype measured over time, and perform QTL
 analysis with each time point individually, to seek genetic loci that
-affect the response.<br><br>
+affect the response.<br/><br/>
 
 The top-left plot is a &ldquo;heat map&rdquo; of the LOD scores
 for each time point at each genomic position.  LOD scores are also
 colored to indicate the sign of the QTL effect, with red indicating
 that BB lines have larger phenotype values and blue indicating that AA lines
 have larger phenotype values.  We consider only those (position, time)
-pairs with LOD > 1.<br><br>
+pairs with LOD > 1.<br/><br/>
 
 When you hover over a point in the top-left plot, the LOD curves for the
 corresponding time are shown below, and the phenotype averages and
 estimated QTL effect (across time) for the corresponding genomic
-position are shown to the right.<br><br>
+position are shown to the right.<br/><br/>
 
 Click on a point to show pointwise confidence bands on the QTL
 effect (&plusmn; 2 SE).  (We require a mouse click, as otherwise the graph
@@ -414,14 +414,14 @@ was painfully slow to refresh.)
 
 
 <aside>
-Interactive graphs are incredibly valuable educational tools.<br><br>
+Interactive graphs are incredibly valuable educational tools.<br/><br/>
 
 You can only show so many static graphs, and it can be a big step to get
-students to make more, on their own.<br><br>
+students to make more, on their own.<br/><br/>
 
 Interactive graphs can be a big help to build students&rsquo; intution
 and understanding, both as a demonstration, and as a tool that they
-can play with.<br><br>
+can play with.<br/><br/>
 
 This is an illustration of permutation test: Click the green button to shuffle
 the phenotypes and re-draw the LOD curves.
@@ -451,15 +451,15 @@ the phenotypes and re-draw the LOD curves.
 <aside>
 I&rsquo;m using <a href="http://d3js.org">D3</a>, a javascript
 library for data visualization.  (D3 stands for &ldquo;data-driven
-documents.&rdquo;)<br><br>
+documents.&rdquo;)<br/><br/>
 
 This is one of the images that convinced me that I wanted to learn D3.
 There are lots of additional examples at the <a
 href="https://github.com/mbostock/d3/wiki/Gallery">D3
-gallery</a>.<br><br>
+gallery</a>.<br/><br/>
 
 There&rsquo;s a ton to learn, and it&rsquo;s rather forbidding (and much of it is
-dull).<br><br>
+dull).<br/><br/>
 
 My most common mistake is to forget to include <code>.enter()</code>.
 No error is given, but nothing shows up in the plot.
@@ -491,13 +491,13 @@ No error is given, but nothing shows up in the plot.
 </code></pre>
 
 <aside>
-Here&rsquo;s a bit of html.<br><br>
+Here&rsquo;s a bit of html.<br/><br/>
 
 html is a system for tagging text files to describe web pages. (And
-these slides!)<br><br>
+these slides!)<br/><br/>
 
 The key thing to know is that bits get a <code>&lt;tag&gt;</code>
-before and a related one (<code>&lt;/tag&gt;</code>) after.<br><br>
+before and a related one (<code>&lt;/tag&gt;</code>) after.<br/><br/>
 
 There's also a bit of CSS in there (the <code>&lt;style&gt;</code>
 bit), which is a system for defining the <em>style</em> of web pages.
@@ -523,15 +523,15 @@ bit), which is a system for defining the <em>style</em> of web pages.
 </code></pre>
 
 <aside>
-Here&rsquo;s a bit of svg.<br><br>
+Here&rsquo;s a bit of svg.<br/><br/>
 
-It's basically like html, but for defining graphics.<br><br>
+It's basically like html, but for defining graphics.<br/><br/>
 
 The &ldquo;vector&rdquo; part means you&rsquo;re defining individual
-objects in the figure.<br><br>
+objects in the figure.<br/><br/>
 
 The &ldquo;scalable&rdquo; part means you can zoom in and out without
-it being pixelated.<br><br>
+it being pixelated.<br/><br/>
 </aside>
 <p class="pg">21</p></section>
 
@@ -643,11 +643,11 @@ and can use other data.
 
 <aside>
 D3 can be forbidding, but just start making stuff. It&rsquo;s fun, and
-eventually it&rsquo;s productive.<br><br>
+eventually it&rsquo;s productive.<br/><br/>
 
 Learn to use your browser&rsquo;s developer tools. When something goes
 wrong, typically you just get a blank screen. The developer tools show
-the error messages, and you can test things on-the-fly.<br><br>
+the error messages, and you can test things on-the-fly.<br/><br/>
 
 <a href="http://jsfiddle.net">jsfiddle</a> is a huge help for learning
 javascript and D3. There are separate boxes for html, css, javascript,
@@ -661,7 +661,7 @@ and the result.
 <h3><a href="http://coffeescript.org">Coffeescript</a> is awesome!</h3>
 
 <div id="coffee" class="medtop">
-<p><code>blob.attr("x", <span class="highlight">(d) -> d.x</span>)</code><br><br>
+<p><code>blob.attr("x", <span class="highlight">(d) -> d.x</span>)</code><br/><br/>
 <code>height = options<span class="highlight">?.</span>height ? 500</code>
 </p>
 </div>
@@ -669,15 +669,15 @@ and the result.
 <aside>
 (I think maybe I&rsquo;ve seen the <a
 href="http://www.lego.com/en-us/movie">Lego Movie</a> too many
-times.)<br><br>
+times.)<br/><br/>
 
 I&rsquo;m using <a href="http://coffescript.org">CoffeeScript</a>
 rather than javascript. It gets translated to javascript, and
-it&rsquo;s a much nicer language.<br><br>
+it&rsquo;s a much nicer language.<br/><br/>
 
 Particularly nice are the light-weight anonymous
 functions. You&rsquo;ll be writing <em>a lot</em> of anonymous
-functions in D3.<br><br>
+functions in D3.<br/><br/>
 
 Also, there&rsquo;s a simple syntax for handling <code>null</code>
 values, for things like options.
@@ -689,7 +689,7 @@ values, for things like options.
 <h3><a href="http://coffeescript.org">Coffeescript</a> is awesome!</h3>
 
 <div id="coffee" class="medtop">
-<p><code>blob.attr("x", <span class="highlight">(d) -> d.x</span>)</code><br><br>
+<p><code>blob.attr("x", <span class="highlight">(d) -> d.x</span>)</code><br/><br/>
 <code>height = options<span class="highlight">?.</span>height ? 500</code>
 </p>
 </div>
@@ -762,19 +762,19 @@ Here&rsquo;s my most fancy plot. But when I showed this to my
 collaborator, his first question was, &ldquo;Where&rsquo;s my favorite
 gene?&rdquo; I needed to add a search box. <em>Moral</em>: These tools
 are not just for playing around; they need to address the scientific
-questions.<br><br>
+questions.<br/><br/>
 
 The top-left image shows inferred eQTL (sites in genome where genotype
 is associated with the expression of some gene).  The y-axis
 corresponds to the genomic location of probes on a gene expression
 array.  The x-axis corresponds to marker positions.  Dots indicate
 that the genotypes at a particular marker are associated with the
-expression of a particular probe.<br><br>
+expression of a particular probe.<br/><br/>
 
 Hover over a point in the top-left to see all eQTL for a given probe.
 Click on a point to see the LOD curves across the genome for that
 probe: the association between that probe&rsquo;s expression and genotype at
-each position in the genome.<br><br>
+each position in the genome.<br/><br/>
 
 Click on a marker in the lower LOD curve plot to see the corresponding
 phenotype-vs-genotype plot in the top-right.
@@ -811,14 +811,14 @@ phenotype-vs-genotype plot in the top-right.
 
 <aside>
 I want to be able to generate interactive graphs rapidly: for
-my own exploratory data analysis, and for my many collaborators.<br><br>
+my own exploratory data analysis, and for my many collaborators.<br/><br/>
 
 My tendency is to write a script with a bunch of code for a specific chart
-with specific data.  I need to fight that and write reusable functions.<br><br>
+with specific data.  I need to fight that and write reusable functions.<br/><br/>
 
 And I need a system for generating interactive charts, so that others
 (including myself a few months from now) can make use of what I&rsquo;ve
-built.<br><br>
+built.<br/><br/>
 
 I&rsquo;m writing an R package, <a
 href="http://kbroman.org/qtlcharts">R/qtlcharts</a> for
@@ -862,7 +862,7 @@ The core of <a
 href="http://kbroman.org/qtlcharts">R/qtlcharts</a> is a set of
 functions for generating specific panels (like scatterplots, heatmaps,
 and so forth). This is packaged as a separate JavaScript library,
-<a href="http://kbroman.org/d3panels">d3panels</a>.<br><br>
+<a href="http://kbroman.org/d3panels">d3panels</a>.<br/><br/>
 
 There are also a set of functions for generating specific multi-panel
 charts that combine several of the basic panels and define the
@@ -991,11 +991,11 @@ Many people are involved in the studies that I presented.
 
 
 <p class="large"><code>
-<a href="http://kbroman.org" class="gray">kbroman.org</a><br>
+<a href="http://kbroman.org" class="gray">kbroman.org</a><br/>
 </code></p>
 
 <p class="large"><code>
-<a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br>
+<a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br/>
 </code></p>
 
 <p class="large"><code>
@@ -1009,7 +1009,7 @@ Many people are involved in the studies that I presented.
 </div>
 
 <aside>
-This is where to find me.<br><br>
+This is where to find me.<br/><br/>
 
 In particular, you can find all of my papers, talks, and software.
 </aside>
