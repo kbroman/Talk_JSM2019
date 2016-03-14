@@ -1,7 +1,7 @@
 ### Talk on &ldquo;Interactive graphics for genetic data&rdquo;
 
 These are slides for a talk that I will give at [Genentech](http://www.gene.com)
-on 15 April 2016.
+on 15 March 2016.
 
 See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/Genentech2016).
 
