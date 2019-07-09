@@ -15,7 +15,7 @@
 
 
 
-<title>Interactive graphics for genetic data</title>
+<title>Why Javascript?</title>
 </head>
 <body class="overview">
 
@@ -23,34 +23,34 @@
 
 <section class="titlepage" id="titlepage">
 <h3 style="margin-top:-10px;" class="highlight">
-<span id="flash" class="highlight">Interactive</span> graphics for genetic data</h3>
+Why <span id="flash" class="highlight">Javascript</span>?</h3>
 
 <h4><a href="http://kbroman.org">Karl Broman</a></h4>
 <p class="nopadding">Biostatistics &amp; Medical Informatics, University of Wisconsin
 &ndash; Madison</p>
 
 <p class="nopadding"><code>
-<a href="http://kbroman.org" class="gray">kbroman.org</a><br/>
+<a href="https://kbroman.org" class="gray">kbroman.org</a><br/>
 <a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br/>
 <a href="https://twitter.com/kwbroman" class="gray">@kwbroman</a>
 </code></p>
 
-<p class="nopadding"><span class="gray">slides:</span> <code><a href="https://www.biostat.wisc.edu/~kbroman/presentations/NZ2016">bit.ly/auck2016</a></code></p>
+<p class="nopadding"><span class="gray">slides:</span> <code><a href="https://www.biostat.wisc.edu/~kbroman/presentations/JSM2019">bit.ly/jsm_2019</a></code></p>
 
 <img style="position:fixed;bottom: 30px; right:40px; z-index: -1;" width="150px" src="Figs/cc-zero.png" />
 
 
 
 <aside>
-These are slides for a talk I gave at <a
-href="https://www.stat.auckland.ac.nz">University of Auckland</a>
-on 31 August 2016.
+These are slides for a very short presentation as part of a
+panel at the <a href="">Joint Statistical Meetings</a> in Denver
+on 30 July 2019.
 <br/><br/>
 
 Click on the link at the top-right to remove these
 notes.<br/><br/>
 
-(The word &ldquo;interactive&rdquo; here is interactive. Click on it
+(The word &ldquo;Javascript&rdquo; here is interactive. Click on it
 to toggle among plain, glowing, and flashing. This is a joke.)<br/><br/>
 
 These slides were tested for Chrome on a Mac and might look terrible
@@ -64,9 +64,47 @@ and then back out.
 </section>
 
 
+
+
+<section nopadding id="D3">
+<h3><a href="http://d3js.org">It's fun!</h3>
+
+<div id="learnd3" class="medtop">
+<p>You <span class="darkgray">just</span> need to learn html, css, svg, and javascript.</p>
+<p id="dotenter" style="opacity:0;">And don&rsquo;t forget <code>.enter()</code></p>
+</div>
+
+<div id="collision" style="position:fixed;top:-10px;left:-50px;width:1280px;height:960px;">
+</div>
+
+<div style="position:fixed;bottom:10px;left:10px;">
+<code style="font-size:28px;"><a href="http://mbostock.github.io/d3/talk/20111018/collision.html">http://mbostock.github.io/d3/talk/20111018/collision.html</a></code></div>
+
+<aside>
+I&rsquo;m using <a href="http://d3js.org">D3</a>, a javascript
+library for data visualization.  (D3 stands for &ldquo;data-driven
+documents.&rdquo;)<br/><br/>
+
+This is one of the images that convinced me that I wanted to learn D3.
+There are lots of additional examples at the <a
+href="https://github.com/mbostock/d3/wiki/Gallery">D3
+gallery</a>.<br/><br/>
+
+There&rsquo;s a ton to learn, and it&rsquo;s rather forbidding (and much of it is
+dull).<br/><br/>
+
+My most common mistake is to forget to include <code>.enter()</code>.
+No error is given, but nothing shows up in the plot.
+</aside>
+<p class="pg">14</p></section>
+
+
+
+
+
 <section id="corr_w_scatter">
 
-<h3>correlation matrix <span id="heatmap_hide" style="opacity:0;">+ scatter plots</span></h3>
+<h3>high-dimensional data
 
 <div id="corr_w_scatter" style="margin-left:-50px;"></div>
 
@@ -92,227 +130,6 @@ by genotype at that locus.
 <a href="Coffee/corr_w_scatter.coffee" class="gray">code</a> |
 <a href="Data/corr_w_scatter.json" class="gray">data</a></p>
 <p class="pg">2</p></section>
-
-
-<section>
-
-<img style="position:fixed;bottom: 0px; left:0px; z-index: -1;" width="1280px" src="Figs/inbredmice.jpg" />
-
-<aside>
-Let me first say a bit about my own research.<br/><br/>
-
-I focus on genetics problems, and particularly on mouse genetics.<br/><br/>
-
-I think these are <a
-href="http://jaxmice.jax.org/strain/000689.html">SWR mice</a>; the
-photo is from <a
-href="http://cals.ncsu.edu/genetics/index.php/people/david-threadgill/">David
-Threadgill</a>.
-</aside>
-
-<p class="pg">3</p></section>
-
-
-
-
-
-
-<section>
-
-<img style="position:fixed;top: 300px; left:120px; z-index: -1;" height="500px" src="Figs/da-vinci-man.jpg" />
-
-<img style="position:fixed;top: 300px; right:120px; z-index: -1;" height="500px" src="Figs/vitruvian_mouse.jpg" />
-
-<div style="position:fixed;bottom: 120px; right:120px;font-size:24px"><a href="http://www.daviddeen.com"><code>daviddeen.com</code></a></div>
-
-<aside>
-Mice are not humans, but you can learn a great deal about human
-biology and disease from mice.<br/><br/>
-
-The figure on the right is from <a
-href="http://www.daviddeen.com">David Deen</a>.
-</aside>
-<p class="pg">4</p></section>
-
-
-
-
-
-
-<section>
-
-<h3>Intercross</h3>
-
-<img src="Figs/intercross.png" />
-
-<aside>
-The main problem I tackle is to try to identify genes that underlie
-phenotypic variation.<br/><br/>
-
-The basic experiment I consider is an experimental cross: we start
-with two inbred strains that differ in the phenotype and perform a
-couple of generations of breeding to mix up the genomes.<br/><br/>
-
-We gather phenotype data on the progeny, along with genome-wide genotype
-data, and we seek to identify genomic regions for which genotype is
-associated with phenotype. We call such regions quantitative trait
-loci (QTL): genetic loci that influence a quantitative trait.
-</aside>
-<p class="pg">5</p></section>
-
-
-
-
-
-
-<section>
-
-<h3>Genome scan for QTL</h3>
-
-<img src="Figs/lodcurve_insulin.png" />
-
-<aside>
-The simplest analysis is to do a statistical test at each locus in the
-genome, to assess the association between genotype and
-phenotype.<br/><br/>
-
-We measure the association with a LOD score. LOD scores are log<sub>10</sub>
-likelihood ratios &mdash; a transformation of the F statistic from
-ANOVA. The details aren&rsquo;t
-important for our purposes here. The key is that large LOD scores indicate evidence for an
-association.<br/><br/>
-
-It is important to account for the scan across the genome. The dashed
-horizontal line is a threshold for statistical significance. If there
-were no association between genotype and phenotype, there&rsquo;d still be a
-5% chance of a LOD score that big <span class="highlight">somewhere</span> in the genome.
-</aside>
-<p class="pg">6</p></section>
-
-
-
-
-
-<section>
-
-<h3>Genome scan for QTL</h3>
-
-<img src="Figs/lodcurve_insulin_with_effects.png" />
-
-<aside>
-Underneath each of these peaks is an association between genotype and
-phenotype: If you group the mice by genotype at that location, you&rsquo;ll
-see a difference in the average phenotype among the groups.<br/><br/>
-
-The BB, BR, and RR indicate the three different genotypes, as these
-data concern a cross between two strains labeled B and R.
-</aside>
-<p class="pg">6</p></section>
-
-
-
-
-
-
-<section>
-
-<h3>Genome-scale phenotypes</h3>
-
-<img height=700 class="indent" src="Figs/mouse_on_chips.png" />
-
-<aside>
-My data visualizations have been pretty pedestrian. But in the past
-decade, I&rsquo;ve come to be swamped with data, and I&rsquo;m just beginning to
-come to grips with that.<br/><br/>
-
-This is a picture of a pile of gene expression arrays. More and more,
-we&rsquo;re seeing genome-scale phenotype information. For example, in
-one of my collaborations, we have data on 500 mice, each with gene
-expression microarrays for 6 different tissues.<br/><br/>
-
-You&rsquo;d think that with such high-dimensional data, we&rsquo;d be
-making a lot more graphs. But there&rsquo;s a tendency actually to
-make <em>fewer</em> graphs, or even <em>no</em> graphs. It&rsquo;s
-hard to look at 500 histograms, so why bother?<br/><br/>
-
-The photo is from <a
-href="http://www.biochem.wisc.edu/faculty/attie/">Alan Attie</a>.
-</aside>
-<p class="pg">7</p></section>
-
-
-
-
-
-<section>
-<h3>&nbsp;</h3>
-
-<img height=600 class="center" src="Figs/weird_correlation_matrix.png"/>
-
-<p class="codelink">
-<a href="https://kbroman.wordpress.com/2012/04/25/microarrays-suck">kbroman.wordpress.com/2012/04/25/microarrays-suck</a>
-</p>
-<aside>
-This is a correlation matrix for a set of arrays. What the heck is that?
-</aside>
-<p class="pg">8</p></section>
-
-
-<section>
-<h3>&nbsp;</h3>
-
-<img width=900 class="center" src="Figs/many_boxplots.png"/>
-
-<p class="codelink">
-<a href="https://kbroman.wordpress.com/2012/04/25/microarrays-suck">kbroman.wordpress.com/2012/04/25/microarrays-suck</a>
-</p>
-<aside>
-This is like a set of 487 boxplots of the array data, sorted by their
-median. The black line is at the median. The pink lines are at the
-25th and 75th percentiles. The green, orange, and blue lines are at 10,
-5, and 1 percentiles.<br/><br/>
-
-It turned out that there were a batch of 120 badly-behaved arrays.<br/><br/>
-
-Things to be concerned about: sample mix-ups, batch effects, bad
-assays.<br/><br/>
-
-But it&rsquo;s hard to look at the data, given the scale.
-</aside>
-<p class="pg">9</p></section>
-
-
-
-<section id="manyboxplots">
-
-<h3>summary + details</h3>
-
-<div id="manyboxplots">
-</div>
-
-<aside>
-Visualization of large data sets necessarily involves making a
-compressed summary. But with interactive graphs, you can easily
-get back to the underlying details.<br/><br/>
-
-This is like a set of 500 box plots (for the gene expression values
-from 500 gene expression microarray), but going farther out into the
-tails: the lines connect various quantiles: the
-1, 5, 10, 25, 50, 75, 90, 95, and 99%iles.  <br/><br/>
-
-Hover over an array above and see the corresponding histogram.  Click
-on an array for the histogram to persist; click again to make it go
-away.<br/><br/>
-
-The first 120 or so arrays are badly behaved; they all came from a
-common batch that went bad.
-</aside>
-
-<p class="codelink">
-<a href="Coffee/manyboxplots.coffee" class="gray">code</a> |
-<a href="Data/hypo.json" class="gray">data</a></p>
-
-<p class="pg">10</p></section>
 
 
 
@@ -435,302 +252,6 @@ the phenotypes and re-draw the LOD curves.
 
 
 
-<section nopadding id="D3">
-<h3><a href="http://d3js.org">D3</a> is awesome!</h3>
-
-<div id="learnd3" class="medtop">
-<p>You <span class="darkgray">just</span> need to learn html, css, svg, and javascript.</p>
-<p id="dotenter" style="opacity:0;">And don&rsquo;t forget <code>.enter()</code></p>
-</div>
-
-<div id="collision" style="position:fixed;top:-10px;left:-50px;width:1280px;height:960px;">
-</div>
-
-<div style="position:fixed;bottom:10px;left:10px;">
-<code style="font-size:28px;"><a href="http://mbostock.github.io/d3/talk/20111018/collision.html">http://mbostock.github.io/d3/talk/20111018/collision.html</a></code></div>
-
-<aside>
-I&rsquo;m using <a href="http://d3js.org">D3</a>, a javascript
-library for data visualization.  (D3 stands for &ldquo;data-driven
-documents.&rdquo;)<br/><br/>
-
-This is one of the images that convinced me that I wanted to learn D3.
-There are lots of additional examples at the <a
-href="https://github.com/mbostock/d3/wiki/Gallery">D3
-gallery</a>.<br/><br/>
-
-There&rsquo;s a ton to learn, and it&rsquo;s rather forbidding (and much of it is
-dull).<br/><br/>
-
-My most common mistake is to forget to include <code>.enter()</code>.
-No error is given, but nothing shows up in the plot.
-</aside>
-<p class="pg">14</p></section>
-
-
-
-
-
-<section>
-
-<pre style="margin-left:-20px;font-size:44px;"><code>
-&lt;<span class="lowlight">!doctype html</span>&gt;
-&lt;<span class="lowlight">html</span>&gt; &lt;<span class="lowlight">head</span>&gt;
-&lt;<span class="lowlight">title</span>&gt;Example html&lt;<span class="lowlight">/title</span>&gt;
-&lt;<span class="lowlight">style</span>&gt;body { font-family: sans-serif; }&lt;<span class="lowlight">/style</span>&gt;
-&lt;<span class="lowlight">/head</span>&gt;
-
-&lt;<span class="lowlight">body</span>&gt;
-&lt;<span class="lowlight">h2</span>&gt;Example html&lt;<span class="lowlight">/h2</span>&gt;
-
-&lt;<span class="lowlight">p</span></span>&gt;Learn more at
-&lt;<span class="lowlight">a</span> href="http://w3schools.com/html"&gt;w3schools&lt;<span class="lowlight">/a</span>&gt;.
-&lt;<span class="lowlight">/p</span>&gt;
-
-&lt;<span class="lowlight">/body</span>&gt;
-&lt;<span class="lowlight">/html</span>&gt;
-</code></pre>
-
-<aside>
-Here&rsquo;s a bit of html.<br/><br/>
-
-html is a system for tagging text files to describe web pages. (And
-these slides!)<br/><br/>
-
-The key thing to know is that bits get a <code>&lt;tag&gt;</code>
-before and a related one (<code>&lt;/tag&gt;</code>) after.<br/><br/>
-
-There's also a bit of CSS in there (the <code>&lt;style&gt;</code>
-bit), which is a system for defining the <em>style</em> of web pages.
-</aside>
-<p class="pg">15</p></section>
-
-
-
-<section>
-
-<pre style="margin-left:-20px;font-size:44px;"><code>
-&lt;<span class="lowlight">svg height</span>="100" <span class="lowlight">width</span>="200"&gt;
-
-&lt;<span class="lowlight">circle cx</span>="45" <span class="lowlight">cy</span>="45" <span class="lowlight">r</span>="40"
- <span class="lowlight">stroke</span>="black" <span class="lowlight">stroke-width</span>="3"
- <span class="lowlight">fill</span>="slateblue" <span class="lowlight">opacity</span>="0.5"/&gt;
-
-&lt;<span class="lowlight">rect x</span>="50" <span class="lowlight">y</span>="50" <span class="lowlight">width</span>="100" <span class="lowlight">height</span>="40"
- <span class="lowlight">stroke</span>="black" <span class="lowlight">stroke-width</span>="2"
- <span class="lowlight">fill</span>="Orchid" <span class="lowlight">opacity</span>="0.5"/&gt;
-
-&lt;<span class="lowlight">/svg</span>&gt;
-</code></pre>
-
-<aside>
-Here&rsquo;s a bit of svg.<br/><br/>
-
-It's basically like html, but for defining graphics.<br/><br/>
-
-The &ldquo;vector&rdquo; part means you&rsquo;re defining individual
-objects in the figure.<br/><br/>
-
-The &ldquo;scalable&rdquo; part means you can zoom in and out without
-it being pixelated.<br/><br/>
-</aside>
-<p class="pg">16</p></section>
-
-
-
-
-<section>
-
-<pre style="margin-left:-40px;"><code>
-svg.selectAll("empty")
-   .data(my_data)
-   .enter()
-   .append("circle")
-   .attr("cx", function(d) { return d.x })
-   .attr("cy", function(d) { return d.y })
-   .attr("r", 3)
-   .attr("fill", function(d,i) {
-        if(sex[i]=="male") return "gray"
-        return "white" })
-</code></pre>
-
-
-<aside>
-Javascript and D3 aren't really <em>that</em> difficult. The basic
-idea is to connect data to graphical elements (like circles), with
-properties of those elements (such as their position) being derived
-from the data.
-</aside>
-<p class="pg">17</p></section>
-
-
-
-
-<section>
-
-<pre style="margin-left:-40px;"><code class="lolit">
-svg.selectAll("empty")
-   <code class="normal">.data(my_data)</code>
-   .enter()
-   <code class="normal">.append("circle")</code>
-   .attr("cx", function(d) { return d.x })
-   .attr("cy", function(d) { return d.y })
-   .attr("r", 3)
-   .attr("fill", function(d,i) {
-        if(sex[i]=="male") return "gray"
-        return "white" })
-</code></pre>
-
-
-<aside>
-In this example, I'm creating a set of circles, one for each data point.
-</aside>
-<p class="pg">17</p></section>
-
-
-<section>
-
-<pre style="margin-left:-40px;"><code class="lolit">
-svg.selectAll("empty")
-   .data(my_data)
-   .enter()
-   .append("circle")
-   <code class="normal">.attr("cx", function(d) { return d.x })</code>
-   .attr("cy", function(d) { return d.y })
-   .attr("r", 3)
-   .attr("fill", function(d,i) {
-        if(sex[i]=="male") return "gray"
-        return "white" })
-</code></pre>
-
-
-<aside>
-The data points are used to define the positions of the circles.
-</aside>
-<p class="pg">17</p></section>
-
-
-<section>
-
-<pre style="margin-left:-40px;"><code class="lolit">
-svg.selectAll("empty")
-   .data(my_data)
-   .enter()
-   .append("circle")
-   .attr("cx", function(d) { return d.x })
-   .attr("cy", function(d) { return d.y })
-   .attr("r", 3)
-   .attr("fill", <code class="normal">function(d,i) {
-        if(sex[i]=="male") return "gray"
-        return "white" }</code>)
-</code></pre>
-
-
-<aside>
-These functions that define the attributes can be more complicated,
-and can use other data.
-</aside>
-<p class="pg">17</p></section>
-
-
-
-
-<section>
-<h3><a href="http://jsfiddle.net">JSFiddle</a> is awesome!</h3>
-
-<a href="http://jsfiddle.net/kbroman/v4qhh/5">
-    <img height=700 style="position:fixed;bottom:50px;left:100px;" src="Figs/jsfiddle.png">
-</a>
-
-<aside>
-D3 can be forbidding, but just start making stuff. It&rsquo;s fun, and
-eventually it&rsquo;s productive.<br/><br/>
-
-Learn to use your browser&rsquo;s developer tools. When something goes
-wrong, typically you just get a blank screen. The developer tools show
-the error messages, and you can test things on-the-fly.<br/><br/>
-
-<a href="http://jsfiddle.net">jsfiddle</a> is a huge help for learning
-javascript and D3. There are separate boxes for html, css, javascript,
-and the result.
-</aside>
-<p class="pg">18</p></section>
-
-
-
-<section>
-<h3><a href="http://coffeescript.org">Coffeescript</a> is awesome!</h3>
-
-<div id="coffee" class="medtop">
-<p><code>blob.attr("x", <span class="highlight">(d) -> d.x</span>)</code><br/><br/>
-<code>height = options<span class="highlight">?.</span>height ? 500</code>
-</p>
-</div>
-
-<aside>
-(I think maybe I&rsquo;ve seen the <a
-href="http://www.lego.com/en-us/movie">Lego Movie</a> too many
-times.)<br/><br/>
-
-I&rsquo;m using <a href="http://coffescript.org">CoffeeScript</a>
-rather than javascript. It gets translated to javascript, and
-it&rsquo;s a much nicer language.<br/><br/>
-
-Particularly nice are the light-weight anonymous
-functions. You&rsquo;ll be writing <em>a lot</em> of anonymous
-functions in D3.<br/><br/>
-
-Also, there&rsquo;s a simple syntax for handling <code>null</code>
-values, for things like options.
-</aside>
-<p class="pg">19</p></section>
-
-
-<section>
-<h3><a href="http://coffeescript.org">Coffeescript</a> is awesome!</h3>
-
-<div id="coffee" class="medtop">
-<p><code>blob.attr("x", <span class="highlight">(d) -> d.x</span>)</code><br/><br/>
-<code>height = options<span class="highlight">?.</span>height ? 500</code>
-</p>
-</div>
-
-<a href="http://jsfiddle.net/kbroman/cfscr/94">
-    <img height=600 style="position:fixed;bottom:10px;left:200px;" src="Figs/jsfiddle_coffee.png">
-</a>
-
-<aside>
-And you can use <a href="http://jsfiddle.net">jsfiddle</a> with
-CoffeeScript.
-</aside>
-<p class="pg">19</p></section>
-
-
-
-
-
-<section>
-<h3><a href="http://htmlwidgets.org">htmlwidgets</a> is awesome!</h3>
-
-<img height=700 style="position:fixed;bottom:50px;left:100px;" src="Figs/rstudio.png">
-
-<aside>
-The <a href="http://htmlwidgets.org">htmlwidgets</a> package takes
-care of the details when driving javascript-based graphs from
-R: converting the data and then dumping the data and code into a html
-file.<br/><br/>
-
-Especially nice: it handles multiple contexts nicely. Interactive
-plots show up within the plot frame in RStudio (like any standard R
-plot but interactive), and you can include interactive graphs in R
-Markdown files without any extra effort. You can include them in Shiny
-apps, too.
-</aside>
-<p class="pg">20</p></section>
-
-
-
-
 
 <section>
 <h3>&nbsp;</h3>
@@ -746,194 +267,6 @@ apps, too.
 
 
 
-<section>
-<h3>&nbsp;</h3>
-
-<p align="center" style="margin-top:200px;font-size: 48px;"> Why not
-<a href="http://shiny.rstudio.com">Shiny</a>,
-<a href="http://plot.ly">Plotly</a>,
-<a href="http://hafen.github.io/rbokeh/">rbokeh</a>, or
-<a href="https://vega.github.io/vega/">Vega</a>?</span>
-
-
-<aside>There&rsquo;s a lot of excitement about Shiny. Also
-plotly and bokeh.<br/><br/>
-
-I prefer a one-file solution without the requirement of an R
-server.<br/><br/>
-
-And at the time I was getting started, Plotly was closed-source. Vega
-is a another library of higher-level D3-based charts. But neither
-seems quite right for my specialized purposes.
-</aside>
-
-<p class="pg">22</p></section>
-
-
-
-
-
-
-
-
-
-<section nopadding id="cistrans">
-
-<h3 style="margin-top:10px;margin-left:-20px;">Interactive eQTL plot</h3>
-
-<div id="cistrans" class="fig" style="margin-top:-80px;"></div>
-
-<aside>
-Here&rsquo;s my most fancy plot. But when I showed this to my
-collaborator, his first question was, &ldquo;Where&rsquo;s my favorite
-gene?&rdquo; I needed to add a search box. <em>Moral</em>: These tools
-are not just for playing around; they need to address the scientific
-questions.<br/><br/>
-
-The top-left image shows inferred eQTL (sites in genome where genotype
-is associated with the expression of some gene).  The y-axis
-corresponds to the genomic location of probes on a gene expression
-array.  The x-axis corresponds to marker positions.  Dots indicate
-that the genotypes at a particular marker are associated with the
-expression of a particular probe.<br/><br/>
-
-Hover over a point in the top-left to see all eQTL for a given probe.
-Click on a point to see the LOD curves across the genome for that
-probe: the association between that probe&rsquo;s expression and genotype at
-each position in the genome.<br/><br/>
-
-Click on a marker in the lower LOD curve plot to see the corresponding
-phenotype-vs-genotype plot in the top-right.
-</aside>
-
-<p class="codelink">
-<a href="Coffee/cistrans.coffee" class="gray">code</a></p>
-
-<p class="pg">23</p></section>
-
-
-
-<section>
-<h3>R/qtlcharts &nbsp; <a class="lowlight" href="http://kbroman.org/qtlcharts">kbroman.org/qtlcharts</a></h3>
-
-
-<table cellpadding=25 style="margin-top:50px;">
-  <tr><td valign="top"><a href="http://kbroman.org/qtlcharts/example/iplotScanone.html">
-               <img src="Figs/iplotScanone.png" title="iplotScanone" width=325/></a></td>
-      <td valign="top"><a href="http://kbroman.org/qtlcharts/example/iplotCorr.html">
-               <img src="Figs/iplotCorr.png" title="iplotCorr" width=325/></a></td>
-      <td valign="top"><a href="http://kbroman.org/qtlcharts/example/iplotMScanone.html">
-               <img src="Figs/iplotMScanone.png" title="iplotMScanone" width=325/></a></td>
-  </tr>
-  <tr><td valign="top"><a href="http://kbroman.org/qtlcharts/example/iplotCurves.html">
-               <img src="Figs/iplotCurves.png" title="iplotCurves" width=325/></a></td>
-      <td valign="top"><a href="http://kbroman.org/qtlcharts/example/iheatmap.html">
-               <img src="Figs/iheatmap.png" title="iheatmap" width=325/></a></td>
-      <td valign="top"><a href="http://kbroman.org/qtlcharts/example/iboxplot.html">
-               <img src="Figs/iboxplot.png" title="iboxplot" width=325/></a></td>
-  </tr>
-</table>
-
-
-<aside>
-I want to be able to generate interactive graphs rapidly: for
-my own exploratory data analysis, and for my many collaborators.<br/><br/>
-
-My tendency is to write a script with a bunch of code for a specific chart
-with specific data.  I need to fight that and write reusable functions.<br/><br/>
-
-And I need a system for generating interactive charts, so that others
-(including myself a few months from now) can make use of what I&rsquo;ve
-built.<br/><br/>
-
-I&rsquo;m writing an R package, <a
-href="http://kbroman.org/qtlcharts">R/qtlcharts</a> for
-interactive graphs for QTL mapping data, as a companion to my <a
-href="http://www.rqtl.org">R/qtl</a> package. It writes html
-(including the data, in <a href="http://www.json.org/">JSON</a>
-format, and links to the javascript code) to a file and then opens it
-in a browser. For small-to-medium-scale charts, this is fast and
-effective.
-</aside>
-<p class="pg">24</p></section>
-
-
-
-<section>
-<h3>R/qtlcharts &nbsp; <a class="lowlight" href="http://kbroman.org/d3panels">kbroman.org/d3panels</a></h3>
-
-<table cellpadding=25 style="margin-top:100px;">
-  <tr><td valign="top"><a href="http://kbroman.org/d3panels/assets/test/dotchart">
-               <img src="Figs/dotchart.png" title="dotchart" width=225/></a></td>
-      <td valign="top"><a href="http://kbroman.org/d3panels/assets/test/cichart">
-               <img src="Figs/cichart.png" title="cichart" width=225/></a></td>
-      <td valign="top"><a href="http://kbroman.org/d3panels/assets/test/scatterplot">
-               <img src="Figs/scatterplot.png" title="scatterplot" width=225/></a></td>
-      <td valign="top"><a href="http://kbroman.org/d3panels/assets/test/heatmap">
-               <img src="Figs/heatmap.png" title="heatmap" width=225/></a></td>
-  </tr>
-  <tr><td valign="top"><a href="http://kbroman.org/d3panels/assets/test/lodheatmap">
-               <img src="Figs/lodheatmap.png" title="lodheatmap" width=225/></a></td>
-      <td valign="top"><a href="http://kbroman.org/d3panels/assets/test/lodchart">
-               <img src="Figs/lodchart.png" title="lodchart" width=225/></a></td>
-      <td valign="top"><a href="http://kbroman.org/d3panels/assets/test/curvechart">
-               <img src="Figs/curvechart.png" title="curvechart" width=225/></a></td>
-      <td valign="top"><a href="http://kbroman.org/d3panels/assets/test/mapchart">
-               <img src="Figs/mapchart.png" title="mapchart" width=225/></a></td>
-  </tr>
-</table>
-
-<aside>
-The core of <a
-href="http://kbroman.org/qtlcharts">R/qtlcharts</a> is a set of
-functions for generating specific panels (like scatterplots, heatmaps,
-and so forth). This is packaged as a separate JavaScript library,
-<a href="http://kbroman.org/d3panels">d3panels</a>.<br/><br/>
-
-There are also a set of functions for generating specific multi-panel
-charts that combine several of the basic panels and define the
-interactions that glue them together.
-</aside>
-<p class="pg">25</p></section>
-
-
-<section>
-<h3>Lessons</h3>
-
-<ul class="tight">
-  <li>Need to rapidly develop/deploy interactive tools.</li>
-  <li>Need for modularity</li>
-  <li>Data structures are really important</li>
-  <li>Tablets have too-coarse resolution, particularly of touches</li>
-  <li>Scaling up</li>
-  <ul class="lowlight">
-    <li>Database on the back end</li>
-    <li>SVG &rarr; Canvas</li>
-    </ul></li>
-
-</ul>
-
-<aside>
-A few of the lessons learned: interactive graphics need to be tailored
-to the question, and so I need to be able to very quicky put together
-something new.<br/><br/>
-
-That requires modular code, so I can re-use pieces.<br/><br/>
-
-I was surprised to learn the importance of well-considered data
-structures. Depending on how you organize your data, use of D3 can be
-easy or painful.<br/><br/>
-
-I tried to get some things to go on tablets, but they really don't
-work well for the sorts of things I'm trying to do. They're better for
-business-type things.<br/><br/>
-
-In scaling up to larger problems, it's clear that I need a proper
-database on the back end, and I'll probably need to switch from SVG to
-Canvas. Canvas is system for bitmap-based graphics; faster with many
-elements, but more cumbersome to work with.
-</aside>
-<p class="pg">26</p></section>
 
 
 
@@ -941,39 +274,11 @@ elements, but more cumbersome to work with.
 <h3>Summary</h3>
 
 <ul class="tight">
-  <li><span class="highlight">Interactive</span> graphics
-  require effort, but they</li>
-
-      <ul class="lowlight">
-        <li>Facilitate exploration</li>
-        <li>Are great collaborative tools</li>
-        <li>Enable summaries with access to the details</li>
-        <li>Are great for teaching</li>
-      </ul>
-
-  <li>Visualizations must be <span
-  class="highlight">tailored</span> to the data and
-  questions</li>
-
-  <li><a href="http://d3js.org" class="highlight">D3</a> is rather low level, but it</li>
-      <ul class="lowlight">
-        <li>Is totally flexible</li>
-        <li>Provides hours of enjoyment</li>
-        <li>Can provide other hours of frustration</li>
-      </ul>
-
-  <li><a href="http://htmlwidgets.org">htmlwidgets</a> to drive
-  JS-based interactive graphs from R.</li>
-
-  <li><a href="http://rstudio.com">RStudio</a>&rsquo;s <a
-  href="http://shiny.rstudio.com">Shiny</a> and <a
-  href="http://ggvis.rstudio.com">ggvis</a> are also really exciting.</li>
-
-  <li>Write modular, reusable tools rather than scripts</li>
-
-  <li><a href="http://kbroman.org/qtlcharts" class="hilight">R/qtlcharts</a>,
-  an R package for interactive graphs for QTL data</li>
-
+  <li>It's fun!</li>
+  <li>High-dimensional data</li>
+  <li>Eases exploratory data analysis</li>
+  <li>Helps teach concepts</li>
+  <li>Simplifies reports</li>
 </ul>
 
 <aside>
@@ -984,124 +289,21 @@ It&rsquo;s always good to have a summary slide with your key points.
 
 
 
-<section>
-<h3>Acknowledgments<span class="lowlight"></span></h3>
-
-<div style="margin-top:-20px;margin-left:120px;font-size:28px;">
-
-<table cellspacing=25>
-  <tr valign="top">
-     <td class="lowlight">Alan Attie<br/>Mark Keller</td>
-     <td width=10></td>
-     <td>Biochemistry, UW&ndash;Madison</td>
-     </tr>
-
-  <tr valign="top">
-     <td class="lowlight">Brian Yandell</td>
-     <td></td>
-     <td>Statistics and Horticulture, UW&ndash;Madison</td>
-     </tr>
-
-  <tr valign="top">
-     <td class="lowlight">Christina Kendziorski<br/>Aimee Teo Broman</td>
-     <td></td>
-     <td>Biostatistics & Medical Informatics, UW&ndash;Madison</td>
-     </tr>
-
-  <tr valign="top">
-     <td class="lowlight">Eric Schadt
-     <td></td>
-     <td>Mount Sinai</td>
-     </tr>
-
-  <tr valign="top">
-     <td class="lowlight">Danielle Greenawalt<br/>Amit Kulkarni</td>
-     <td></td>
-     <td>Merck & Co., Inc.</td>
-     </tr>
-
-  <tr height=25><td></td></tr>
-
-  <tr valign="top">
-     <td class="lowlight">&#346;aunak Sen</td>
-     <td></td>
-     <td>Epidemiology & Biostatistics, UC-San Francisco</td>
-     </tr>
-  <tr height=25><td></td></tr>
-
-  <tr valign="top">
-     <td class="lowlight">Edgar Spalding<br/>Candace Moore<br/>Logan Johnson</td>
-     <td></td>
-     <td>Botany, UW-Madison</td>
-     </tr>
-</table>
-</div>
-
-<aside>
-Many people are involved in the studies that I presented.
-</aside>
-<p class="pg">28</p></section>
-
-
-
-
-
-<section>
-
-<div class="hugetop">
-<p class="large"><span class="gray">slides</span>: &nbsp;
-<code><a href="https://www.biostat.wisc.edu/~kbroman/presentations/NZ2016">bit.ly/auck2016</a></code>
-&nbsp; <img style="vertical-align:middle;" width="150px" src="Figs/cc-zero.png" /></p>
-
-
-<p class="large"><code>
-<a href="http://kbroman.org" class="gray">kbroman.org</a><br/>
-</code></p>
-
-<p class="large"><code>
-<a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br/>
-</code></p>
-
-<p class="large"><code>
-<a href="https://twitter.com/kwbroman" class="gray">@kwbroman</a>
-</code></p>
-
-<p class="large"><code>
-<a href="http://kbroman.org/qtlcharts" class="gray">kbroman.org/qtlcharts</a>
-</code></p>
-
-</div>
-
-<aside>
-This is where to find me.<br/><br/>
-
-In particular, you can find all of my papers, talks, and software.
-</aside>
-<p class="pg">29</p></section>
-
-
-
 <script charset="utf-8" type="text/javascript" src="JS/d3.min.js"></script>
 <script type="text/javascript" src="JS/d3.tip.js"></script>
 
-<script src="JS/density.js"></script>
 <script src="JS/plotframe.js"></script>
 
 <script type="text/javascript" src="JS/corr_w_scatter.js"></script>
-
-<script type="text/javascript" src="JS/manyboxplots.js"></script>
 <script type="text/javascript" src="JS/lod_and_effect.js"></script>
 <script type="text/javascript" src="JS/lod_alltimes.js"></script>
 <script type="text/javascript" src="JS/lod_onetime_random.js"></script>
-<script type="text/javascript" src="JS/cistrans.js"></script>
-
 <script type="text/javascript" src="JS/collision.js"></script>
 
 <script type="text/javascript" src="JS/slide_transition.js"></script>
 <script type="text/javascript" src="JS/flash_text.js"></script>
 <script type="text/javascript" src="JS/stack.v0.js"></script>
 <script type="text/javascript" src="JS/handle_stickies.js"></script>
-
 
 </body>
 </html>
