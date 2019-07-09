@@ -14,15 +14,15 @@ JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^
 
 web:
-	scp *.html broman-2.biostat.wisc.edu:Website/presentations/NZ2016
+	scp *.html broman-2.biostat.wisc.edu:Website/presentations/JSM2019
 
 weball: JS Figs
-	scp *.html broman-2.biostat.wisc.edu:Website/presentations/NZ2016/
-	scp JS/* broman-2.biostat.wisc.edu:Website/presentations/NZ2016/JS/
-	scp Coffee/* broman-2.biostat.wisc.edu:Website/presentations/NZ2016/Coffee/
-	scp CSS/* broman-2.biostat.wisc.edu:Website/presentations/NZ2016/CSS/
-	scp Figs/*.png broman-2.biostat.wisc.edu:Website/presentations/NZ2016/Figs/
-	scp Figs/*.jpg broman-2.biostat.wisc.edu:Website/presentations/NZ2016/Figs/
+	scp *.html broman-2.biostat.wisc.edu:Website/presentations/JSM2019/
+	scp JS/* broman-2.biostat.wisc.edu:Website/presentations/JSM2019/JS/
+	scp Coffee/* broman-2.biostat.wisc.edu:Website/presentations/JSM2019/Coffee/
+	scp CSS/* broman-2.biostat.wisc.edu:Website/presentations/JSM2019/CSS/
+	scp Figs/*.png broman-2.biostat.wisc.edu:Website/presentations/JSM2019/Figs/
+	scp Figs/*.jpg broman-2.biostat.wisc.edu:Website/presentations/JSM2019/Figs/
 
 tar: all
-	cd ..;tar czhf NZ2016.tgz NZ2016/[A-Za-z]*
+	cd ..;tar czhf JSM2019.tgz JSM2019/[A-Za-z]*
