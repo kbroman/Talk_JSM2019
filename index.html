@@ -99,7 +99,7 @@ No error is given, but nothing shows up in the plot.
 
 <section id="corr_w_scatter">
 
-<h3>high-dimensional data
+<h3>high-dimensional data</h3>
 
 <div id="corr_w_scatter" style="margin-left:-50px;"></div>
 
@@ -130,6 +130,17 @@ by genotype at that locus.
 
 
 
+<section id="scatterplot">
+<h3>exploratory data analysis</h3>
+<div id="scatterplot" class="chart"></div>
+
+<aside>Outliers can be easily identified, with the right interactive
+plot.  In R, you can use <code>identify()</code>, but who remembers
+how to do it?  Usually, I&rsquo;ll say, "Hmm...I want to figure out which point has
+weight 1 &gt; 30 and weight 2 &lt; 25."</aside>
+
+<p class="pg">4</p></section>
+
 
 
 
@@ -159,7 +170,7 @@ right to get some further information.
 <a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
 <a href="Data/insulinlod.json" class="gray">data</a></p>
 
-<p class="pg">4</p></section>
+<p class="pg">5</p></section>
 
 
 
@@ -210,7 +221,7 @@ was painfully slow to refresh.)
 <a href="Data/all_lod.json" class="gray">data</a></p>
 
 
-<p class="pg">5</p></section>
+<p class="pg">6</p></section>
 
 
 
@@ -240,25 +251,12 @@ This is an illustration of permutation test: Click the green button to shuffle
 the phenotypes and re-draw the LOD curves.
 </aside>
 
-<p class="pg">6</p></section>
-
-
-
-
-
-
-
-<section>
-<h3>&nbsp;</h3>
-
-<p align="center" style="margin-top:200px;font-size: 48px;"> <a href="http://code.google.com/p/google-motion-charts-with-r/">Easy</a> <span
-  class="gray">or <a href="http://d3js.org" class="highlight">flexible</a>?</span>
-
-
-<aside>You have to choose between easy or flexible; you can&rsquo;t have
-  both.  I&rsquo;m going for flexible.</aside>
-
 <p class="pg">7</p></section>
+
+
+
+
+
 
 
 
@@ -269,11 +267,12 @@ the phenotypes and re-draw the LOD curves.
 <h3>Summary</h3>
 
 <ul class="tight">
-  <li>It's fun!</li>
+  <li>Javascript is fun!</li>
   <li>High-dimensional data</li>
   <li>Eases exploratory data analysis</li>
-  <li>Helps teach concepts</li>
+  <li>Encourages exploration</li>
   <li>Simplifies reports</li>
+  <li>Helps teach concepts</li>
 </ul>
 
 <aside>
@@ -290,6 +289,7 @@ It&rsquo;s always good to have a summary slide with your key points.
 <script src="JS/plotframe.js"></script>
 
 <script type="text/javascript" src="JS/corr_w_scatter.js"></script>
+<script type="text/javascript" src="JS/scatterplot.js"></script>
 <script type="text/javascript" src="JS/lod_and_effect.js"></script>
 <script type="text/javascript" src="JS/lod_alltimes.js"></script>
 <script type="text/javascript" src="JS/lod_onetime_random.js"></script>

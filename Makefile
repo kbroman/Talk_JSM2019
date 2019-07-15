@@ -2,7 +2,7 @@ all: JS
 
 .PHONY: all tar JS web weball
 
-JS: JS/lod_and_effect.js JS/lod_alltimes.js JS/corr_w_scatter.js JS/lod_onetime_random.js JS/handle_stickies.js JS/flash_text.js JS/plotframe.js JS/scatterplot.js JS/panelutil.js JS/slide_transition.js
+JS: JS/lod_and_effect.js JS/lod_alltimes.js JS/corr_w_scatter.js JS/lod_onetime_random.js JS/handle_stickies.js JS/flash_text.js JS/plotframe.js JS/scatterplot.js JS/panelutil.js JS/slide_transition.js JS/scatterplot.js
 
 JS/%.js: Coffee/%.coffee
 	coffee -bco JS $^

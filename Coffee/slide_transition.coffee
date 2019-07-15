@@ -8,6 +8,7 @@ lod_and_effect_index = get_slide_index("lod_and_effect")
 lod_over_time_index = get_slide_index("lod_over_time")
 permutation_index = get_slide_index("permutation")
 d3_index = get_slide_index("D3")
+scatter_index = get_slide_index("scatterplot")
 
 slide_transition = (slidenumber) ->
     console.log("transition #{current_slide} -> #{slidenumber}")
@@ -21,6 +22,14 @@ slide_transition = (slidenumber) ->
         corr_w_scatter()
     if slidenumber==corr_w_scatter_index-1 or slidenumber==corr_w_scatter_index+1
         stop_corr_w_scatter()
+
+    # eda example
+    if slidenumber==scatter_index
+        console.log("animate scatter slide")
+        scatterplot()
+    if slidenumber==scatter_index-1 or slidenumber==scatter_index+1
+        stop_scatterplot()
+
 
     # lod_and_effect slide
     if slidenumber==lod_and_effect_index
