@@ -46,11 +46,6 @@ slide_transition = (slidenumber) ->
     # collision slide
     if slidenumber==d3_index
         console.log("animate d3 slide")
-        d3.select("p#dotenter").transition()
-                               .style("opacity", 1)
-                               .delay(20000)
-                               .duration(5000)
-                               .ease("linear")
         collision()
     if slidenumber==d3_index+1 or slidenumber==d3_index-1
         console.log("stop d3 slide animation")
