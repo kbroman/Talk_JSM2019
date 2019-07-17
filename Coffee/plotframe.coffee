@@ -105,6 +105,8 @@ plotframe = (data, args=null, svgscale={svg:null, x:null, y:null}) ->
      .attr("x", (pad.left + width - pad.right)/2)
      .attr("y", height-pad.bottom/4)
      .attr("class", "axislabel")
+     .attr("style", "dominant-baseline:hanging")
+     .attr("style", "text-anchor:middle")
      .style("font-family", "sans-serif")
      .text(xlab)
 
@@ -117,6 +119,8 @@ plotframe = (data, args=null, svgscale={svg:null, x:null, y:null}) ->
      .attr("x", pad.left/4)
      .attr("y", (pad.top + height - pad.bottom)/2)
      .attr("class", "axislabel")
+     .attr("style", "dominant-baseline:middle")
+     .attr("style", "text-anchor:middle")
      .style("font-family", "sans-serif")
      .attr("transform", rotation)
      .text(ylab)
