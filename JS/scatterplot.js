@@ -23,9 +23,9 @@ scatterplot = function() {
     });
     pointcolor = function(d) {
       if (d.sex === "FEMALE") {
-        return "hotpink";
+        return "#2ECC40"; // green
       } else {
-        return "slateblue";
+        return "#B10DC9"; // purple
       }
     };
     return svgscale.svg.selectAll("circle", {

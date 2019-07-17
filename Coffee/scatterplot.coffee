@@ -9,9 +9,9 @@ scatterplot = () ->
       pad: {bottom: 90, left: 100, top: 0, right: 10, scale: 0.05}, tickPadding: 8}
 
       pointcolor = (d) -> if d.sex is "FEMALE"
-                                  "hotpink"
+                                  "#2ECC40" # green
                              else
-                                  "slateblue"
+                                  "#B10DC9" # purple
 
       svgscale.svg.selectAll("circle", {chartname: "#scatterplot"})
         .data(weights)
