@@ -9,7 +9,7 @@ scatterplot = () ->
       pad: {bottom: 90, left: 100, top: 0, right: 10, scale: 0.05}, tickPadding: 8}
 
       pointcolor = (d) -> if d.sex is "FEMALE"
-                                  "#2ECC40" # green
+                                  "#58E858" # green
                              else
                                   "#B10DC9" # purple
 
