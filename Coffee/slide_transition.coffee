@@ -3,6 +3,7 @@ current_slide = null
 get_slide_index = (section_id) ->
    d3.selectAll("section")[0].indexOf(d3.select("##{section_id}").node()) + 1
 
+
 corr_w_scatter_index = get_slide_index("corr_w_scatter")
 lod_and_effect_index = get_slide_index("lod_and_effect")
 lod_over_time_index = get_slide_index("lod_over_time")
@@ -11,6 +12,9 @@ d3_index = get_slide_index("D3")
 scatter_index = get_slide_index("scatterplot")
 
 slide_transition = (slidenumber) ->
+    if(navigator.userAgent.includes("Chrome"))
+        slidenumber = slidenumber + 1
+
     console.log("transition #{current_slide} -> #{slidenumber}")
 
     return if slidenumber == current_slide
