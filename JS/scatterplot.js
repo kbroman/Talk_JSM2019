@@ -23,7 +23,7 @@ scatterplot = function() {
     });
     pointcolor = function(d) {
       if (d.sex === "FEMALE") {
-        return "#2ECC40"; // green
+        return "#58E858"; // green
       } else {
         return "#B10DC9"; // purple
       }
