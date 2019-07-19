@@ -14,8 +14,8 @@
 draw_lod_and_effect = (data) ->
 
   # dimensions of SVG
-  w = 1000
-  h = 300
+  w = 1450
+  h = 330
   botLw = 500
   pad = {left:60, top:30, right:40, bottom: 40}
   innerPad = 4

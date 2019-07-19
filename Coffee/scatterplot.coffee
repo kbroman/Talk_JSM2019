@@ -5,7 +5,7 @@ scatterplot = () ->
 
     d3.json "Data/scatterplot.json", (weights) ->
 
-      svgscale = plotframe weights, {chartname: "div#scatterplot", xlab:"Week 1 weight (g)", ylab:"Week 2 weight (g)", height: 600, width: 620,
+      svgscale = plotframe weights, {chartname: "div#scatterplot", xlab:"Week 1 weight (g)", ylab:"Week 2 weight (g)", height: 700, width: 720,
       pad: {bottom: 90, left: 100, top: 0, right: 10, scale: 0.05}, tickPadding: 8}
 
       pointcolor = (d) -> if d.sex is "FEMALE"

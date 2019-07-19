@@ -28,7 +28,7 @@ lod_permutation = () ->
     bigRad = 5
 
     # dimensions of SVG
-    w = [800, 200]
+    w = [1100, 200]
     h = 500
     pad = {left:60, top:50, right:10, bottom: 60, inner: 5}
     totalw = w[0]+w[1]+pad.left*2+pad.right*2
