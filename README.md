@@ -4,7 +4,7 @@ These are slides for a very short presentation, as part of a panel on
 Javascript, for the [Joint Statistical Meetings](https://www.amstat.org/ASA/Meetings/Joint-Statistical-Meetings.aspx)
 on 30 July 2019.
 
-See them in action [here](https://www.biostat.wisc.edu/~kbroman/presentations/JSM2019).
+See them in action [here](https://kbroman.org/Talk_JSM2019/).
 
 ---
 
