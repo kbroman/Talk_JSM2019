@@ -1,0 +1,16 @@
+.d3-tip {
+  fill: darkslateblue;
+  stroke: none;
+  font-weight: bold;
+}
+
+.d3-tip text {
+  fill: white;
+  font-size: 20px;
+  stroke: none;
+  font-family: sans-serif;
+}
+
+.d3-tip#em_segtip {
+    fill: violetred;
+}

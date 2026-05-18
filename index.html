@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<style>
+@import url(CSS/stack.css);
+@import url(CSS/d3-tip.css);
+@import url(CSS/figures.css);
+@import url(CSS/kbroman_talk.css);
+@import url(CSS/corr_w_scatter.css);
+@import url(CSS/panelutil.css);
+</style>
+
+
+
+<title>Why Javascript?</title>
+</head>
+<body class="overview">
+
+
+
+<section class="titlepage" id="titlepage">
+<h3 style="margin-top:-10px;" class="highlight">
+Why <span id="flash" class="highlight">Javascript</span>?</h3>
+
+<h4><a href="http://kbroman.org">Karl Broman</a></h4>
+<p class="nopadding">Biostatistics &amp; Medical Informatics, University of Wisconsin
+&ndash; Madison</p>
+
+<p class="nopadding"><code>
+<a href="https://kbroman.org" class="gray">kbroman.org</a><br/>
+<a href="https://github.com/kbroman" class="gray">github.com/kbroman</a><br/>
+<a href="https://twitter.com/kwbroman" class="gray">@kwbroman</a>
+</code></p>
+
+<p class="nopadding"><span class="gray">slides:</span> <code><a href="https://www.biostat.wisc.edu/~kbroman/presentations/JSM2019">bit.ly/jsm_2019</a></code></p>
+
+<img style="position:fixed;bottom: 30px; right:40px; z-index: -1;" width="150px" src="Figs/cc-zero.svg" />
+
+
+
+<aside>
+These are slides for a very short presentation as part of a
+panel at the <a href="">Joint Statistical Meetings</a> in Denver
+on 30 July 2019.
+<br/><br/>
+
+Click on the link at the top-right to remove these
+notes.<br/><br/>
+
+(The word &ldquo;Javascript&rdquo; here is interactive. Click on it
+to toggle among plain, glowing, and flashing. This is a joke.)<br/><br/>
+
+These slides were tested for Firefox on a Mac and might not work
+in some browsers.<br/><br/>
+
+I&rsquo;ve had some technical difficulties with the slides. If an
+interactive figure is not showing up, trying zooming your browser in
+and then back out.
+</aside>
+
+</section>
+
+
+
+
+<section nopadding id="D3">
+<h3><a href="http://d3js.org">It's fun!</a></h3>
+
+<div id="collision" style="position:fixed;top:-10px;left:-50px;width:1712px;height:963px;">
+</div>
+
+<div style="position:fixed;bottom:10px;left:10px;">
+<code style="font-size:28px;"><a href="http://mbostock.github.io/d3/talk/20111018/collision.html">http://mbostock.github.io/d3/talk/20111018/collision.html</a></code></div>
+
+<aside>
+I&rsquo;m using <a href="http://d3js.org">D3</a>, a javascript
+library for data visualization.  (D3 stands for &ldquo;data-driven
+documents.&rdquo;)<br/><br/>
+
+This is one of the images that convinced me that I wanted to learn D3.
+There are lots of additional examples at the <a
+href="https://github.com/mbostock/d3/wiki/Gallery">D3
+gallery</a>.<br/><br/>
+
+There&rsquo;s a ton to learn, and it&rsquo;s rather forbidding (and much of it is
+dull).<br/><br/>
+
+My most common mistake is to forget to include <code>.enter()</code>.
+No error is given, but nothing shows up in the plot.
+</aside>
+<p class="pg">2</p></section>
+
+
+
+
+
+<section id="corr_w_scatter">
+
+<h3>high-dimensional data</h3>
+
+<div id="corr_w_scatter" style="margin-left:50px;"></div>
+
+
+<aside>
+Why interactivity? My primary interest is in the display of an overall
+summary of high-dimensional data, but with access to the underlying
+details.<br/><br/>
+
+Heatmaps of things like correlation matrices can be quite useful, but
+they are often hard to read.  It&rsquo;s nice to be able to read off the
+values by hovering.<br/><br/>
+
+Even better: to be able to click on a pixel and view the corresponding
+scatterplot.<br/><br/>
+
+This is a set of genes whose expression values are associated with
+genotype at a common locus. In the scatterplots, the points are colored
+by genotype at that locus.
+</aside>
+
+<p class="codelink">
+<a href="Coffee/corr_w_scatter.coffee" class="gray">code</a> |
+<a href="Data/corr_w_scatter.json" class="gray">data</a></p>
+<p class="pg">3</p></section>
+
+
+
+
+
+<section id="scatterplot">
+<h3>exploratory data analysis</h3>
+<div id="scatterplot" class="chart"></div>
+
+<aside>Outliers can be easily identified, with the right interactive
+plot.  In R, you can use <code>identify()</code>, but who remembers
+how to do it?  Usually, I&rsquo;ll say, "Hmm...I want to figure out which point has
+weight 1 &gt; 30 and weight 2 &lt; 25."</aside>
+
+<p class="pg">4</p></section>
+
+
+
+
+<section id="lod_and_effect">
+<h3>people are busy</h3>
+
+<div id="lod_and_effect" class="fig"></div>
+
+<aside>
+We know we should not rely solely on summary statistics (like the LOD
+score), but if it takes an extra step to plot the underlying details,
+we tend not to do it, or at least not so much as we should.<br/><br/>
+
+I&rsquo;ve come to the conclusion that <em>every</em> graph could be
+improved with interactivity. You at least want tooltips.<br/><br/>
+
+The curves at the top are the same LOD curves we saw before. The LOD
+score is a measure of association between genotype and phenotype.<br/><br/>
+
+Click on a chromosome in the top panel to see a detailed view in the
+lower-left panel.  Click on a marker in the lower-left panel to see
+effect estimates and raw data on the right.  Hover over things on the
+right to get some further information.
+</aside>
+
+<p class="codelink">
+<a href="Coffee/lod_and_effect.coffee" class="gray">code</a> |
+<a href="Data/insulinlod.json" class="gray">data</a></p>
+
+<p class="pg">5</p></section>
+
+
+
+
+<section id="lod_over_time">
+
+<h3>reports to collaborators</h3>
+
+<div id="lod_alltimes_fig" style="font-size:20px;margin-left:150px;"></div>
+
+<aside>
+I write a lot of reports to collaborators, describing my analysis
+results and conclusions.
+It&rsquo;s hard to anticipate all possible questions that a collaborator
+might have. (&ldquo;What gene is that?&rdquo;) And you can only show
+so many pictures. <br/><br/>
+
+Including interactive graphs in a report allows my collaborators to
+answer a lot of their own questions on their own and to more fully
+explore their own data.
+And a single interactive graph can take the place of thousands of
+static ones.<br/><br/>
+
+Here we consider a phenotype measured over time, and perform QTL
+analysis with each time point individually, to seek genetic loci that
+affect the response.<br/><br/>
+
+The top-left plot is a &ldquo;heat map&rdquo; of the LOD scores
+for each time point at each genomic position.  LOD scores are also
+colored to indicate the sign of the QTL effect, with red indicating
+that BB lines have larger phenotype values and blue indicating that AA lines
+have larger phenotype values.  We consider only those (position, time)
+pairs with LOD > 1.<br/><br/>
+
+When you hover over a point in the top-left plot, the LOD curves for the
+corresponding time are shown below, and the phenotype averages and
+estimated QTL effect (across time) for the corresponding genomic
+position are shown to the right.<br/><br/>
+
+Click on a point to show pointwise confidence bands on the QTL
+effect (&plusmn; 2 SE).  (We require a mouse click, as otherwise the graph
+was painfully slow to refresh.)
+</aside>
+
+
+<p class="codelink">
+<a href="Coffee/lod_alltimes.coffee" class="gray">code</a> |
+<a href="Data/all_lod.json" class="gray">data</a></p>
+
+
+<p class="pg">6</p></section>
+
+
+
+<section id="permutation">
+
+<h3>teaching</h3>
+
+<div id="lod_onetime_random_fig" style="margin-left:-30px;"></div>
+
+<p class="codelink">
+<a href="Coffee/lod_onetime_random.coffee" class="gray">code</a> |
+<a href="Data/onetime_random.json" class="gray">data</a></p>
+
+
+
+<aside>
+Interactive graphs are incredibly valuable educational tools.<br/><br/>
+
+You can only show so many static graphs, and it can be a big step to get
+students to make more, on their own.<br/><br/>
+
+Interactive graphs can be a big help to build students&rsquo; intution
+and understanding, both as a demonstration, and as a tool that they
+can play with.<br/><br/>
+
+This is an illustration of permutation test: Click the green button to shuffle
+the phenotypes and re-draw the LOD curves.
+</aside>
+
+<p class="pg">7</p></section>
+
+
+
+
+
+
+
+
+
+
+
+<section>
+<h3>Summary</h3>
+
+<ul class="tight">
+  <li>Javascript is fun!</li>
+  <li>High-dimensional data</li>
+  <li>Eases exploratory data analysis</li>
+  <li>Encourages exploration</li>
+  <li>Simplifies reports</li>
+  <li>Helps teach concepts</li>
+</ul>
+
+<aside>
+It&rsquo;s always good to have a summary slide with your key points.
+</aside>
+
+
+<div style="position:fixed;bottom:50px;left:50px;">
+<code style="font-size:28px; color:gray;">Slides: <a href="https://bit.ly/jsm_2019">bit.ly/jsm_2019</a></code></div>
+
+<p class="pg">8</p></section>
+
+
+
+
+<script charset="utf-8" type="text/javascript" src="JS/d3.min.js"></script>
+<script type="text/javascript" src="JS/d3.tip.js"></script>
+
+<script src="JS/plotframe.js"></script>
+
+<script type="text/javascript" src="JS/corr_w_scatter.js"></script>
+<script type="text/javascript" src="JS/scatterplot.js"></script>
+<script type="text/javascript" src="JS/lod_and_effect.js"></script>
+<script type="text/javascript" src="JS/lod_alltimes.js"></script>
+<script type="text/javascript" src="JS/lod_onetime_random.js"></script>
+<script type="text/javascript" src="JS/collision.js"></script>
+
+<script type="text/javascript" src="JS/slide_transition.js"></script>
+<script type="text/javascript" src="JS/flash_text.js"></script>
+<script type="text/javascript" src="JS/stack.v0.js"></script>
+<script type="text/javascript" src="JS/handle_stickies.js"></script>
+
+</body>
+</html>

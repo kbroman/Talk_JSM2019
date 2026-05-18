@@ -1,0 +1,49 @@
+
+/* many box plots and lod_and_effect SVGs*/
+div svg {
+  margin-top:  10px;
+  margin-left: 50px;
+}
+
+div .line {
+  stroke-width: 1;
+  fill: none;
+}
+
+div text {
+ font-family: sans-serif;
+ font-size: 11pt;
+}
+
+div.fig .thickline {
+  stroke-width: 2;
+  fill: none;
+}
+
+div.fig text {
+ font-family: sans-serif;
+ font-size: 10pt;
+ dominant-baseline: middle;
+ text-anchor: middle;
+}
+
+div.fig text.alignright {
+ text-anchor: end;
+}
+
+div.fig .outerBox {
+  stroke: black;
+  stroke-width: 2;
+  fill: none;
+  pointer-events: none;
+}
+
+div.fig .innerBox {
+  fill: rgb(200, 200, 200);
+  stroke: none;
+  pointer-events: none;
+}
+
+div.fig .axis {
+  pointer-events: none;
+}
